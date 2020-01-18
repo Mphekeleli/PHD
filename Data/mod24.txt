@@ -1,0 +1,28 @@
+
+Family:  c("ZAIG", "Zero adjusted IG") 
+Fitting method: RS() 
+
+Call:  gamlss(formula = Losses ~ UpdatedDay + CapturedBy +  
+    TradeStatus + TraderId + Instrument + Reason +      EventTypeCategoryLevel1 + BusinessLineLevel1 +  
+    pb(CapturedBy) + pb(Desk), sigma.formula = ~Desk,  
+    nu.formula = ~1, family = ZAIG, data = crs$training,  
+    mu.start = NULL, sigma.start = NULL, nu.start = NULL,      tau.start = NULL, n.cyc = 80, trace = FALSE) 
+
+Mu Coefficients:
+            (Intercept)               UpdatedDay               CapturedBy              TradeStatus  
+               22.65931                 -0.03121                  1.45120                 -3.02141  
+               TraderId               Instrument                   Reason  EventTypeCategoryLevel1  
+               -0.08697                 -0.01565                  0.16583                 -0.75487  
+     BusinessLineLevel1           pb(CapturedBy)                 pb(Desk)  
+               -0.98833                       NA                 -0.61800  
+Sigma Coefficients:
+(Intercept)         Desk  
+   -4.14111     -0.04238  
+Nu Coefficients:
+(Intercept)  
+     -25.64  
+
+ Degrees of Freedom for the fit: 13 Residual Deg. of Freedom   246 
+Global Deviance:     5938.96 
+            AIC:     5964.96 
+            SBC:     6011.2 

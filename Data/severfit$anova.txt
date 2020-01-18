@@ -1,0 +1,25 @@
+Stepwise Model Path 
+Analysis of Deviance Table
+
+Initial
+mu
+ Model:
+Losses ~ UpdatedDay + Desk + CapturedBy + TradeStatus + TraderId + 
+    Instrument + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1 + 
+    Exposure + pb(CapturedBy) + pb(TraderId) + pb(TradeStatus) + 
+    TraderId:Reason + UpdatedDay:Desk + Desk:Exposure + Reason:EventTypeCategoryLevel1 + 
+    TradeStatus:EventTypeCategoryLevel1
+
+Final
+mu
+ Model:
+Losses ~ UpdatedDay + Desk + CapturedBy + TradeStatus + TraderId + 
+    Instrument + Reason + EventTypeCategoryLevel1 + Exposure + 
+    pb(CapturedBy) + pb(TraderId) + pb(TradeStatus) + TraderId:Reason + 
+    UpdatedDay:Desk + Desk:Exposure + Reason:EventTypeCategoryLevel1 + 
+    TradeStatus:EventTypeCategoryLevel1
+
+
+                  Step       Df  Deviance Resid. Df Resid. Dev      AIC
+1                                          235.7159   5910.670 6048.424
+2 - BusinessLineLevel1 1.007996 0.2152737  236.7239   5910.886 6042.676

@@ -1,0 +1,38 @@
+
+Family:  c("GB2", "Generalized beta 2 (i.e. of the second kind)") 
+Fitting method: RS() 
+
+Call:  gamlss(formula = Losses ~ UpdatedDay + Desk + CapturedBy +      TradeStatus + TraderId + Instrument + Reason +  
+    EventTypeCategoryLevel1 + Exposure + pb(CapturedBy) +      pb(TraderId) + pb(TradeStatus) + TraderId:Reason +  
+    UpdatedDay:Desk + Desk:Exposure + Reason:EventTypeCategoryLevel1 +  
+    TradeStatus:EventTypeCategoryLevel1, sigma.formula = ~BusinessLineLevel1,  
+    nu.formula = ~1, tau.formula = ~Instrument, family = GB2,      data = crs$training, mu.start = NULL, sigma.start = NULL,  
+    nu.start = NULL, tau.start = NULL, n.cyc = 1700,      trace = FALSE) 
+
+Mu Coefficients:
+                        (Intercept)                           UpdatedDay                                 Desk  
+                         11.3274048                            0.0769694                            0.2639089  
+                         CapturedBy                          TradeStatus                             TraderId  
+                         -0.1666376                           -1.9155606                            0.2107559  
+                         Instrument                               Reason              EventTypeCategoryLevel1  
+                          0.0323856                           -0.1054440                           -1.7661357  
+                           Exposure                       pb(CapturedBy)                         pb(TraderId)  
+                          0.0018252                                   NA                                   NA  
+                    pb(TradeStatus)                      TraderId:Reason                      UpdatedDay:Desk  
+                                 NA                           -0.0309107                           -0.0118501  
+                      Desk:Exposure       Reason:EventTypeCategoryLevel1  TradeStatus:EventTypeCategoryLevel1  
+                         -0.0002197                            0.0619507                            0.4030053  
+Sigma Coefficients:
+       (Intercept)  BusinessLineLevel1  
+            0.7302              0.1251  
+Nu Coefficients:
+(Intercept)  
+        2.7  
+Tau Coefficients:
+(Intercept)   Instrument  
+   -2.11476      0.02488  
+
+ Degrees of Freedom for the fit: 22.28 Residual Deg. of Freedom   236.7 
+Global Deviance:     5910.89 
+            AIC:     5955.44 
+            SBC:     6034.67 

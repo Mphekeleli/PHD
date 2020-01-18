@@ -1,0 +1,1116 @@
+---
+output: pdf_document
+---
+
+\doublespacing
+
+\section{Introduction}
+\label{sec3:Introduction}
+
+The fundamental premise behind the nature of ORMF's is to provide an exposure-based treatment of OpRisk losses which caters to modeling capital estimates for forward-looking aspects of ORM. This proves tricky due to the need for specific knowledge about potential loss events viz. the required knowledge of the likelihood and magnitude of a loss from the time the loss event occurs until the actual realised loss materialises, given a case specific underlying loss-generating mechanism. By this very nature OpRisk is being characterised by the significant lag that results between the moment the event is conceived to the point the loss materializes.\medskip 
+
+For example, in the case of rogue trading, there is a frequency exposure associated with traders *going rogue*, due to a probability of rogue events happening between a specific group of traders over time, which is then modeled for each rogue trading event and the impact (severity based on the size of the position) of the loss when it is realised (at time of detection). This timing paradox often results in questionable capital estimates, especially for those near misses, pending and realised losses that need to be captured in the model.
+
+\section{Applicability of EBOR methodology for capturing forward-looking aspects of ORM}
+\label{sec:Applicability of EBOR methodology for capturing forward-looking aspects of ORM}
+
+OpRisk is characterised by a time delay $\tau$, wherein the p\&l impact lags behind the moment the OpRisk event is conceived up until the event is observed and accounted for. In this paper the author advances knowledge of the current ORMF's toward a new EBOR framework which aims to provide an exposure-based treatment of OpRisk losses catering for modeling capital estimates of forward-looking aspects of OpRisk.\medskip
+
+@einemann2018operational unearth the current EBOR model anagolous to the BL/ET matrix combinations in the LDA model, wherein an additional cell is considered in the classical LDA model whose contributions build a hybrid ORMF which integrates EBOR models with the LDA model, facilitating the migration of OpRisk types from a classical to EBOR treatment through a quantitative framework [@einemann2018operational]. Conceptually, the EBOR model component can be extended to include potential future events e.g., future litigations, based on some underlying property, capturing forward looking aspects of business environment and internal control factors (BEICF's) thereof.\medskip
+
+The fundamental premise behind the LDA is that each firm's OpRisk losses are a reflection of it's underlying OpRisk exposure [@einemann2018operational]. @dobson2008introduction relates OpRisk events to a varying or a constant degree of exposure, which needs to be taken into account when modeling counts or frequencies of occurance. In particular, the assumption behind the use of the Poisson distribution in the model to estimate the frequency of losses for all available observations, is that both the the intensity (or rate) of occurrence and the opportunity (or exposure) for counting can assume either of these two afore-mentioned forms [@dobson2008introduction]. In the former case the varying degrees of exposure impact on the rate of events, whereas in the latter case the exposure is constant hence not relevant to the model.\medskip
+
+When observed counts all have the same exposure, modeling the mean count $\mu$ as a function of explanatory variables $x_{1},\ldots,x_{p}$ is the same as modeling the rate $R$. The actual measure of exposure we need to use depends specifically on projecting the count of OpRisk events (frequency of realised losses) as the target variable in the model as opposed to the measure if the target variable were the severity of the losses, e.g. in modeling rogue trading severity exposure of events is based on size of loss position at time to detection or CapturedBy as severity risk factors.
+
+\section{Sub-problem 1}
+\label{sec:Sub-problem 1}
+
+In our prevailing banking phenomena of increasing OpRisks, the problem consists of questioning whether a firm's susceptibility to OpRisk hazard's growth, results in the degree of OpRisk losses slowing due to tightning OpRisk controls and enhancements to OpRisk frameworks. It would be prudent not to declare things are improving if the evidence is not quite firm that this is true. This is essentially a check for situations, from these data, whether there is evidence of the unchecked spread of negligent behaviour leading to operational loss events or not; or on the contrary, those situations other than the unrestricted spread of these "rogue" events conscequently driving OpRisk losses i.e., which may requiring a re-thinking our approach to improving OpRisk controls and enhancing OpRisk management frameworks.
+
+\subsection{Exposure-based OpRisk (EBOR) models}
+\label{ssec:Exposure-based OpRisk (EBOR) models}
+
+The existing models in OpRisk measurement for which historical loss distributions are the best predictors of future losses, assume that we do not learn from past losses. This is problematic for "predictable" risk types due to model's practice of undercapitalising known risks before occur, and overcapitalising for risks after the losses materialise, creating innappropriate capital estimates [@ama2013ama]. These concerns motivate the development of an EBOR modelling framework which not only captures past losses but also how exposures to forward-looking affect risk attitudes using event frequencies based on actual exposures in the business environment and internal control risk factors (BEICF) thereof.
+
+\subsection{Hypothesis 1}
+\label{Hyp1:Hypothesis 1}
+
+To quantify OpRisk losses by introducing GLM's, GAMLSS models towards a new framework for OpRisk management, who are "predictive" due to learning capabilities, capturing exposures to forward-looking aspects in addition to how past losses affect may risk attitudes. EBOR treatments effectively replace historical loss severity curves obtained from historical loss counts, replacing how missed losses are undercapitalized for, and/or overcapitalizing realised losses after they occur, by looking for evidence in deep hierarchies of the features from these data to affirm that this is true. 
+
+\section{Derivation of the poisson model from the exponential family of distributions}
+\label{sec:Derivation of the poisson model from the exponential family of distributions}
+
+Operational riskiness in FIs grows as trading transactions grow in complexity i.e., the more complex and numerous trading activity builds the higher the rate at which new cases of OpRisk events occur. Therefore, it is likely that the rate of operational hazard may be increasing exponentially over time. The scientifically interesting question is whether the data provides any evidence that the increase in the underlying operational hazard generation is slowing. The afore-mentioned postulate provides a plausible model to start investigating this question.\medskip
+
+In the obove discussions, the question of increasing OpRisk hazard rates due to increasing transaction complexity arises, wherein $\mu_i$, the expected number of new cases on day $t_i$ is modeled. As a starting point, and with reference to LDA model steps, one begins by using Poisson modeling for counts to estimate the rate of loss events frequencies. The Poisson model's flexibility permits the modelling of numerous operational loss counts and when the data are mostly zeroes and ones (when Poisson means are low). The model assumes that the  number of expected new OpRisk hazards often increase exponentially over time. Hence, if $\mu_i$ is the expected number of new cases over time $[T,T+\tau] = t_i$, then an appropriate model takes the form:
+
+\singlespacing
+\begin{eqnarray}\label{expgrowth}
+E(\mathbf{Y}_i) = \mu_i = d_i\exp{(\beta t_i)} 
+\end{eqnarray}
+\doublespacing
+
+where the random variables $\mathbf{Y_i}$ are independent, $d_i = \mbox{exposure}_i$, and $\beta$'s are a set of unknown parameters in $\mathbf{\beta}$. For a list of $N$ different Oprisk events, note that the random variables $Y_i$ are the basis for the OpRisk hazard defined by a binary response variable *LossIndicator* which denotes the presence or absence loss. Define random variabels $Y_1,\ldots,Y_N$ as follows
+
+\begin{definition}\label{DefLosInd}
+\singlespacing
+\begin{equation}\label{LossIndicator}
+\mathbf {Y}_i =\left\{\begin{array}{rcl}
+				 & 1 & \mbox{\it{for realised OpRisk losses}}  \\
+                 & 0 & \mbox{\it{for pending losses and near misses}} 
+                      \end{array}\right.
+\end{equation}
+\doublespacing
+\end{definition}
+
+indexed by the subscript $i$, who may have different expected values $\mu_i$. It is important to note that sometimes there may be one observation $y_i$ for each $Y_i$, but on other occasions there may be several observations $y_{ij}\quad(j=1,\ldots,n_i)$ for each $Y_i$. Equation \ref{expgrowth} can be turned into GLM form by using a log link so that
+
+\singlespacing
+\begin{eqnarray}\label{linearcombination}
+\mbox{ln}\mu_i = \mbox{ln}d_i + \beta t_i
+\end{eqnarray}
+\doublespacing
+
+Parameter $\mu$ will depend on risk factors, which are the causal factors that are associated with OpRisk hazards and therefore the basic unit that create losses with random uncertainty e.g., the transaction population size, the period of observation, and various characteristics of the population (i.e., UpdatedTime, Instrument, TraderId, etc.). The transposed vector $\mathbf{x}_i^T$ represents the $i$th row of the design matrix $\mathbf{X}$, it takes the form; $t_i = x_{ij}^T, (j=1,\ldots,p_i)$ for $p$ explanatory variables (covariates or dummy variables).\medskip
+
+The response variable is a series of OpRisk events $\mathbf{Y}$ where the probability of the event occuring in a very small time (or space) is low and the events occur independently. Since this is a count, the Poisson distribution is probably a reasonable distribution to try. The Poisson distribution is denoted by $\mathbf{Y_i} \thicksim \mathbf{Poi}(\theta_i)$. Rewriting Equation \ref{Exponential} as
+
+\singlespacing
+\begin{eqnarray}\label{CanonicalExponential}
+f(y;\theta) = \exp[a(y)b(\theta) + c(\theta) + d(y)],
+\end{eqnarray}
+\doublespacing
+
+Substituting $a(y)=y$, $b(\theta) = \mbox{ln}\theta$, $c(\theta) = -\theta$, and $d(y) = -\mbox{ln}y!$; given $\mbox{ln}$ is some monotone differentiable (link) function, so the GLM for this situaton uses a poisson response distribution, log link: Equation \ref{CanonicalExponential} can be expressed as:
+
+\singlespacing
+\begin{eqnarray}\label{eqn:simplepoisson}
+f(y_i;\theta) = \exp{\left[y\mbox{ln}\theta - \theta -\mbox{ln}y!\right]}
+\end{eqnarray}
+\doublespacing
+
+Equation \ref{eqn:simplepoisson} is the probability function for the discrete random variable $\mathbf{Y}$, it can be rewritten as
+
+\singlespacing
+\begin{eqnarray}\label{POISSON}
+f(y,\theta) = \frac{\theta^ye^{-\theta}}{y!}
+\end{eqnarray}
+\doublespacing
+
+Where $y$ takes the values $0,1,2,..$. If a random variable has a poisson distribution, its expected value $E(Y)$ and variance $Var(Y)$ are equal i.e., $\theta =\lambda$.\medskip
+
+The choice of the poisson distribution for use on real world data is questionable, mainly because earnings volatility is high in the real world, therefore real world data is often \textbf{overdispersed} i.e., has a larger variance than the expected value. A quadratic term ($\beta_2t_i^2$) could be added to the model, which usefully approximates other situations which may influence the counts adapted to the poisson case other than only those due to the unchecked prevalence of Oprisk hazards. The RHS of Equation \ref{linearcombination} with the quadratic term so other situations other than the unrestricted spread of OpRisk hazards becomes 
+
+\singlespacing
+\begin{eqnarray}\label{eqn:adaptedpoisson}
+\mu = d_i\exp{(\beta_0 + \beta_1x_{ij} + \beta_2x_{ij}^2)} 
+\end{eqnarray}
+\doublespacing
+
+\section{A poisson regression operational hazard model}
+\label{sec:A poisson regression operational hazard model}
+
+The random component is given by the independent random variables $Y_1, Y_2,\ldots, Y_n$, not i.i.d [@wood2017generalized; @covrig2015using]. $\mathbf{Y}$ takes a (exponential) family argument, depending on parameters $\mbox{ln}\lambda$, where $\lambda$ represents the average frequency of the OpRisk transactions. The response data $y_i$ is an observation of $Y$. The target variable *LossIndicator* defined as per definition \ref{DefLosInd} is the basis for the poisson distribution as a reasonable model of choice. As per equation \ref{POISSON}, it's probability mass function (pdf) is:
+
+\singlespacing
+\begin{eqnarray}\label{eqn:Poisson}
+Y &\thicksim & \mbox{Poi}(\lambda), \quad f(y;\lambda) = \frac{\lambda^y e^{-\lambda}}{y!}\\
+ &\mbox{where}& \quad y \in  \mathbb{N}, \mbox{and} \quad \lambda > 0. \nonumber
+\end{eqnarray}
+\doublespacing
+
+Again, the expectation and variance $E[Y] = \mbox{VaR}[Y] = \lambda$\footnote{If you were to guess an independent $Y_i$ from a random sample, the best guess is given by this expression}, are both equal to parameter $\lambda$ simultaneously. The model's systematic component, equation \ref{linearpredictor} specifies the linear predictor and is built with $p + 1$ parameters $\beta = (\beta_0\ldots,\beta_p)^t$, with $p$ explanatory variables:
+
+\singlespacing
+\begin{eqnarray}
+\eta_i = \beta_0 + \sum_{j=1}^{p}\beta_jx_{ij}, \qquad \mbox{where} \quad j = 1,\ldots,p_i
+\end{eqnarray}
+\doublespacing
+
+If sample variables $Y_i \thicksim \mbox{Poi}(\lambda_i)$, then $\mu_i = E[Y_i] = \lambda_i$; the link function between the random and systematic components, viz. a tranformation by the model by some function $g()$, which does not change features essential to to fitting, but rather a scaling in magnitude: i.e., the link between natural canonical parameter $\theta$ in equation \ref{Exponentialfamily} and parameter $\lambda$, the mean frequency of poisson distribution $\theta = \mbox{ln}\lambda$, or otherwise the rate, will be predicted by the model\ldots
+
+\singlespacing
+\begin{eqnarray}\label{eqn:multmodel}
+\lambda_i &=& d_i\mbox{exp}(\beta_0 + \sum_{j=1}^{p}\beta_jx_{ij}) \quad \mbox{or} \nonumber \\
+\lambda_i &=& d_i\cdot e^{\beta_0}\cdot e^{\beta_1x_{i1}}\cdot e^{\beta_2x_{i2}} \ldots e^{\beta_px_{ip}}
+\end{eqnarray}
+\doublespacing
+
+Where $d_i$ represents the risk exposure for transaction $i$. Taking logs on both sides of equation \ref{eqn:multmodel}, the regression model for the estimation of loss frequency is:
+
+\singlespacing
+\begin{eqnarray}
+\mbox{ln}\lambda_i =  \mbox{ln}d_i + \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \ldots + \beta_px_{ip}
+\end{eqnarray}
+\doublespacing
+
+where $\mbox{ln}d_i$ is the natural log of risk exposure, called the "offset variable".\medskip
+
+The poisson distribution is restrictive when applied to approximate counts, due to the assumption made about it that the mean and variance of the number of events are equal. However, in models for count data where means are low so that the number of zeros and ones in the data is exessive are well adapted to the poisson case [@wood2017generalized].\medskip
+
+These cases are characteristic of scenarios in OpRisk other than those modeling situations when the unchecked spreading of negligent behaviour may result in an operational hazard. For example, the negative binomial and/or quasipoisson regression models ascribe to data that exhibits *overdispersion*, wherein the variance is much larger than the mean for basic count data, therefore they have been eliminated in this paper. 
+
+\section{Logistic regression and GLM's: Loss frequency, Indicator variables}
+\label{sec:Logistic regression and regression GLM's: Loss frequency, Indicator variables}
+
+As per section \ref{sec4:Generalized linear (regression) models (GLM) for count data} in chapter \ref{DATA EXPLORATION AND EXPOSURE VARIABLE ANALYSIS} a GLM is introduced starting by estimating the expected number of OpRisk events (the mean OpRisk frequency) by a poisson model given by equation \ref{eqn:Poisson}: Followed up by estimating the target variable using the binomial/bernoulli distribution complementing the numerical counts with factor (categorical) outcomes, thereby covering the range of probable model fits using the glm function. In calling the GLM we specify the target variable *LossIndicator*; the explanatory variables are also composed of numeric, continuous and categorical variables. Where the variable in the argument of a GLM is categorical, we choose to specify the modal class as the reference level. A user defined function "getmode" accomplishes the following as specified see chapter \ref{DATA EXPLORATION AND EXPOSURE VARIABLE ANALYSIS} section \ref{sec:Exploratory data analysis} on page \pageref{sec:Exploratory data analysis}: It selects the modal class of observation in each factor, and the dataset is reordered using the *relevel* function in RStudio.
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# options(scipen = 999)
+# 
+# # Load packages
+# library(rattle, quietly = TRUE)
+# library(magrittr, quietly = TRUE) # Utilize the %>% and %>% pipeline operators
+# library(Hmisc, quietly = TRUE)
+# library(chron, quietly = TRUE)
+# library(dplyr, quietly = TRUE)
+# library(ggplot2)
+# library(caTools)
+# library(caret)
+# 
+# 
+# building <- TRUE
+# scoring <- ! building
+# 
+# # A predefined value is used to reset the random seed so that results are repeatable
+# 
+# crv$seed <- 42 # set random seed to make your partition reproducible
+# 
+# #==========================================================================================
+# #crv$training.proportion <- 0.7 # proportion of data used for training
+# #crv$validation.proportion <- 0.15 # proportion of data used for validation
+# 
+# # Load the dataset OPriskDataSet_exposure
+# 
+# 
+# fname <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_exposure.csv"
+# crs$dataset <- read.csv(fname,
+#               sep=";",
+#               dec=",",
+#               na.strings=c(".", "NA", "", "?"),
+#               strip.white=TRUE, encoding="UTF-8")
+# 
+# exposure <- crs$dataset[,ncol(crs$dataset)]
+# 
+# #class(exposure)
+# #length(exposure)
+# 
+# crs$dataset <- as.data.frame(crs$dataset)
+# 
+# # The following varaible selections have been noted
+# 
+# crs$input <- crs$dataset %>%
+#   group_by(UpdatedDay,
+#            UpdatedTime,
+#            TradedDay,
+#            TradedTime,
+#            Desk,
+#            CapturedBy,
+#            TradeStatus,
+#            TraderId,
+#            Instrument,
+#            Reason,
+#            EventTypeCategoryLevel1,
+#            BusinessLineLevel1) %>%
+#   transmute(LossesIndicator = LossIndicator,
+#             Losses = Loss,
+#             Exposure = exposure)
+# 
+# # Create function "getmode" which finds the modal class in the categorical variables
+# getmode <- function(x){
+#   u <- unique(x)
+#   as.integer(u[which.max(tabulate(match(x,u)))])
+# }
+# # Reorder the categorical variables so that the modal class
+# # is specified as the reference level
+# for (i in 5:(ncol(crs$input) - 3)){
+#      crs$input[[i]] <- relevel(crs$input[[i]], getmode(crs$input[[i]]))
+# }
+# 
+# # crs$target  <- "LossesIndicator"
+# # crs$risk    <- NULL
+# # crs$ident   <- NULL
+# # crs$ignore  <- c("UpdateTime", "TradeTime", "Nominal", "FloatRef", "LastResetDate", "LastResetRate", "Theta", "Loss", "Unexplained")
+# # crs$weights <- NULL
+# 
+# # Build the training/validation/testing datasets
+# # nobs=2331 training=1632 validation=349 testing=350
+# 
+# set.seed(crv$seed)
+# 
+# crs$nobs <- nrow(crs$input)
+# 
+# crs$train <- sample(crs$nobs, 0.7*crs$nobs)
+# 
+# crs$nobs %>%
+#   seq_len() %>%
+#   setdiff(crs$train) %>%
+#   sample(0.15*crs$nobs) ->
+#   crs$validate
+# 
+# crs$nobs %>%
+#   seq_len() %>%
+#   setdiff(crs$train) %>%
+#   setdiff(crs$validate) ->
+#   crs$test
+# 
+# crs$training <- as.data.frame(crs$input[crs$train,])
+# crs$validation <- as.data.frame(crs$input[crs$validate,])
+# crs$testing <- as.data.frame(crs$input[crs$test,])
+
+```
+\doublespacing
+
+\subsection{Estimation of some poisson regression model}
+\label{ssec: Estimation of some poisson regression model}
+
+Let us consider a model where the *LossIndicator* is the target variable: We shall estimate the mean quarterly rate in the OpRisk hazard portfolio through poisson regression models i.e., the target variable is *LossIndicator*, the mean daily loss frequency in the risk correction statistics is estimated through the poisson regression model.\medskip
+
+The following fits the model (the log link is canonical for the poisson distribution, and hence the R default) and checks it. Other GLM arguments are: The afore-mentioned link function poisson(link="log"); a data frame containing the OpRisk dataset, data=crs\$training; and the r offset=log(exposure), i.e. the variable representing a component known apriori, coefficient= $1$, introduced in the linear predictor [@covrig2015using]. Firstly, consider a GLM introducing two explanatory variables, one numerical variable, *UpdatedTime*, and another categorical variable *Desk*. This will be our global model. We will use *LossesIndicator* as the target variable while these two unique variables will be explanatory variables.
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# 
+# freqfit1 <- glm(LossesIndicator ~ TradedDay + Desk, data=crs$training,
+#                family=poisson(link = 'log'), offset = log(Exposure))
+
+```
+\doublespacing
+
+\singlespacing
+\begin{verbatim}
+Call:
+glm(formula = LossesIndicator ~ TradedDay + Desk, family = poisson(link="log"), 
+    data = crs$training, offset = log(Exposure))
+
+\end{verbatim}
+\doublespacing
+
+The output in the appendices Appendix \ref{sec:Appendix B: R Code for Chapter 4}, see basic model build summary presented in subsection \ref{ssec:Estimation of some poisson regression models for OpRisk loss frequency distribution}, where significant variables are depicted. The coefficients of the categorical variable *Desk* are reordered and weighted against the modal class: *DeskRates*. Interestingly the modal class does is not indicated in the results section since the coefficient of the modal class is $e^0 = 1$, indicating that the remaining classes are weighted against it.
+
+\singlespacing
+```{r, tidy=TRUE, echo=FALSE}
+# summary(freqfit1)
+```
+\doublespacing
+
+Using this bivariate model, the estimated quarterly OpRisk (LossIndicators) frequency of realised losses for each  *Desk* category (excluding the insignificant ones) are:
+\begin{list}{*}{}
+\item $0,0013 = e^{-8.053221}\cdot e^{-0.014087}\cdot e^{1.457695}$, for the combination of the TradedDay and DeskAfrica category, which implies that frequency of realised losses for this combination of preditor variables is $4.3 \quad (=\cdot e^{1.457695})$ fold (times) higher than the realised loss frequency of OpRisk causes in the reference desk category, viz. the Rates desk. 
+\item $0,0018 = e^{-8.053221}\cdot e^{-0.014087}\cdot e^{1.764230}$, for the combination of the TradedDay and DeskBonds/Repos category, which implies that frequency of realised losses for this combination of preditor variables is $5.83 \quad (=\cdot e^{1.764230})$ times higher than causes in the reference desk category.
+\item $0,0008 = e^{-8.053221}\cdot e^{-0.014087}\cdot  e^{0.924033}$, for the combination  for the combination of the TradedDay and DeskCommodities, which implies that frequency of realised losses for this combination of preditor variables is $2,52 \quad (=\cdot e^{0.0.924033})$ fold higher than the causes in the reference desk category.
+\item $0,0012 = e^{-8.053221}\cdot e^{-0.014087}\cdot  e^{1.365152}$, for the combination of the TradedDay and DeskEquity, which implies that frequency of realised losses for this combination of preditor variables is $3,92 \quad (=\cdot e^{1.365152})$ fold higher than the causes in the reference desk category.
+\item $0,0026 = e^{-8.053221}\cdot e^{-0.014087}\cdot cdot e^{2.129594}$, for the combination of the TradedDay and DeskPrime Services,an increase of $8,4 \quad (=\cdot e^{2.129594})$ fold times higher w.r.t the baseline (the Rates desk)
+\item about $0.00015 = e^{-8.053221}\cdot e^{-0.014087}\cdot  e^{-0.716361}$ of the last desk category DeskSND, which means a decrease of about 51% of the frequency of losses in the DeskRates category.
+\end{list}
+
+The predicted mean frequency ($\lambda$) of OpRisk losses for operational losses $i$, for the bivariate model \textbf{freqfit1}, is given by:
+
+\singlespacing
+\begin{eqnarray}
+\mu_{i}& = &\mbox{exposure}_i\cdot e^{-8.053221\cdot \mbox{Intercept}_i}\cdot e^{-0.014087\cdot \mbox{TradedDay}_i}\cdot e^{1.457695\cdot \mbox{DeskAfrica}_i}\nonumber\\
+&\cdot&e^{1.764230\cdot \mbox{DeskBonds/Repos}_i}\cdot e^{0.924033\cdot \mbox{DeskCommodities}_i}\cdot e^{1.365152\cdot \mbox{DeskEquity}_i}\nonumber\\
+&\cdot& e^{2.129594\cdot \mbox{DeskPrime Services}_i}\cdot e^{-0.716361\cdot \mbox{DeskSND}_i}
+\end{eqnarray}
+\doublespacing
+
+We now fit a more comprehensive model wherein all $13$ explanatory variables are introduced into the global model; this shows realised losses for quarterly OpRisk incidents in the all varibles inclusive case. Again, we use *LossIndicator* as the target variable, while the other $13$ variables are predictor (explanatory) variables. Fitting the glm global model yields output seen in subsection \ref{ssec:GLM estimation results} of the Appendix \ref{sec:Appendix B: R Code for Chapter 4} on page \pageref{sec:Models}.
+
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+### Let us fit a GLM to our data. This will be our global model.
+## We will use "LossesIndicator" as the dependent variable, while the
+# other variables will be predictor variables.
+
+ # freqfitP1 <- glm(LossesIndicator ~ UpdatedDay + UpdatedTime + TradedDay
+ # + TradedTime + Desk + CapturedBy + TradeStatus + TraderId + Instrument
+ # + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1,
+ # data=crs$training, family=poisson(link="log"), offset=log(Exposure))
+
+```
+
+
+The selection of the best-fit model from the list of possible combinations of predictor variables traditionally follows of a process removing/adding each variable progressively after each estimation, and propagating backward/forward, comparing goodnes of fit tests at each stage. For example, if we compare the values of the Aikaike information criteria (AIC) for the bivariate model \textbf{freqfit1} and the multivariate model \textbf{freqfit}, by AICs; we see that for the first (bivariate) model the AIC value is $2253.4$ and $1907.6$ for the second (multivariate) model, which suggests that the second model, \textbf{freqfit}, the model in which we considered an all inclusive list of $13$ predictor variables is a better fit since there is a marked reduction/improvement in AIC magnitudes compared to the first value, hence \textbf{freqfit} is prefered over the bivariate (first) model.
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# summary(freqfitP1)
+```
+\doublespacing
+
+\subsection{Estimation of some binomial regression model}
+
+Another approach to the estimation of the mean frequency is to assume that the variable that shows the mean frequency follows a binomial distribution. Consider the predictors of such a regression model are given by the global model and presented by calling the glm model yielding output results seen subsection \ref{ssec:GLM estimation results}, section \ref{sec:Models} in Appendix \ref{sec:Appendix B: R Code for Chapter 4}.
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# options(scipen = 999)
+# 
+# # Load packages
+# library(rattle, quietly = TRUE)
+# library(magrittr, quietly = TRUE) # Utilize the %>% and %>% pipeline operators
+# library(Hmisc, quietly = TRUE)
+# library(chron, quietly = TRUE)
+# library(dplyr, quietly = TRUE)
+# library(ggplot2)
+# library(caTools)
+# library(caret)
+# 
+# 
+# building <- TRUE
+# scoring <- ! building
+# 
+# # A predefined value is used to reset the random seed so that results are repeatable
+# 
+# crv$seed <- 42 # set random seed to make your partition reproducible
+# 
+# #==========================================================================================
+# #crv$training.proportion <- 0.7 # proportion of data used for training
+# #crv$validation.proportion <- 0.15 # proportion of data used for validation
+# 
+# # Load the dataset OPriskDataSet_exposure
+# 
+# 
+# fname <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_exposure.csv"
+# crs$dataset <- read.csv(fname,
+#               sep=";",
+#               dec=",",
+#               na.strings=c(".", "NA", "", "?"),
+#               strip.white=TRUE, encoding="UTF-8")
+# 
+# exposure <- crs$dataset[,ncol(crs$dataset)]
+# 
+# # Remap variables.
+# 
+# # Transform into a factor.
+# 
+# crs$dataset[["TFC_LossIndicator"]] <- as.factor(crs$dataset[["LossIndicator"]])
+# 
+# ol <- levels(crs$dataset[["TFC_LossIndicator"]])
+# lol <- length(ol)
+# nl <- c(sprintf("[%s,%s]", ol[1], ol[1]), sprintf("(%s,%s]", ol[-lol], ol[-1]))
+# levels(crs$dataset[["TFC_LossIndicator"]]) <- nl
+# 
+# #class(exposure)
+# #length(exposure)
+# 
+# crs$dataset <- as.data.frame(crs$dataset)
+# 
+# # The following varaible selections have been noted
+# 
+# crs$input <- crs$dataset %>%
+#   group_by(UpdatedDay,
+#            UpdatedTime,
+#            TradedDay,
+#            TradedTime,
+#            Desk,
+#            CapturedBy,
+#            TradeStatus,
+#            TraderId,
+#            Instrument,
+#            Reason,
+#            EventTypeCategoryLevel1,
+#            BusinessLineLevel1) %>%
+#   transmute(LossesIndicator = TFC_LossIndicator,
+#             Losses = Loss,
+#             Exposure = exposure)
+# 
+# getmode <- function(x){
+#   u <- unique(x)
+#   as.integer(u[which.max(tabulate(match(x,u)))])
+# }
+# 
+# for (i in 5:(ncol(crs$input) - 3)){
+#      crs$input[[i]] <- relevel(crs$input[[i]], getmode(crs$input[[i]]))
+# }
+# 
+# crs$target  <- "LossesIndicator"
+# crs$risk    <- NULL
+# crs$ident   <- NULL
+# crs$ignore  <- c("UpdateTime", "TradeTime", "Nominal", "FloatRef", "LastResetDate", "LastResetRate", "Theta", "Loss", "Unexplained")
+# crs$weights <- NULL
+# 
+# # Build the training/validation/testing datasets
+# # nobs=2331 training=1632 validation=350 testing=349
+# 
+# set.seed(crv$seed)
+# 
+# crs$nobs <- nrow(crs$input)
+# 
+# crs$train <- sample(crs$nobs, 0.7*crs$nobs)
+# 
+# crs$nobs %>%
+#   seq_len() %>%
+#   setdiff(crs$train) %>%
+#   sample(0.15*crs$nobs) ->
+#   crs$validate
+# 
+# crs$nobs %>%
+#   seq_len() %>%
+#   setdiff(crs$train) %>%
+#   setdiff(crs$validate) ->
+#   crs$test
+# 
+# 
+# crs$training <- as.data.frame(crs$input[crs$train,])
+# crs$validation <- as.data.frame(crs$input[crs$validate,])
+# crs$testing <- as.data.frame(crs$input[crs$test,])
+# 
+
+### Let us fit a GLM to our data. This will be our global model.
+## Using "LossesIndicator" as the dependent variable, while the 
+# other variables will be predictor variables.
+
+# freqfit <- glm(LossesIndicator ~ UpdatedDay + UpdatedTime + TradedDay
+#        + TradedTime + Desk + CapturedBy + TradeStatus + TraderId + 
+#   Instrument + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1,
+#   data=crs$training, family=binomial(link="logit"), offset=log(Exposure))
+
+
+# summary(freqfit)
+# 
+# # s <- summary(freqfit)
+# # capture.output(s,file = "SUMfreqfit.txt")
+
+```
+\doublespacing
+
+\singlespacing
+\begin{verbatim}
+Call:
+glm(formula = LossesIndicator ~ UpdatedDay + UpdatedTime + TradedDay + 
+    TradedTime + Desk + CapturedBy + TradeStatus + TraderId + 
+    Instrument + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1, 
+    family = binomial(link = "logit"), data = crs$training,
+    offset = log(Exposure))
+
+    Null deviance: 2380.8  on 1630  degrees of freedom
+Residual deviance: 1270.6  on 1553  degrees of freedom
+
+AIC: 1426.6
+
+Number of Fisher Scoring iterations: 18
+\end{verbatim}
+\doublespacing
+
+The AIC value for the binomial model of $1426.6$ is less than that of the poisson model $1907.6$, therefore by the same token to that fashioned in section \ref{ssec: Estimation of some poisson regression model}, an estimation of the models by a comparison of information criteria (AIC's) which enables the choice the most appropriate or "best" fit model is carried out: First through establishing significance viz., if the residual deviance and the corresponding number of degrees of freedom don't have value significantly bigger than $1$ i.e., the multivariate model freqfit $\frac{1270.6}{1553} = 0.8$, and therefore retaining the binomial model i.e., the model with the smaller AIC value.
+
+\section{Model selection and multimodel inference}
+
+@Burnham2002's introduction of the information-theoretic approach permits a data-based selection for the "best-fit" model in the analysis of the OpRisk dataset *OpRiskDataSet_exposure.csv*, and a ranking and weighting of what remains. This approach allows traditional (formal) statistical inference to be based on the selected "best-fit" model, which is now based on more than one model (multimodel inference). As a requirment the r package to load is the *MuMIn* Rstudio package. \medskip
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# Load "MuMIn" package
+# require(MuMIn)
+
+```
+\doublespacing
+
+\subsection{Data dredging}
+
+We then use the *dredge* function to generate models using combinations of the terms in the global model. This function also calculates AICc values and rank models according to it. Note that AICc is AIC corrected for finite sample sizes. The process of analyzing data where the experimentalist has few or no a priori information, thus "all possible models" are considered by subjectively ad iteratively searching the data for patterns and "significance", is often called "data mining", "data snooping" or the term "data dredging". 
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+## Then, we use "dredge" function to generate models using combinations of the terms in the global model. The function will also calculate AICc values and rank models according to it. ## Note that AICc is AIC corrected for finite sample sizes
+
+# library(parallel)
+# cl <- makeCluster(2) # Assign R cores to the job
+# 
+# options(na.action=na.fail)
+# freqfitsp1 <- dredge(freqfitP1)
+# 
+# stopCluster(cl)
+# freqfitsp1
+
+# t <- freqfits
+# capture.output(t,file = "freqfits.txt")
+```
+\doublespacing
+
+The function "MuMLn::dredge" returns a list of $4097$ models, which is every combination of predictor variable in the global model freqfit. Model number 894 is the best-fit: All predictor variables included in this model have a positive effect on the target variable except for the preditor TrddD (\textbf{TradedDay}) which has a negative effect on the likelihood of a realised loss (target variable *LossIndicator*) i.e., the later in the month of the transaction, the less likely a loss is realised. Additionally, from the delta (=delta AIC) one cannot distinguish between models 894, 382, 1918 and 1406 since (using the common rule of thumb) they have AIC < 2.\medskip
+
+Of the top seven models (listed below); 1918 \& 2942 each hold nine; 894, 1406 \& 1854 hold eight; 382 \& 830 hold seven; and lastly 318 hold six predictor variables respectively. Where a variable doesn't have a value associated with it does not mean no effect, but rather that it was not included in the model. For example, model $894$ returns a combination of the eight variables $1/2/3/4/5/6/7/8$, corresponding to top most model in the following output predictor variables (abbreviated in the header row), see figure \ref{Dredge}, subsection \ref{ssec:Data_mining}, section \ref{sec:Model selection and multimodel inference: MuMIn} in the Appendix \ref{sec:Appendix B: R Code for Chapter 4}.\medskip
+
+Information from the AICc's values suggest, that of the top eight models have similar support, and their Akaike weights are not high relative to the $[0,1]$ weight range: This is characteristic of the endemic nature of data dredging, as the literature suggests [@Burnham2002], and should generally be avoided to curb attendant inferential problems if a single model is chosen, e.g the risk of finding spurious effects, overfitting, etc. @Burnham2002 advises that model averaging is useful in finding a confirmatory result as estimates of precision should include model selection uncertainty. Even so, one can rule out many models on a priori grounds.\medskip    
+
+We now use "get.models" function to generate a list in which its objects are the fitted models. We will also use the "model.avg" function to do a model averaging based on AICc. Note that "subset=TRUE" will make the function calculate the average model (or mean model) using all models. However, if we want to get only the models that have delta AICc < 2; we therefore use "subset=TRUE"
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# ### Ok, let us use "get.models" function to generate a list in which its objects are the fitted models. We will also use the "model.avg" function to do a model averaging based on AICc. Note that "subset=TRUE" will make the function calculate the average model (or mean model) using all models.
+ 
+ # cl <- makeCluster(2) # Assign R cores to the job 
+
+ #  # Amodel <- model.avg(get.models(freqfits, subset = TRUE))
+ #  # summary(Amodel)
+
+ #  # stopCluster(cl) 
+ #  #  
+ #  #  u <- summary(Amodel) 
+ #  # capture.output(u,file = "SUMAmodel.txt") 
+
+# ### That's it! Now we have AICc values for our models and we have the average model (or mean model).
+# ##________________________________________________________________________________________________
+
+```
+
+\doublespacing
+
+Now we have AICc values for our models and we have the average (mean) model, we denote this \textbf{Amodel} sumamrized below. For full comprehensive results, see figures \ref{AModel_Summary1}, \ref{AModel_Summary1} \& \ref{AModel_Summary1} in Appendix \ref{sec:Model averaging function}. \medskip
+
+\singlespacing
+\begin{verbatim}
+Call:
+model.avg(object = get.models(freqfits, subset = TRUE))
+
+Component model call: 
+glm(formula = LossesIndicator ~ <4096 unique rhs>, family = 
+poisson(link = "log"), data = crs$training, offset = log(Exposure))
+
+Component models: 
+                           df   logLik    AICc  delta weight
+1/3/4/5/6/9/10/12          71  -901.58 1951.72   0.00   0.08
+1/2/3/4/5/6/9/10           74  -898.47 1952.07   0.36   0.07
+1/3/4/5/6/9/10             70  -902.97 1952.32   0.60   0.06
+1/2/3/4/5/6/9/10/12        75  -897.57 1952.47   0.75   0.06
+1/3/4/5/6/8/9/10           71  -902.12 1952.80   1.08   0.05
+1/2/3/4/5/6/8/9/10         75  -897.89 1953.12   1.40   0.04
+1/3/4/5/6/9/10/11/12       72  -901.23 1953.20   1.48   0.04
+ [ reached getOption("max.print") -- omitted 4888 rows ]
+
+\end{verbatim}       
+\doublespacing
+
+\subsection{Discussion on single "best model" vs ensemble}
+
+No single "best model" rather an ensemble wins when going about the thinking of the OpRisk problem as opposed to the traditional way, as better subsidies are designed as protection against the possibilities of extreme events. Traditionally the question of how often and extreme event will happen or how much of a buffer to put up to subsidise against OpRisk, was answered by using distributions and looking at pecentiles of extreme events of one "best model". This may shift going about the historical thinking of OpRisk VaR to the more accurate predictive analytical measure resulting in less subsidy between risks within the pool of independent risks, guarding against over/under compensated buffers which in turn results from the reduction of variance that arises due to aggregating/pooling independent risks.       
+
+\section{Model performance evaluation}
+
+We have gained initial insights through data exploration in Section \ref{sec:Exploratory data analysis} and then built models. The next critical step is to evaluate our model using data mining techniques. For this we need to split our data sample into three subsets. We use a 70/15/15 sampling strategy; the 70\% subset sample for the *training dataset*, 15\% for the *validation dataset* and another 15\% for the *testing dataset* whose function is to provide error estimates of the final result,for this we use the validation dataset i.e., it's used to test different parameter setings or different choices of variables whilst we are data mining, the testing dataset is not used in building or even fine tuning the models that we build, for the sake of model building we defined and used the training dataset [@williams2011data].\medskip    
+
+The resulting error estimates come out in the process of testing the performance of the models we build, by first using the validation dataset in preliminary and intermediate stages, putting in adjustments where required and re-evaluating the error rate, until the final modelling phase where the refined model is evaluated using the testing dataset to provide an unbiased error of the final results. \medskip
+
+\singlespacing
+```{r}
+
+# # Evaluate model performance on the test dataset
+# 
+# 
+# # Obtain the response from the Linear model.
+# 
+# Av.PredTT <- predict(Amodel, crs$testing, type = "response")
+# Av.PredTT
+# 
+# # Export into excel
+# 
+# library(R2HTML)
+# HTMLStart(); HTML(data.frame(Av.PredTT)); w <- HTMLStop()
+# browseURL(w)
+# 
+# shell(paste("start excel", w))
+# 
+# Est <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_GoF_Amodel_InCode.csv"
+# pred <- read.csv(Est,
+#                   sep=",",
+#                   dec=".",
+#                   na.strings=c(".", "NA", "", "?"),
+#                   strip.white=TRUE, encoding="UTF-8")
+# head(pred)
+
+```
+\doublespacing
+
+\subsection{Confusion Matrix and Statistics}
+
+To measure the level of accuracy of the decisions made by the model compared with the actual decisions, a *confusion matrix* is used. The confusion matrix, otherwise known as an *error matrix* is a mechanism used to provide an understanding of how well the model will perform on new previously unseen data i.e., used to evaluate the model. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=1.0]{ConfusionMatrix}
+\caption[Confusion (Error) matrices]{Basic comparison of prediction and actuals as confusion matrices using both counts and calculated as a percentage. Summary statistics are computed and displayed}
+\label{ConfusionMatricesAll}
+\end{figure}
+
+The confusion matrices for the Training, Validation and Testing datasets for the poisson \textbf{Amodel} that we have previously seen are displayed obove. Two tables per dataset are displayed, the first list the actual counts of observations and the second the percentages. We can observe using the Testing dataset, that for $69$\% of the predictions the model correctly predicts pending or near misses i.e., no pnl loss impact (called the true negatives). That is, $243$ out of the $350$ loss events are correctly predicted as pending or near misses. similarly we see that the model correctly predicts OpRisk losses (called the true positives) on $6$\% of the events.\medskip
+
+In terms of how correct the model is, we observe that it correctly predicts OpRisk losses $22$ out of the $66$ events on which losses actually materialise. This is $33$\% accuracy in predicting Oprisk events. This is called the true positive rate, also know as the recall of a model. It is a measure of how mant of the actual positives the model can identify, or how much the model can *recall*. This recall is also known as the *specificity*. Similarly, the true negative rate is another measure which also arises and is known as the *sensitivity* is 85\%.\medskip
+
+We also see $41$ potential events when we expect pnl loss impacts and none occur (called the false positives). If we were using this mode to help us decide whether or not to be wary and closely monitor future daily trading activity, then there aren't probably serious conscequences in this instance, we heightened our risk threshold without need. More serious though is that there are $44$ actual loss events when our model tells us there will be no pnl impact yet losses occur (called the false negatives). We are inconveniently incurring OpRisk losses without moderating for the risk. Notice that the overall accuracy of the training dataset is $78$\% which is not surprising as the estimated accuracy of the resulting learned model leads to overoptimistic estimates due to overspecialisation of the learning algorithm to the data. 
+
+\singlespacing
+```{r, tidy=TRUE, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# ## Generate the confusion matrix showing counts.
+# 
+# library(e1071)
+# confusionMatrix(table(pred$response, crs[["testing"]][["LossesIndicator"]]))
+# 
+# # z <- confusionMatrix(table(pred$response, crs[["testing"]][["LossesIndicator"]]))
+# # capture.output(z,file = "Confusion Matrix.txt")
+
+```
+\doublespacing
+
+\subsection{ROC Curve}
+
+An ROC chart plots the true positives against the false positive rate, essentially to compare the performance of the model against known outcomes and is used to identify a suitable trade-off between effor and outcomes. Generally the larger area-under-curve (auc) also the probability that the classifier scores a randomly drawn positive sample higher than a randomly drawn negative sample. For a more comprehensive comparison, see figure \ref{ROCCurveAll} in Appendix \ref{sec:Evaluate model performance on the test dataset}.  
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=1\linewidth]{ROC_Curve_testing.eps}
+   \caption{}
+   \label{ROC_Validation_dataset} 
+\end{subfigure}
+
+\begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=1\linewidth]{ROCCurve_Testing.eps}
+   \caption{}
+   \label{ROC_Testing_dataset}
+\end{subfigure}
+
+\caption[ROC Curves for GLM over validation and testing set]{(a) ROC Curve for a binomial GLM on the validation dataset (b) As for (a) but on the testing dataset. The area under the curve \texttt{auc} is a measure of the performance of the model. A perfect model would have $100\%$ of the area under the curve}
+\end{figure}
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# # Guage model performance of ROCR on the validation dataset.
+# # ROC Curve: requires the ROCR package.
+# 
+# library(ROCR)
+# 
+# # ROC Curve: requires the ggplot2 package.
+# 
+# library(ggplot2, quietly=TRUE)
+# 
+# # Generate an ROC Curve for the glm model on OPriskDataSet_exposure.csv [validate].
+# 
+# crs$pr <- Av.PredTT
+# 
+# # Remove observations with missing target.
+# 
+# no.miss   <- na.omit(crs[["testing"]][["LossesIndicator"]])
+# miss.list <- attr(no.miss, "na.action")
+# attributes(no.miss) <- NULL
+# 
+# if (length(miss.list))
+# {
+#   predic <- prediction(crs$pr[-miss.list], no.miss)
+# } else
+# {
+#   predic <- prediction(crs$pr, no.miss)
+# }
+# 
+# pe <- performance(predic, "tpr", "fpr")
+# au <- performance(predic, "auc")@y.values[[1]]
+# pd <- data.frame(fpr=unlist(pe@x.values), tpr=unlist(pe@y.values))
+# p <- ggplot(pd, aes(x=fpr, y=tpr))
+# p <- p + geom_line(colour="red")
+# p <- p + xlab("False Positive Rate") + ylab("True Positive Rate")
+# p <- p + ggtitle("ROC Curve Linear OPriskDataSet_exposure.csv [validate] LossesIndicator")
+# p <- p + theme(plot.title=element_text(size=10))
+# p <- p + geom_line(data=data.frame(), aes(x=c(0,1), y=c(0,1)), colour="grey")
+# p <- p + annotate("text", x=0.50, y=0.00, hjust=0, vjust=0, size=5,
+#                   label=paste("AUC =", round(au, 2)))
+# print(p)
+# 
+# # Calculate the area under the curve for the plot.
+# 
+# 
+# # Remove observations with missing target.
+# 
+# no.miss   <- na.omit(crs[["testing"]][["LossesIndicator"]])
+# miss.list <- attr(no.miss, "na.action")
+# attributes(no.miss) <- NULL
+# 
+# if (length(miss.list))
+# {
+#   predic <- prediction(crs$pr[-miss.list], no.miss)
+# } else
+# {
+#   predic <- prediction(crs$pr, no.miss)
+# }
+# performance(predic, "auc")
+
+```
+\doublespacing
+
+\subsection{Discussion on MuMIn model performance}
+\label{ssec:Discussion on MuMIn model performance}
+
+Conceptually the "best model" \textbf{Amodel} represents the phenomena hypothesised from the information in the observed data, which then forms the basis for making inferences about the OpRisk frequency processes or system that generated the data. Multimodel inference leads to even more robust inferences, especially in the point of view that the selection of the model used to estimate the mean frequency must, at the same time, serve the ultimate root cause analysis objective of OpRisk control, that is to decide when calculating the capital requirement using a robust OpVaR measurement technique, to take into account as many characteristics of the trading OpRisk dataset as possible, as well to consider how the variables interact with each other.\medskip
+
+The performance measures here can ether tell us that we are going to experience realised losses from OpRisk events more often than we would like, or overcompensate for losses that do not materialise. This is an important issue i.e., the fact that the different types of errors have different conscequences for us. Higher risks (extremal events) are normally compensated more than necessary and often than not cause social division within management structures when sectors cannot reconcile or afford the protection.
+
+\section{Data augmentation}
+
+After monitoring profiling and integration, the known HFLS \& LFHS data management dilemna needs to be overcome at the last stage, which requires some innovation. Furthermore, ML algorithms are data driven therefore the more data the better the model. In the OpRisk context, problems due to data sensitivity concerns and cost constraints have limited the study to only three months of available data, which by implication means increasing the number of data points in some way. One way of adding to the base data is deriving from the internal sources of an institution using an extrapolation technique i.e., based on heuristics the relevant fields are updated or provided with values.\medskip 
+
+We have a population of $K = 2330$ OpRisk events over the first quarter Q12013, and of these events we have a number $N = 371$ of realised losses. $N$ is a discrete random variable modelled as a Poisson variable with rate $\lambda$. Each loss $X_i$ is another random variable with an underlying sverity distribution. How does the size $K$ of the population enter the risk model?. It doesn't appear explicitly in the model [@parodi2014pricing], however, it is taken into account during the creation of the model. Intuitively, the poisson rate $\lambda$ is likely to be proportional to the current OpRisk sample size, or more specifically, it is the rate of some expected operational event over per specified time interval.\medskip
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+## predicting validation set results and estimating the mean 
+
+# av.pred <- predict(Amodel, crs$validation, type = "response")
+# 
+# MASS::fitdistr(av.pred, "Poisson")
+
+```
+\doublespacing
+
+Predicting test set results and evaluating the parameter $\lambda$ Yields a daily rate of $\lambda = 0.20739163$ per day quarter, which computes to a cut-off probability of $0.18009498$. By a simple growth formula, one years of data  (4 quarters) i.e., 3 months * 4 = 1 year:  
+
+\singlespacing
+\begin{eqnarray}
+\mbox{1yr Population} &=& \mbox{Initial Population} + \mbox{Initial Population} * (1 + \lambda)^n \nonumber \\
+ &=& 2330 + 2330*(1+0.18009498) + 2330*(1+0.18009498)^2 \nonumber \\
+ &+& 2330*(1+0.18009498)^3\nonumber \\
+ &=& 11,791 \mbox{observations}
+\end{eqnarray}
+\doublespacing
+
+This corresponds to a 1yr population of $11,791$ observations. The next step is to use an extrapolation script to generate the $11,791$ observations for the augmented dataset. The extrapolation algorithm which augments the existing data to increase the size of the population by the heuristics approach, effectively increasing the number of rows, which is best done in the Matlab code (due to it's matrix based foundations), see section \ref{sec:Data augmentation code: Extrapolation simulation in Matlab} on page \pageref{sec:Data augmentation code: Extrapolation simulation in Matlab}in the Appendix \ref{sec:Appendix B: R Code for Chapter 4}. 
+
+\subsection{Deploying the R model}
+\label{ssec:Deploying and R model}
+
+Often for one to obtain the benefit of a model, it's "scored" through applying it to a new dataset using a form of a predict() function. This is the simplest approach to deployment and is practiced regularly as new data entries become available, particularly using the R concept, whereby model outcomes are saved for later use then at a later time a new dataset scored using the saved model and applying it to some new data enhancing the data mining capabilities within an organisation. \medskip
+
+After building the augmented dataset we simulate the application of the model to it. We can then schedule the model to be applied regularly as new data points come in, spurring off secondary and tertiary processes such as the flagging of potentially hazardous future events, high risk individuals
+ or perhaps identifying clients who need to be audited or to communicate to the trader the predicted critical risk indicators for tomorrow.
+ 
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# # Remap variables.
+# 
+# # Transform into a factor.
+# 
+# crs$dataset[["TFC_LossIndicator"]] <- as.factor(crs$dataset[["LossIndicator"]])
+# 
+# ol <- levels(crs$dataset[["TFC_LossIndicator"]])
+# lol <- length(ol)
+# nl <- c(sprintf("[%s,%s]", ol[1], ol[1]), sprintf("(%s,%s]", ol[-lol], ol[-1]))
+# levels(crs$dataset[["TFC_LossIndicator"]]) <- nl
+# 
+# #class(exposure)
+# #length(exposure)
+# 
+# crs$dataset <- as.data.frame(crs$dataset)
+# 
+# # The following varaible selections have been noted
+# 
+# crs$input <- crs$dataset %>%
+#   group_by(UpdatedDay,
+#            UpdatedTime,
+#            TradedDay,
+#            TradedTime,
+#            Desk,
+#            CapturedBy,
+#            TradeStatus,
+#            TraderId,
+#            Instrument,
+#            Reason,
+#            EventTypeCategoryLevel1,
+#            BusinessLineLevel1) %>%
+#   transmute(LossesIndicator = TFC_LossIndicator,
+#             Losses = Loss,
+#             Exposure = exposure)
+# 
+# getmode <- function(x){
+#   u <- unique(x)
+#   as.integer(u[which.max(tabulate(match(x,u)))])
+# }
+# 
+# for (i in 5:(ncol(crs$input) - 3)){
+#      crs$input[[i]] <- relevel(crs$input[[i]], getmode(crs$input[[i]]))
+# }
+# 
+# crs$target  <- "LossesIndicator"
+# crs$risk    <- NULL
+# crs$ident   <- NULL
+# crs$ignore  <- c("UpdateTime", "TradeTime", "Nominal", "FloatRef", "LastResetDate", "LastResetRate", "Theta", "Loss", "Unexplained")
+# crs$weights <- NULL
+# 
+# # Build the training/validation/testing datasets
+# # nobs=2331 training=1632 validation=350 testing=349
+# 
+# set.seed(crv$seed)
+# 
+# crs$nobs <- nrow(crs$input)
+# 
+# crs$train <- sample(crs$nobs, 0.7*crs$nobs)
+# 
+# crs$nobs %>%
+#   seq_len() %>%
+#   setdiff(crs$train) %>%
+#   sample(0.15*crs$nobs) ->
+#   crs$validate
+# 
+# crs$nobs %>%
+#   seq_len() %>%
+#   setdiff(crs$train) %>%
+#   setdiff(crs$validate) ->
+#   crs$test
+# 
+# 
+# crs$training <- as.data.frame(crs$input[crs$train,])
+# crs$validation <- as.data.frame(crs$input[crs$validate,])
+# crs$testing <- as.data.frame(crs$input[crs$test,])
+# 
+# ## Import extrapolated data nine months into the horizon, use the estimated model Amodel to perform estimates
+# 
+# newfname <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/Extrap_Data_Model.csv"
+# 
+# crs$newdataset <- read.csv(newfname,
+#                sep=",",
+#                dec=".",
+#                na.strings=c(".", "NA", "", "?"),
+#                strip.white=TRUE, encoding="UTF-8",header=T)
+# 
+# head(crs$newdataset)
+
+# ### Deploying the R model
+# ## Predict forecasted estimates
+# 
+# Forecast <- predict(Amodel, crs$newdataset, type = "link")
+# Forecast
+# 
+# # Export into excel
+# 
+# library(R2HTML)
+# HTMLStart(); HTML(data.frame(Forecast)); w <- HTMLStop()
+# browseURL(w)
+# 
+# shell(paste("start excel", w))
+
+```
+\doublespacing
+
+\section{The estimation of some  generalised additive models for location scale and shape (GAMLSS) for severity loss estimation}
+\label{sec:The estimation of some  generalised additive models for location scale and shape (GAMLSS) for severity loss estimation}
+
+Figure \ref{fourLossplot1} and \ref{fourLossplot2} shows plots of the pnl impact, \texttt{Loss}, against three selected explanatory variables chosen for the purpose of demonstrating the complexity of their relationship, hence the need for a statisical model for the analysis of the OpRisk data viz., GAMLSS. In the first two plots labelled figure \ref{fourLossplot1} (a) for the two explanatory variables in the bivariate plots, \texttt{Loss} vs \texttt{UpdatedTime} and \texttt{Loss} vs \texttt{UpdatedDay}, there is obvious nonlinear dependence between the mean of the response variable Loss and the \texttt{UpdatedTime} and \texttt{UpdatedDay}, here nonparametric smoothing functions may be needed. There is also a clear indication of the non-homogeniety of the variance of Loss, therefore modelling the variance of \texttt{Loss} requires a statistical model which caters for the dependency of the variance of its's mean and/or explanatory variables.\medskip
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# options(scipen = 999)
+# file_loc <- "C:/Users/Mphekeleli/Documents/R PROJECT/OpRiskPHDGitHub/OpRisk_PHD_Thesis/Data"
+# setwd(file_loc)
+# list.files(file_loc)
+# 
+# library(gamlss)
+# 
+# frequency <- openxlsx::read.xlsx("Raw_Formatted_Data.xlsx", check.names = TRUE, sheet = "Frequency")
+# severity <- openxlsx::read.xlsx("Raw_Formatted_Data.xlsx", check.names = TRUE, sheet = "Severity")
+# projdata <- openxlsx::read.xlsx("OPriskDataSet_GAMLSS.xlsx", check.names = TRUE, sheet = "CleanedData")
+# 
+# names(projdata) <- sub("\\.", "", names(projdata))
+# dput(names(projdata))
+# 
+# par(mar=c(1,1,1,1))
+# PPP <- par(mfrow=c(2,2))
+# plot(Loss ~ UpdateTime, data = projdata, col=gray(0.7), pch=15, cex=0.5)
+# plot(Loss ~ UpdatedDay, data = projdata, col=gray(0.7), pch=15, cex=0.5)
+# par(PPP)
+```
+\doublespacing
+
+The first boxplot displays how the day in the month \texttt{UpdatedDay} varies according to the OpRisk event, and the second how the \texttt{Loss} varies according according to same. There is clear indication of positive skewness in the distribution of \texttt{Loss} depending on the explanatory variable \texttt{EventTypeCategoryLevel}, and asymmetrical boxes about the median a nd long upper and lower whiskers, especially in the first boxplot, emphasizing the need to explicitly modelfor this.      
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=1\linewidth]{Rplot01.eps}
+   \caption{Plots of \texttt{Loss} against explanatory variables }
+   \label{fourLossplot1} 
+\end{subfigure}
+
+\begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=1\linewidth]{Rplot.eps}
+   \caption{Boxplots of \texttt{UpdatedDay} and \texttt{Loss} against explanatory variable \texttt{EventtypeCategoryLevel1}}
+   \label{fourLossplot2}
+\end{subfigure}
+
+\caption[Loss against explanatory variables]{(a) Plot of the Loss (pnl impact) against explanatory variables UpdatedTime and UpdatedDate. (b) As for (a) against EventTypeCategory.}
+\end{figure}
+
+\subsection{Model strategy in GAMLSS framework}
+
+The OpRiskDataSet_exposure data contains intra-day pnl impacts (Losses) of amendment activity of during trading across primary and secondary markets of an investment banking platform. We use model selection to discover the effect of pnl losses i.e., fitting different distributions to the response variable in order to select a plausible distribution for the GAMLSS. Let $\mathcal{M}=\{\mathcal{D},\mathcal{G},\mathcal{T},\Lambda\}$ represent @stasinopoulos2018gamlss's expansion of equation \ref{EqnGAMLSS}. Teh components of $\mathcal{M}$ are defined as follows [@voudouris2012modelling]:
+
+\begin{enumerate}
+\item $\mathcal{D}$ specifies the distribution of the response variable,
+\item $\mathcal{G}$ specifies the link functions,
+\item $\mathcal{T}$ specifies the terms appearing in all the predictors for $\mu,\sigma,\nu$ and $\tau$,
+\item $\Lambda$ specifies the smoothing hyper-parameters which determine the amount of smoothing in the $h_{kj}()$ functions of equation
+\ref{EqnGAMLSS}.
+\end{enumerate}
+
+\subsection{Component $\mathcal{D}$: Selection of the distribution}
+
+We begin model selection using only three distribution parameter distribution otherwise known as the Lambda, Nu and Sigma (LMS) method [@stasinopoulos2018gamlss] selected from the family of zero adjusted distributions; on zero and the positive real line $[0,\infty)$, and then move to its extensions (four distribution parameters). Of the zero adjusted distributions, only the Zero adjusted gamma $\mbox{ZAGA}(\mu,\sigma,\nu )$ and the zero adjusted inverse gamma $\mbox{ZAIG}(\mu,\sigma,\nu )$ can be fitted explicitly in GAMLSS, therefore we begin with this in mind. The parameters $\mu,\sigma$ and $\nu$ in this case, are the approximate mean, approximate coefficient of variation and skewness parameters.\medskip  
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# 
+# mod1 <- gamlss(Losses ~ UpdatedDay + Desk + CapturedBy + TradeStatus + TraderId + Instrument + Reason + EventTypeCategoryLevel1
+#                + BusinessLineLevel1 + Exposure, mu.start = NULL,  sigma.start = NULL, nu.start = NULL, tau.start = NULL,
+#                         sigma.fo = ~1, nu.fo = ~1, data=crs$training,  family = ZAGA, n.cyc=80)
+# mod1
+# 
+# mod2 <- gamlss(Losses ~ UpdatedDay + Desk + CapturedBy + TradeStatus + TraderId + Instrument + Reason + EventTypeCategoryLevel1
+#                + BusinessLineLevel1 + Exposure, mu.start = NULL,  sigma.start = NULL, nu.start = NULL, tau.start = NULL,
+#                sigma.fo = ~1, nu.fo = ~1, data=crs$training,  family = ZAIG, n.cyc=80)
+# mod2
+
+```
+\doublespacing
+
+The introduction of a fourth parameter $\tau$ for modelling the kurtosis of the distribution leads to the creation of the generalized beta type 2 distribution, denoted by $\mbox{GB}2(\mu, \sigma,\nu,\tau)$, which is the only four parameter distribution for fitting a GAMLSS to estimate the (non-linear nature) mean OpRisk loss severity explicity.
+
+\subsubsection{Generalized Beta type $2$ distribution (GB$2$)}
+
+Given $X=x$, $Y$ (the \texttt{Loss} severity is the target variable) is modelled here by a generalized beta type 2 $\mbox{GB}2(\mu, \sigma,\nu,\tau)$\footnote{The GB2 adjusts the obove density $f(y|\mu,\sigma,\nu,\tau)$, resulting from the condition $y>0$, where $\mu>0$, $-\infty<\sigma<\infty$, $\nu>0$ and $\tau>0$. The mean and the variance of $Y$ are given by $E(Y)=\mu\mbox{B}(\nu+\frac{1}{\sigma},\tau-\frac{1}{\sigma})/\mbox{B}(\nu,\tau)$ for $-\nu<\frac{1}{\sigma}<\tau$ and $E(Y^2)=\mu^2\mbox{B}(\nu+\frac{2}{\sigma})/\mbox{B}(\nu,\tau)$ for $-\nu<\frac{2}{\sigma}<\tau$, See @stasinopoulos2008instructions.} distribution is defined by:
+
+\singlespacing
+\begin{eqnarray}\label{EqnPdfGB2}
+f(y|\mu,\sigma,\nu,\tau)=|\sigma|y^{\sigma\nu-1}\{\mu^{\sigma\nu}\mbox{B}(\nu,\tau)[1+(y/\mu)^{\sigma}]^{\nu+\tau}\}^{-1}
+\end{eqnarray}
+\doublespacing
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# mod3 <- gamlss(Losses ~ UpdatedDay + Desk + CapturedBy + TradeStatus + TraderId + Instrument + Reason + EventTypeCategoryLevel1
+#                + BusinessLineLevel1 + Exposure, mu.start = NULL,  sigma.start = NULL, nu.start = NULL, tau.start = NULL,
+#                sigma.fo = ~1, nu.fo = ~1, tau.fo = ~1, data=crs$training,  family = GB2, n.cyc=1700)
+# mod3
+```
+\doublespacing
+
+The choice of distribution for the OpRisk severity \texttt{Loss} variable is based on it being the only simple explicit for the mean and median of the response variable. Additionally:-
+
+\begin{list}{*}{}
+\item The variate takes values within to the appropriate range viz., $[0,\infty)$;
+\item The distribution is relevant because in has an explicit p.d.f, c.d.f and inverse c.d.f, explicit moment based measures of location, scale, skewness and kurtosis (i.e. population mean, standard deviation, $\gamma_1, \gamma_2$ [@rigby2017distributions]);
+\item Explicit centiles and centile based measures viz., median, semi-interquartile range, skewness and kurtosis ($\gamma, \mbox{st}_{0.49}$ resp.);
+\item Continuity of $f(y|\mu,\sigma,\nu,\tau)$ w.r.t y and it's derivatives w.r.t $\mu,\sigma,\nu,\tau$;
+\item Allows for flexibility in specifying the distribution of severity and also allowing for the modelling of distribution parameters as function of explanatory variables
+\end{list}
+
+\section{GAMLSS model for the four parameters of the $\mbox{GB}2$ distribution}
+
+The parameters $\mu, \sigma,\nu,$ and $\tau$ of the $\mbox{GB}2$ distribution are modelled as functions of explanatory variables using semi-parametric additive models, extended to incorporate non-linear parametric and/or non-parametric smooth functions $x$. Specifically, the model assumes that conditional on $(\mu_i,\sigma_i,\nu_i,\tau_i)$, for $i=1,2,\ldots,n$, observations where $Y \sim \mbox{GB}2(\mu,\sigma,\nu,\tau)$ i.e., $Y_i$ are independent $\mbox{GB}2(\mu_i,\sigma_i,\nu_i,\tau_i)$ variables with p.d.f $\mathcal{f}_{Y_i}(\mathcal{y}_i)$ obtained from equation \ref{EqnPdfGB2}.
+
+\subsection{Component $\mathcal{G}$: selection of the link functions}
+
+Also for $k=1,\ldots,4$ let $g_k(\cdot)$ be known momotonic link functions relating the parameters to expalnatory variables through extended semi-parametric additive models given by: 
+
+\singlespacing
+\begin{eqnarray}\label{EqnLinks}
+g_1(\mu) &=& \eta_1 = \mathbf{\Large{X}}_1\mathbf{\beta}_1 + \sum_{j=1}^{J_1}h_{1j}(\mathbf{x}_{1j})\nonumber\\
+g_2(\sigma) &=& \eta_2 = \mathbf{\Large{X}}_2\mathbf{\beta}_2 + \sum_{j=1}^{J_2}h_{2j}(\mathbf{x}_{2j})\nonumber\\
+g_3(\nu) &=& \eta_3 = \mathbf{\Large{X}}_3\mathbf{\beta}_3 + \sum_{j=1}^{J_3}h_{3j}(\mathbf{x}_{3j})\nonumber\\
+g_4(\theta) &=& \eta_4 = \mathbf{\Large{X}}_4\mathbf{\beta}_4 + \sum_{j=1}^{J_4}h_{4j}(\mathbf{x}_{4j})
+\end{eqnarray}
+\doublespacing
+
+where for $i=1,2,\ldots,n$ $j=1,2,\ldots,J_k$ and $\mathbf{\beta}_k^T=(\beta_1k,\beta_2k,\ldots,\beta_{J'_kk})$ is a parametric vestor of length $J'_k$, $\mathbf{x}_{ik}$ a fixed known design vector of length $J''_k$ and $h_k$ a non-linear function []. The explanatory values $x_{jk}$ are assumed to be fixed and known and the univariate function $h_{jk}$ is an additive smooth parametric function assumed to have continuous first and second order derivatives. If for $k=1,2,3,4$, $J_k=0$, then the GAMLSS model \ref{EqnLinks} reduces to a non-linear parametric model. If in addition, $h_k(x_{ik},\mathbf{\beta}_k)=\mathbf{x}_{ik}^T\mathbf{\beta}_k$ for $i=1,2,\ldots,n$ and $k=1,2,3,4$, then equation \ref{EqnLinks} reduces to a linear parametric model [@rigby2017distributions].
+
+\section{Model estimation and selection}
+\label{sec:Model estimation and selection}
+
+There are several different strategies that could be applied for model selection of the terms used to model the four parameters, however the procedure in the analysis as outlined in @stasinopoulos2018gamlss and @voudouris2012modelling, comprised of the function \texttt{stepGAIC.A}, is by selcting all terms for all the parameters by a forward, backward or stepwise procedure, assuming the particular response distribution function [also found in @stasinopoulos2017flexible \& @rigby2017distributions]. The final model may contain different combinations for $\mu, \sigma,\nu,$ and $\tau$.
+
+\subsection{Component $\mathcal{T}$ and $\Lambda$: selection of the terms and smoothing parameters in the model}
+
+Given that a set of plausible distributions have been identified, let $\chi$ be the selection of all terms available for consideration. Their parameters are modelled as regression models. In particular the non-linear parameter vectors $\mathbf{\beta}_k$ and the non-parametric functions $h_{jk}$ for $j=1,2,\ldots,J_k$ and $k=1,2,3,4$ in equation \ref{EqnLinks} are estimatied by maximizing the penalised log-likelihood as a way of understanding how the location, scale, skewness and kurtosis parameters of the loss severity distribution are affected by the explanatory variables.\medskip
+
+This is essentially shown conducted, in R, dropping unneccessary terms, selecting and adding additive terms and smoothing terms. In order to do this a formula is created containing all the linear main effects and second-order interactions plus smooth function of expalnatory variables. In R this is achieved through a "scope" statement whereby the function \texttt{FORM} is used as the upper argument, as demonstrated in see Appendix \ref{sec:Selection of terms.}.
+
+\singlespacing
+```{r, eval=FALSE, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# ## Now we use drop1() to check whether any linear terms can be dropped
+# drop1(mod3)
+# ## Using add1(), we consider adding a two-way interaction term into the linear model mod1
+# add1(mod3, scope=~(UpdatedDay + Desk + CapturedBy + TradeStatus + TraderId +
+# Instrument + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1 + Exposure)^2)
+# 
+# FORM <- as.formula("~(UpdatedDay + Desk + CapturedBy + TradeStatus + TraderId
+# + Instrument + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1 + Exposure)^2
+# +pb(UpdatedDay) + pb(Desk) + pb(CapturedBy) + pb(TradeStatus)+ pb(TradeStatus)
+# + pb(TraderId) + pb(Instrument) + pb(Reason)+ pb(EventTypeCategoryLevel1) 
+# + pb(BusinessLineLevel1) + pb(Exposure)")
+
+```
+\doublespacing
+
+\section{Checking the model}
+
+Figure \ref{4Residual_GOF_plot} displays the (normalized quantile) residuals, from model $\mbox{GB}2()$. Panel $(a)$ and $(b)$ plot the residuals against the fitted values of $\mu$ and against the explanatory variables respectively. While panel $(c)$ and $(d)$ provide a kernel density estimate and normal $\mbox{QQ}$ plot for them respectively. the residuals appear slightly skewed to the right and the $\mbox{QQ}$ plot shows extreme outliers in the upper tails of the distribution of $y$. Also note that not all plots in figure \ref{4Residual_GOF_plot} are useful, nevertheless the $\mbox{GB}2$() distribution model provides a reasonable fit to the data, substantially better than to the and preferable to the models.    
+
+\begin{figure}
+\centering
+\includegraphics[height=10cm, width=10cm]{4_GOF_plot.pdf}
+\caption[Normalized quantile residuals from model $\mbox{GB}2$]{The result of the plot displays (normalized quantile) residuals from model $\mbox{GB}2(\mu,\sigma,\nu,\tau)$, the top-left panel plots the residuals against the fitted values of $\mu$, the bottom-left panel provides a kernel density estimate and the normal QQ plot for the residuals in bottom-right panel. The last panel results are meaningless}.
+\label{4Residual_GOF_plot}
+\end{figure}
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# mod14 <- stepGAICAll.A(mod1, scope=list(lower=~1, upper=FORM), k=log(371))
+
+# GAIC(mod14,mod24,mod34)
+# mod34
+# plot(mod34)
+# mod34$anova
+```
+\doublespacing
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{mod42GB2.eps}
+\caption[Summary of fitted distribution]{Summary statistics of fitted distribution $\mbox{GB}2(\mu,\sigma,\nu,\tau)$, the "Generalized beta type 2 (i.e. of the second kind)" using fitting method: RS()}
+\label{SumGB2Anova}
+\end{figure}
+
+Figure \ref{SumGB2Anova} shows summary statistics of the $\mbox{GB}2$ distribution model. The $\mbox{GB}2$ distribution is the best fit for the data based on the model selection strategy discussed in section \ref{sec:Model estimation and selection}, the empirical GAMLSS-based model $Y \sim \mbox{GB}2(\mu,\sigma,\nu,\tau)$ where $Y=$ log(Losses due to OpRisk events) and 
+
+\small
+\singlespacing
+\begin{eqnarray}
+&\mbox{log}(\mu)& = \mbox{\texttt{UpdatedDay}} + \mbox{\texttt{Desk}} + \mbox{\texttt{CapturedBy}} +  \mbox{\texttt{TradeStatus}} + \mbox{\texttt{TraderId}} + \mbox{\texttt{Instrument}}\nonumber\\
+&+& \mbox{\texttt{Reason}} + \mbox{\texttt{EventTypeCategoryLevel1}} + \mbox{\texttt{Exposure}} + \mbox{pb}(\mbox{\texttt{CapturedBy}}) + \mbox{pb}(\mbox{\texttt{TraderId}})\nonumber\\
+&+& \mbox{pb}(\mbox{\texttt{TradeStatus}}) + \mbox{\texttt{TraderId:Reason}} +  \mbox{\texttt{UpdatedDay:Desk}} + \mbox{\texttt{Desk:Exposure}}\nonumber\\
+&+& \mbox{\texttt{Reason:EventTypeCategoryLevel1}} + \mbox{\texttt{TradeStatus:EventTypeCategoryLevel1}},\nonumber\\
+&\sigma& = \mbox{\texttt{BusinessLineLevel1}},\nonumber\\
+&\mbox{log}(\nu)& = 1,\nonumber\\
+&\mbox{log}(\tau)& = \mbox{\texttt{Instrument}}
+\end{eqnarray}
+\doublespacing
+\normalsize
+
+\subsection{Testing hypothesis from the fitted model}
+
+Using the \texttt{stepGAIC.A}() function in GAMLSS, we compare the models tat best fit the 2013Q1 dataset of OpRisk losses, pending and near misses, conditional on the available explanatory variables such as the \texttt{UpdatedDay}, \texttt{UpdatedTime}, \texttt{CapturedBy}, \texttt{TraderId}, \texttt{Reason}, \texttt{Desk}, \texttt{Instrument}, etc. The conclusion from Table \ref{GAIC} is that the $\mbox{GB}2$ model provides the best fit to expalnatory variables according to criterion \texttt{GAIC()} i.e., loss severity (pnl impact) requires modelling of both skewness and kurtosis and is not adequately modelled by either skewness or kurtosis alone. The fitted models for $\mu,\sigma,\nu$ and $\tau$, given by equation \ref{EqnLinks} for the chosen model is displayed.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1.0]{GAIC.eps}
+\caption[Summary of fitted models]{Summary of the fitted models for the OpRisk 2013Q1 data, showing the effective degrees of freedom (df) used in the model and the AIC($k=$length of loss variable).}
+\label{GAIC}
+\end{figure}
+
+
+\singlespacing

@@ -1,0 +1,431 @@
+---
+output: pdf_document
+---
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\doublespacing
+
+\section{Appendix A: R Code and Data Preparation for Chapter 3}
+\label{sec:Appendix A: R Code and Data Preparation for Chapter 3}
+
+\singlespace
+
+Required: R Packages from CRAN
+
+\small
+```{r, eval=FALSE, results="hide", fig.show="hide", fig.keep="none", echo=TRUE}
+if (!require(caTools)){
+  install.packages("caTools")
+  library(caTools)
+}
+if (!require(caret)){
+  install.packages("caret")
+  library(caret)
+}
+if (!require(R2HTML)){
+  install.packages("R2HTML")
+  library(R2HTML)
+}
+if (!require(rattle)){
+  install.packages("rattle")
+  library(rattle)
+}
+if (!require(magrittr)){
+  install.packages("magrittr")
+  library(magrittr)
+}
+if (!require(dplyr)){
+  install.packages("dplyr")
+  library(dplyr)
+}
+if (!require(Hmisc)){
+  install.packages("Hmisc")
+  library(Hmisc)
+}
+if (!require(chron)){
+  install.packages("chron")
+  library(chron)
+}  
+  if (!require(ggplot2)){
+  install.packages("ggplot2")
+  library(ggplot2)
+  }
+```
+\normalsize
+
+\subsection{Data preparation for understanding the raw frequency and raw severity data mentioned in
+section \ref{sec:Exploratory data analysis} on page \pageref{sec:Exploratory data analysis} of collected internally over the period
+between 1 January 2013 and 31 March 2013 i.e., Q12013 at an investment bank in SA}
+\label{ssec:Data preparation raw}
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+file_loc <- "C:/Users/Mphekeleli/Documents/R PROJECT/OpRiskPHDGitHub
+/OpRisk_PHD_Thesis/Data"
+setwd(file_loc)
+list.files(file_loc)
+frequency <- openxlsx::read.xlsx("Raw_Formatted_Data.xlsx",
+                      check.names = TRUE, sheet = "Frequency")
+severity <- openxlsx::read.xlsx("Raw_Formatted_Data.xlsx",
+                      check.names = TRUE, sheet = "Severity")
+projdata <- openxlsx::read.xlsx("OPriskDataSet_exposure.xlsx",
+                      check.names = TRUE, sheet = "CleanedData")
+```
+\normalsize
+
+\subsection{Data preparation providing the numbers of OpRisk events collected through pre-processing by following the LCDE as described in section \ref{sec:Description of the dataset} on \pageref{sec:Description of the dataset} over Q12013, limited to the covariates selected to fit into the models}
+\label{ssec:Data preparation pre-processed}
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+# Set parameter values
+crv$seed <- 42 # set random seed
+crv$training.proportion <- 1.0
+
+# Load data
+fname <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_exposure.csv"
+crs$dataset <- read.csv(fname,
+              sep=";",
+              dec=",",
+              na.strings=c(".", "NA", "", "?"),
+              strip.white=TRUE, encoding="UTF-8")
+
+# Build the train/validate/test datasets.
+
+# nobs=2330 train=2330 validate=0 test=0
+set.seed(crv$seed)
+crs$nobs   <- nrow(crs$dataset)
+crs$sample <- sample(crs$nobs, crv$training.proportion * crs$nobs)
+crs$train  <- crs$sample <- sample(crs$nobs, crv$training.proportion * crs$nobs)
+# crs$train  <- sample(crs$nobs, 1*crs$nobs)
+crs$validate <- NULL
+crs$test <- NULL
+
+# The following variable selections have been noted.
+crs$input     <- c("Trade", "UpdatedDay", "UpdatedTime",
+                   "TradedDay", "TradedTime", "Desk", "CapturedBy",
+                   "TradeStatus", "TraderId", "Instrument", "Reason",
+                   "Loss", "EventTypeCategoryLevel1",
+                   "BusinessLineLevel1", "exposure")
+
+crs$numeric   <- c("Trade", "UpdatedDay", "UpdatedTime",
+                   "TradedDay", "TradedTime", "Loss", "exposure")
+
+crs$categoric <- c("Desk", "CapturedBy", "TradeStatus",
+                   "TraderId", "Instrument", "Reason",
+                   "EventTypeCategoryLevel1", "BusinessLineLevel1")
+
+crs$target    <- "LossIndicator"
+crs$risk      <- NULL
+crs$ident     <- NULL
+crs$ignore    <- c("UpdateTime", "TradeTime", "Nominal", "FloatRef", 
+                   "LastResetDate", "LastResetRate", "Theta", "Unexplained")
+crs$weights   <- NULL
+```
+\normalsize
+
+\subsection{The algorithm only accepts numerical data and so categorical data is transformed into numeric. This is done using an approach where each value of a categoric variable is turned into a variable itself. Multi-level categoric variables are recoded by building dummy variables corresponding to each level by the following commands:}
+\label{ssec:Transforming to dummy variables}
+
+Numerical and categoric variables (to be transformed by below conversion code) depicted in table \ref{tab_contents} on page \pageref{tab_contents}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+# Remap factor variables and transform into numeric variables.
+crs$dataset[["TNM_Desk"]] <- as.numeric(crs$dataset[["Desk"]])
+crs$dataset[["TNM_CapturedBy"]] <- as.numeric(crs$dataset[["CapturedBy"]])
+crs$dataset[["TNM_TraderId"]] <- as.numeric(crs$dataset[["TraderId"]])
+crs$dataset[["TNM_Instrument"]] <- as.numeric(crs$dataset[["Instrument"]])
+crs$dataset[["TNM_Reason"]] <- as.numeric(crs$dataset[["Reason"]])
+crs$dataset[["TNM_EventTypeCategoryLevel1"]] <- as.numeric(crs$dataset
+                                        [["EventTypeCategoryLevel1"]])
+crs$dataset[["TNM_BusinessLineLevel1"]] <- as.numeric(crs$dataset
+                                             [["BusinessLineLevel1"]])
+```
+\normalsize
+
+\subsection{Scatterplots and Histograms plots of loss severities and frequency counts against selected explanatory variables showing basic
+summary statistics of intra-day trading activity}
+\label{ssec:Scatterplots and Histograms of intra-day trading activity}
+
+Figures \ref{Intra_Day_Trends} and \ref{Hist_Loss_Freq} on page \pageref{Hist_Loss_Freq}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+# Scatterplots for loss severities
+plot(projdata$UpdatedTime, log(projdata$Loss+0.000000001), ylim = c(6, 18),
+     col = "navy", xlab = "Updated Time", ylab = "Log. Loss")
+xyplot(Loss ~ as.factor(TraderId) , data = projdata)
+
+# Histograms for loss severities
+hist(projdata$UpdatedDay, col = "#9999CC", main = "All losses", xlab = "Updated Day"
+     , ylab = "Frequency")
+hist(projdata$TradedDay)
+```
+\normalsize
+
+\subsection{Characteristics of exposure: Exposure data is used for several of the steps of the process in frequency and severity modelling}
+\label{ssec:Characteristics of exposure}
+
+Figure \ref{Exploration_analysis_exposure} on page \pageref{Exploration_analysis_exposure}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+#######Display histogram plots for the selected variables##########
+#============================================================
+# Display histogram plots for the selected variables. Use ggplot2 to generate
+# histogram plot for exposure. Generate the plot.
+
+Exp <- crs %>%
+  with(dataset[train,]) %>%
+  dplyr::select(exposure) %>%
+  ggplot2::ggplot(ggplot2::aes(x=exposure)) +
+  ggplot2::geom_density(lty=1, lwd=1) +
+  ggplot2::geom_density(ggplot2::aes(fill="", colour=""), alpha=0.55) +
+  ggplot2::xlab("Exposure") +
+  ggplot2::ggtitle("Pdf(exposure)") +
+  ggplot2::labs(y="Density") +
+  theme_bw(base_size = 15) +
+  theme(legend.position = "none")
+
+# Display the plots.
+gridExtra::grid.arrange(Exp)
+
+#============================================================
+# Generate just the data for an Ecdf plot of the variable 'exposure'.
+ds <- rbind(data.frame(dat=crs$dataset[crs$train,][,"exposure"], grp="All"))
+
+# The 'Hmisc' package provides the 'Ecdf' function.
+library(Hmisc, quietly=TRUE)
+
+# Plot the data.
+Ecdf(ds[ds$grp=="All",1], col="red", xlab="exposure", lwd=2, 
+     ylab=expression(Proportion <= x), subtitles=FALSE)
+
+# Add a title to the plot.
+title(main="Cdf(exposure)")
+    
+#============================================================
+# Benford's Law 
+
+# The 'ggplot2' package provides the 'ggplot' function.
+library(ggplot2, quietly=TRUE)
+
+# The 'reshape' package provides the 'melt' function.
+library(reshape, quietly=TRUE)
+
+# Initialies the parameters.
+var    <- "exposure"
+digit  <- 1
+len    <- 1
+
+# Build the dataset
+ds <- merge(benfordDistr(digit, len),
+            digitDistr(crs$dataset[crs$train,][var], digit, len, "All"))
+
+# Plot the digital distribution
+p <- plotDigitFreq(ds)
+p <- p + ggtitle("Digital Analysis") +
+  theme(
+    legend.position = c(.95, .95),
+    legend.justification = c("right", "top"),
+    legend.box.just = "right",
+    legend.margin = margin(6, 6, 6, 6)
+    ) +
+  # custom box around legend
+ theme(
+    legend.box.background = element_rect(color="red", size=2),
+    legend.box.margin = margin(6, 6, 6, 6)
+) +
+# custom the key
+ theme(legend.key = element_rect(fill = "white", colour = "black")) +
+# custom the text
+ theme(legend.text = element_text(size = 8, colour = "red")) +
+# custom the title
+ theme(legend.title = element_text(face = "bold"))
+print(p)
+# #============================================================
+```
+\normalsize
+
+\subsection{Histograms for frequency characteristics of daily and monthly operations for daily losses and/or pending/near misses}
+\label{ssec:Frequency characteristics of operational activity}
+
+Figures \ref{Exploratory_UpdateTime_Frequency3plot} and \ref{Exploratory_UpdateDay_Frequency3plot} on page \pageref{Exploratory_UpdateTime_Frequency3plot}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+################   EXPLORATORY DATA ANALYSIS  ###################
+#___________________________________________________________________________________________________
+# Update Time
+### summary statistics
+ summary(projdata$UpdatedTime)
+
+### Histograms - ALL Losses and Near Misses/Pending Losses and Realised losses 
+par(mfrow=c(1,3))
+hist(projdata$UpdatedTime, col = "blue", main = "All losses", 
+     xlab = "Update Time", ylab = "Frequency")
+hist(projdata$UpdatedTime[projdata$LossIndicator == 0], col = "red",
+     main = "Near Misses", xlab = "Update Time", ylab = "Frequency")
+hist(projdata$UpdatedTime[projdata$LossIndicator == 1], col = "green",
+     main = "Realised losses", xlab = "Update Time", ylab = "Frequency")
+par(mfrow=c(1,1))
+#___________________________________________________________________________________________________
+# # Update Day
+ summary(projdata$UpdatedDay)
+
+### Histograms - ALL Losses and Near Misses/Pending Losses and Realised losses
+par(mfrow=c(1,3))
+hist(projdata$UpdatedDay, col = "#9999CC", main = "All losses",
+     xlab = "Updated Day", ylab = "Frequency")
+hist(projdata$UpdatedDay[projdata$LossIndicator == 0], col = "#CC6666",
+     main = "Near Misses", xlab = "Updated Day", ylab = "Frequency")
+hist(projdata$UpdatedDay[projdata$LossIndicator == 1], col = "#66CC99",
+     main = "Realised losses", xlab = "Updated Day", ylab = "Frequency")
+par(mfrow=c(1,1))
+```
+\normalsize
+
+\subsection{Density plots of overlaid trade proportions of realised losses vs pending losses/near misses}
+\label{ssec:Density plots}
+
+Figures \ref{Density_Proportions} on page \pageref{Density_Proportions}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+# Density Plot for Updated Day
+p01 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(UpdatedDay, LossIndicator) %>%
+  ggplot2::ggplot(ggplot2::aes(x=UpdatedDay)) +
+  ggplot2::geom_density(lty=3) +
+  ggplot2::geom_density(ggplot2::aes(fill=LossIndicator, colour=LossIndicator)
+                        , alpha=0.55) +
+  ggplot2::ggtitle("Distr. of Updated DaY") +
+  ggplot2::labs(fill="LossIndicator", y="Density") +
+  ggplot2::xlab("Day of Month that Trade Was Updated") +
+  ggplot2::theme(legend.position=c(.7,.2))
+
+# Density Plot for Traded day
+p02 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(TradedDay, LossIndicator) %>%
+  ggplot2::ggplot(ggplot2::aes(x=TradedDay)) +
+  ggplot2::geom_density(lty=3) +
+  ggplot2::geom_density(ggplot2::aes(fill=LossIndicator, colour=LossIndicator)
+                        , alpha=0.55) +
+  ggplot2::ggtitle("Distr. of TradedDay") +
+  ggplot2::labs(fill="LossIndicator", y="Density") +
+  ggplot2::xlab("Day of Month for Trade") +
+  ggplot2::theme(legend.position=c(.7,.2))
+
+# Display the plots.
+gridExtra::grid.arrange(p01, p02, nrow = 1)
+```
+\normalsize
+
+Table \ref{tab_Desk_Prop} on \pageref{tab_Desk_Prop}
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+# addmargins(table(projdata$Desk, projdata$LossIndicator), 2)
+```
+\normalsize
+
+\subsection{Histograms of overlaid trade proportions of realised losses vs pending loss/near misses}
+\label{ssec:Histogram proportions}
+
+Figures \ref{Desk_Proportions} on page \pageref{Desk_Proportions}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+# Plot Desk category distribution
+p03 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(Desk, LossIndicator) %>%
+  dplyr::group_by(Desk, LossIndicator) %>%
+  dplyr::summarise(n = n()) %>%
+  ggplot2::ggplot(ggplot2::aes(x=Desk, y=n, fill=LossIndicator)) +
+  ggplot2::geom_bar(stat="identity") +
+  ggplot2::ggtitle("Desk category distribution") +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ggplot2::ylab("Frequency")
+
+# Create new variable to proportion no. of realised losses
+T01 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(Desk, LossIndicator) %>%
+  dplyr::group_by(Desk, LossIndicator) %>%
+  dplyr::summarise(n = n())
+
+T02 <- T01 %>%
+  group_by(Desk) %>%
+  summarise(N=sum(n))
+
+T03 <- inner_join(T01, T02)
+
+# Plot Desk category by proportion
+T04 <- T03 %>%
+  mutate(Prob=n/N) %>%
+  filter(LossIndicator==1) %>%
+  select(Desk, Prob) %>%
+  arrange(desc(Prob)) %>%
+  ggplot2::ggplot(ggplot2::aes(x=Desk, y=Prob, fill=Desk), alpha=0.55) +
+  ggplot2::geom_bar(stat="identity", fill="grey", colour="black", show.legend = FALSE)+
+  ggplot2::ggtitle("Proportion of losses per Desk") +
+  ggplot2::theme_minimal()+
+  ggplot2::theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ggplot2::ylab("Loss Ratio (n/N)")+
+  ggplot2::xlab("Desk")
+
+#Display both plots in one row
+gridExtra::grid.arrange(p03, T04, nrow = 1)
+####============================================================
+```
+\normalsize
+
+\subsection{Mosaic grid plots for the bidimensional distributions by traded \texttt{Instrument}, \texttt{TraderId} and number}
+\label{ssec:Mosaic bidimensional grid plot}
+
+Figures \ref{Mosaic_Instr_Trd_Tec} on page \pageref{Mosaic_Instr_Trd_Tec}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+par(mfrow=c(1,2))
+plot(table(projdata$LossIndicator, projdata$Instrument), main="By Instrument",
+     col=rainbow(20), las=1)
+plot(table(projdata$LossIndicator, projdata$TraderId), main="By Trader", 
+     col=rainbow(20), las=1)
+plot(table(projdata$LossIndicator, projdata$CapturedBy), main="By Tech Support",
+     col=rainbow(20), las=1)
+par(mfrow = c(1, 1))
+####============================================================
+```
+\normalsize
+
+\subsection{Mosaic grid plots for the structure of OpRisk portfolio by traded \texttt{TradeStatus}, \texttt{TraderId} by the number of realised losses vs pending loss/near misses}
+\label{ssec:Mosaic cross-sectional plot}
+
+Figures \ref{Mosaic_Instr_Trd_Tec} on page \pageref{Mosaic_Instr_Trd_Tec}:
+
+\small
+```{r, eval=FALSE, echo=TRUE}
+# Contingency Table
+library(vcd)
+STD <- structable(~TradeStatus + TraderId + LossIndicator, data = projdata)
+par(cex.axis = 1.5, cex.lab = 0.1)
+# Mosaic plot
+MS01 <- mosaic(STD, condvars = 'TradeStatus', col=rainbow(20), 
+      split_horizontal = c(TRUE, FALSE, TRUE), shade = TRUE, legend = TRUE)
+MS01
+```
+\normalsize
+

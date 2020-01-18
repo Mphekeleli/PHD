@@ -1,0 +1,877 @@
+---
+output: pdf_document
+---
+\doublespacing
+
+\section{Introduction}
+\label{sec4:Introduction}
+
+Many of the ideas and concepts [@dobson2008introduction] of linear regression modelling carry over to generalized regression modelling, however the "generalized"  term is used to refer to all linear models other than simple straight lines found in the linear case. That is, the generalized linear regression (GLR) model reduces (multiple) linear regression (MLR) if and only if the error term (random component of the response variable $y$) has a normal distribution i.e., $\mu = 0$, \&  $\sigma^2$:  
+
+\singlespacing
+\begin{eqnarray}\label{linearmodel}
+E(\mathbf{Y_i}) = \mathbf{\mu_i} = \mathbf{x_i}^T\mathbf{\beta} + \epsilon_i \qquad \epsilon_i \thicksim \mathbf{N(0, \sigma^2)},
+\end{eqnarray}
+\doublespacing
+
+In the case of the OpRisk dataset, the relationship between outcomes and drivers of risk are frequently not normal, therefore models of the form \ref{linearmodel} where random variables $\mathbf{Y_i}$ are independent, are not applicable. The transposed vector $\mathbf{x_i}^T$ represents the $i$th row of the dataset $\mathbf{X}$. In such cases, due to recent advances in statistical theory and computational techniques, generalised linear models (GLM); which are analogous to linear models, are used to assess and quantify the relationships between a target variable and explanatory variables [@dobson2008introduction].\medskip
+
+GLM's differ in that 
+
+\begin{itemize}
+\item The distribution of the target variable is chosen from the exponential family
+\item A transformation of the mean of the response is linearly related to the explanatory variables, however their association need not be of the simple linear form in equation \ref{linearmodel}
+\end{itemize}
+\medskip
+
+\section{Generalized linear (regression) models (GLM) for count data}
+\label{sec4:Generalized linear (regression) models (GLM) for count data}
+
+As with the linear model, consider independent rv's $\mathbf{Y_i}$ not i.i.d, whose probability depends on a parameter $\theta_i$. The choice of parameter $\theta_i$ determines the response distribution which is assumed to have the same form as the exponential family, in turn characterising the statistical unit $i$. Thus, the exponential family representation depends on varying parameters $\theta_i$, and a constant scale parameter $\phi$. the pdf of $\mathbf{Y_i}$ is
+
+\singlespacing
+\begin{eqnarray}\label{Exponentialfamily}
+f(y_i;\theta_i;\phi) = \exp\left[\frac{a(y_i)b(\theta_i) -c(\theta_i)}{\phi}-d(y_i,\phi)\right], \quad y_i \in Y 
+\end{eqnarray}
+\doublespacing
+
+where $a$, $b$, $c$, \& $d$ are regarded as known functions. Expanding the expression in equation \ref{Exponentialfamily} yields
+
+\singlespacing
+\begin{eqnarray}\label{Exponentialfamilies}
+f(y_i;\theta_i;\phi) &=& \exp\left[\frac{a(y_i)b(\theta_i) -c(\theta_i)}{\phi}-d(y_i,\phi)\right] \nonumber\\
+ &=& \frac{1}{e^{d(y,\phi)}}\exp\left[\frac{a(y_i)b(\theta_i) -c(\theta_i)}{\phi}\right] \nonumber\\
+ &=& r(y,\phi)\frac{1}{e^{\frac{c(\theta_i)}{\phi}}}\exp\left[\frac{a(y_i)b(\theta_i)}{\phi}\right] \nonumber\\
+ &=& r(y,\phi)s(\theta,\phi)\exp\left[\frac{a(y_i)b(\theta_i)}{\phi}\right]\\
+ \mbox{where} \quad r(y,\phi) &=& \frac{1}{e^{d(y,\phi)}}\quad \mbox{and where}\quad s(\theta,\phi) = \frac{1}{e^{\frac{c(\theta_i)}{\phi}}}\nonumber
+\end{eqnarray}
+\doublespacing
+
+since the scale parameter $\phi$ is constant, the distribution belongs to the exponential family if it can be written in the form
+
+\singlespacing
+\begin{eqnarray}\label{Exponential}
+f(y;\theta) = r(y)s(\theta)\mathbf{e}^{a(y)b(\theta)}
+\end{eqnarray}
+\doublespacing
+
+If $a(y) = y$, the distribution is in canonical form and $b(\theta)$ is called the natural parameter of the response distribution [@de2008generalized]. The specific elements of a GLM are [@dobson2008introduction; @covrig2015using]:
+
+\begin{enumerate}
+\item The random component given by the independent random variables $Y_1, Y_2, \ldots, Y_n $ not identically distributed. Note that the rv's $\mathbf{Y_i}$ for the Oprisk data, indexed by the subscript $i$, have different expected values $\mu_i$. Sometimes there may be only one observation $y_i$ for each $Y_i$, but there may be several observations $y_{ij}, (j=1,\ldots,n_i)$ for each $\mathbf{Y_i}$. The pdf or probability mass function of $\mathbf{Y_i}$ is given in equation \ref{Exponential} for $f(y)$, which specifies that the distribution of the response is in the exponential family. The support set $X$ of the rv $Y_i$ is subset of $\mathbf{N}$ of $\mathbf{R}$. 
+
+\item The second advance is the extension of computational methods to estimate the models systematic component, so called the "linear predictor" described in equation \ref{linearmodel} built with $p+1$ parameters $\mathbf{\beta} = (\beta_0,\beta_1,\ldots,\beta_p)$ and with $p$ explanatory variables:
+
+\singlespacing
+\begin{eqnarray}\label{linearpredictor}
+\eta_i = \beta_0 + \sum_{j=1}^{p}\beta_jx_{ij}, \qquad i = 1,2,\ldots,n
+\end{eqnarray}
+\doublespacing
+
+\item The equation for $\eta_i$ specifies to the situation that there is some non-linear function, a transformation of the mean, $g(\mu)$, that is linearly related to the explanatory variables contained on the r.h.s of equation \ref{linearpredictor}, $\mathbf{X_i}^T\mathbf{\beta}$, i.e.,
+
+\singlespacing
+\begin{eqnarray}
+g(\mu_i) = \mathbf{X_i}^T\mathbf{\beta}
+\end{eqnarray}
+\doublespacing
+
+The function $g(\mu_i)$ is called the link function.
+\end{enumerate}
+
+\subsection{Interpretation}
+
+Given a response variable $y$, for the initial formulation of glm's by @nelder1972generalized, $b(\theta)$ determines the nature of the response distribution and the choice of link is suggested by the functional form of the relationship between the response and explanatory variables. In choosing these components extra steps are taken compared to ordinary regression modeling. Commonly used links functions are given in Table \ref{tab_linkfcn} which also presents the units produced for the various GLM links.
+
+\begin{table}[tb]
+\centering
+\caption{The generalized linear model link functions with their associated units of interpretation. Note: This list is not exhaustive and there are likely more GLMs that are used within prevention research.} 
+\label{tab_linkfcn}
+\begin{tabular}{lcll}
+\toprule
+Link Function & $g(\mu)$ & Target variable Effect & Canonical link for \\ 
+\midrule
+Identity & $\mu$ & Original Continuous Unit & normal \\ 
+  Log & ln$\mu$ & count & poisson \\ 
+  Logit & ln $\frac{\mu}{1-\mu}$ & Risk & binomial \\ 
+  Probit & $\phi^{-1}(\theta)$ & Risk & binomial \\ 
+  Power & $\mu^p$ & Count & $\Gamma(p=-1)$\\
+        &       & Count & inverse Gaussian(p=-2)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Offsets}
+
+Modeling counts as realised operational hazard in an OpRisk group requires correction for the period in days $d$ exposed to risk. If $\mu$ is the mean of the count $y$ then the occurence rate of interest $R= \frac{\mu}{d}$ and 
+
+\singlespacing
+\begin{eqnarray}
+g\left(\frac{\mu}{d}\right) = \mathbf{x}^T\mathbf{\beta}
+\end{eqnarray}
+\doublespacing
+
+When $g$ is the log function, this becomes
+
+\singlespacing
+\begin{eqnarray}\label{offset}
+\mbox{ln}\left(\frac{\mu}{d}\right) = \mathbf{x}^T\mathbf{\beta} \quad \Rightarrow \quad \mbox{ln}\mu = \mbox{ln}d + \mathbf{x}^T\mathbf{\beta}
+\end{eqnarray}
+\doublespacing
+
+Where the variable $d$ appears representing the risk *exposure* and ln$d$ is called an "offset". Equation \ref{offset} differs from the usual specification of the linear predictor due to the inclusion of the term ln$d$. An offset is effectively another explanatory variable in the regression, with a $\beta$ coefficient = 1. With the offset, $y$ has expected value directly proportional to exposure:
+
+\singlespacing
+\begin{eqnarray}
+E(Y) = \mu = d e^{x^T\beta}
+\end{eqnarray}
+\doublespacing
+
+Offsets are used to correct for differing periods of observation [@de2008generalized] i.e., in the opRisk dataset these are the times to detection (exposure) of the realised losses. The exposure measure is a known constant which is readily incorporated into the estimation procedure and is a quantity that is roughly proportional to the risk [@parodi2014pricing] i.e., when the exposure (time to detection) doubles whilst everthing else (e.g. interest on an interest rate swap) remains the same, the risk also doubles. 
+
+\section{Exploratory data analysis}
+\label{sec:Exploratory data analysis}
+
+The main source of the analysis dataset is primary data, a collection of internal OpRisk losses for the period between 1 January 2013 and 31st March 2013 at an investment bank in SA. The method of data generation and collection is at the level of the individual trade deal, wherein deal information is drawn directly from the trade generation and and settlement system (TGSS) and edit detail from attribution reports generated in middle office profit \& loss (MOPL). The raw source consists of two separate datasets on a trade-by-trade basis of daily frequencies (number of events) and associated loss severities.\medskip
+
+```{r Load Data A1, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+file_loc <- "G:/PHD/OPRISK_PHD_DISS/Data"
+setwd(file_loc)
+list.files(file_loc)
+
+frequency <- openxlsx::read.xlsx("Raw_Formatted_Data.xlsx", check.names = TRUE, sheet = "Frequency")
+severity <- openxlsx::read.xlsx("Raw_Formatted_Data.xlsx", check.names = TRUE, sheet = "Severity")
+projdata <- openxlsx::read.xlsx("OPriskDataSet_exposure.xlsx", check.names = TRUE, sheet = "CleanedData")
+
+```
+
+The raw frequency data consists of 58,953 observations of 15 variables, within the dataset there are 50,437 unique trades. The raw severity data consists of 6,766 observations of 20 variables; within the severity dataset there are 2,537 unique trades. The intersection between the frequency and severity datasets consists of 2,330 individual transactions which represent realised losses, pending and/or near misses. This dataset is comprised of 3-month risk correction detail, in the interval between 01 January 2013 and 31 March 2013. \medskip
+
+```{r Data Understanding, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+### Contents of Raw Formatted Data columns
+str(frequency)
+str(severity)
+str(projdata)
+
+### Number of unique trade entries in contents of Raw Formatted Data
+length(unique(frequency$Related.Trade))
+length(unique(severity$Trd.Nbr))
+
+### Number of intersecting trades in the frequency (from amendment tracker) and severity (from MOPL  attribution summary) data sets from Raw Formatted Data file
+length(intersect(frequency$Related.Trade, severity$Trd.Nbr))
+
+### Column labels in Raw Formatted Data (frequency & severity) and Cleaned Data
+names(frequency)
+names(severity)
+dput(names(projdata))
+
+### Renaming column entries in Cleaned Data
+names(projdata)[names(projdata) %in% "EventTypeCategoryLevel1"] <- "EventTypeCategoryLevel"
+names(projdata)[names(projdata) %in% "BusinessLineLevel1"] <- "BusinessLineLevel"
+names(projdata) <- sub("\\.", "", names(projdata))
+dput(names(projdata))
+
+projdata[] <- lapply(projdata, function(x) if (is.character(x)) toupper(trimws(x)) else x)
+
+```
+
+\begin{table}[ht]
+\centering
+\caption{The contents of the traded transactions of the associated risk correction events.}
+\begin{tabular}{lcc}
+\toprule
+  & \multicolumn{2}{c}{Storage} \\
+Covariate     & Levels   & Type \\ 
+\midrule
+ Trade       &          & numeric \\
+ UpdateTime  &          & numeric \\
+ UpdatedDay  &          & numeric \\
+ UpdatedTime &          & numeric \\
+ TradeTime   &          & numeric \\
+ TradedDay   &          & numeric \\
+ TradedTime  &          & numeric \\
+ Desk        &  10      & categorical \\
+ CapturedBy  &  5       & categorical \\
+ TradeStatus &  4       & categorical \\
+ TraderId    &  7       & categorical \\
+ Instrument  &  23      & categorical \\
+ Reason      &  19      & categorical \\
+ Loss        &          & numeric \\
+ EventTypeCategoryLevel & 5  & categorical \\
+ BusinessLineLevel      & 8  & categorical \\
+ LossIndicator          & 2  & binary \\
+ exposure               &    & numeric \\
+ \bottomrule
+\end{tabular}\label{tab_contents}
+\end{table}
+
+Two new variables are derived from the data; a target variable (LossIndicator) is a binary variable whereupon, a $1$ signifies a realised loss, and $0$ for those pending losses, or near misses. The *exposure* variable is computed by deducting the time between the trade amendment (UpdateTime) and the time when the trade was booked (TradeTime). It is a measure that is meant to be rougly proportional to the risk of the transaction or a group of transactions. The idea is that if the exposure (e.g. the duration of a trade, the number of allocation(trade splits), etc.) doubles whilst everything else (e.g. the rate, nominal of the splits, and others) remains the same, then the risk also doubles.\medskip
+
+In R, the GLM function works with two types of covariates/explanatory variables: numeric (continuous) and categorical (factor) variables as depicted in table \ref{tab_contents}. Multi-level categorical variables are recoded by building dummy variables corresponding to each level. This is achieved through an implemented algorithm in R, through a transformation as recommended for the estimation of the GLM, particularly in the estimation of the poisson regression model for count data.\medskip
+
+The model revolves around the fact that for each categorical variable (covariate), previously transformed into a dummy variable, one must specify a reference category from which the corresponding observations under the same covariate are estimated and assigned a weight against in the model [@covrig2015using]. By default in the GLM, the first level of the categorical variable is taken as the reference level. As best practice,  @de2008generalized, @frees2010household, @denuit2007actuarial, @cameron2013regression and others recommend that for each categorical variable one should specify the modal class as the reference level; as this variable corresponds to the level with the highes order of predictability, excluding the dummy variable corrresponding to (weight coefficient = $e^0 = 1$) the biggest absolute frequency.
+
+\section{Description of the dataset}
+\label{sec:Description of the dataset}
+
+In this section, section \ref{sec:Description of the dataset}, the dataset called *OpRiskDataSet_exposure*, provides data on the increase in the numbers of operational events over a three month period, beginning 01 January 2013 to end of 20 March 2013. For each transaction, there is information about: trading risk exposure, trading characteristics, causal factor characteristics and their cost.
+
+```{r Data Exploration, echo=FALSE, fig.keep="all", fig.show="hide", results="hide"}
+
+# EXPLORATORY DATA ANALYSIS : SUMMARY STATISTICS
+#___________________________________________________________________________________________________
+### Update Time: 
+summary(projdata$UpdatedTime)
+
+## Losses
+plot(projdata$UpdatedTime, log(projdata$Loss+0.000000001), ylim = c(6, 18), col = "navy", xlab = "Updated Time", ylab = "Log. Loss")
+do.call("rbind", lapply(split(projdata$Loss, projdata$UpdatedTime), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+### Trade Time
+summary(projdata$TradedTime)
+
+### Histograms - LossIndicator of ALL Losses and Near Misses/Pending Losses and Realised losses
+hist(projdata$TradedTime, col = "navy", main = "All losses", xlab = "Trade Time", ylab = "Frequency")
+hist(projdata$TradedTime[projdata$LossIndicator == 0], col = "red", main = "Near Misses", xlab = "Trade Time", ylab = "Frequency")
+hist(projdata$TradedTime[projdata$LossIndicator == 1], col = "green", main = "Realised losses", xlab = "Trade Time", ylab = "Frequency")
+
+### Losses
+plot(projdata$TradedTime, log(projdata$Loss+0.000000001), ylim = c(6, 18), col = "navy", xlab = "Traded Time", ylab = "Log. Loss")
+do.call("rbind", lapply(split(projdata$Loss, projdata$TradedTime), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+### Updated Day
+summary(projdata$UpdatedDay)
+data.frame(table(projdata$UpdatedDay))
+hist(projdata$UpdatedDay, main="",xlab="UpdatedDay", ylab="Frequency")
+
+### Losses
+plot(projdata$UpdatedDay, log(projdata$Loss+0.000000001), ylim = c(0, 20), col = "navy", xlab = "Updated Day", ylab = "Log. Loss")
+do.call("rbind", lapply(split(projdata$Loss, projdata$UpdatedDay), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+### Traded Day
+summary(projdata$UpdatedDay)
+data.frame(table(projdata$TradedDay))
+hist(projdata$TradedDay, main="",xlab="TradedDay", ylab="Frequency")
+
+### Losses
+plot(projdata$TradedDay, log(projdata$Loss+0.000000001), ylim = c(0, 20), col = "navy", xlab = "Traded Day", ylab = "Log. Loss")
+do.call("rbind", lapply(split(projdata$Loss, projdata$TradedDay), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+### TraderId
+tapply(projdata$Loss, INDEX = projdata$TraderId, function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x)))
+
+library("lattice")
+xyplot(Loss ~ as.factor(TraderId), xlab="TraderID", ylab="Loss", data = projdata)
+hist(projdata$Loss[projdata$TraderId == "ANALYST"])
+#___________________________________________________________________________________________________
+### Captured By
+do.call("rbind", lapply(split(projdata$Loss, projdata$CapturedBy), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+### Instrument
+round(addmargins(prop.table(table(projdata$LossIndicator, projdata$Instrument), 1), 2)*100, 1)
+
+```
+
+\begin{figure}
+\begin{subfigure}[b]{0.55\textwidth}
+   \begin{frame}
+      \centering
+       \begin{tabular}{cc}
+        Overall Loss Severity & Loss Severity as per Trading Role \\
+        \includegraphics[height=5.5cm, width=7.5cm]{IntraDayUpdatedTime.pdf}
+         &
+         \includegraphics[height=5.0cm, width=7cm]{TrendTraderId.pdf}
+         \end{tabular}
+    \end{frame}
+\subcaption{Intra-day trend analysis of loss severities: overall and as per trading role}
+   \label{Intra_Day_Trends} 
+\end{subfigure}
+
+\begin{subfigure}[b]{0.55\textwidth}
+   \begin{frame}
+      \centering
+       \begin{tabular}{cc}
+        OpRisk events during month & Trading frequency \\
+        \includegraphics[height=5.5cm, width=7.5cm]{UpdatedDayFreq.pdf}
+         &
+         \includegraphics[height=5.5cm, width=7.5cm]{TradedDayFreq.pdf}
+         \end{tabular}
+    \end{frame}
+\subcaption{Intra-month trends of OpRisk trading incidents compared to frequency of trading activity}
+   \label{Hist_Loss_Freq}
+\end{subfigure}
+\caption[Numerical grid display]{(a) Scatterplots of intra-day trend analysis for logs of severities of operational events and for those identifying the trading role responsible/originating the loss incidents. (b) As for (a) but intra-month, and in the form of histograms depicting the frequency distrbution of the number daily operational indicents and the frequency of trades.} 
+\end{figure}
+
+\subsection{Characteristics of exposure}
+
+```{r Load Pre-Processed Data, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+#=======================================================================
+# Rattle timestamp: 2020-01-14 20:16:43 x86_64-w64-mingw32 
+# Action the user selections from the Data tab. 
+options(scipen = 999)
+
+# Load packages
+library(rattle, quietly = TRUE)
+library(magrittr, quietly = TRUE) # Utilize the %>% and %>% pipeline operators
+library(Hmisc, quietly = TRUE)
+library(chron, quietly = TRUE)
+library(dplyr, quietly = TRUE)
+library(ggplot2)
+library(caTools)
+library(caret)
+
+# Set parameter values
+crv$seed <- 42 # set random seed
+crv$training.proportion <- 1.0
+
+# Load data
+fname <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_exposure.csv"
+crs$dataset <- read.csv(fname,
+              sep=";",
+              dec=",",
+              na.strings=c(".", "NA", "", "?"),
+              strip.white=TRUE, encoding="UTF-8")
+
+# Build the train/validate/test datasets.
+
+# nobs=2330 train=2330 validate=0 test=0
+set.seed(crv$seed)
+crs$nobs   <- nrow(crs$dataset)
+crs$sample <- sample(crs$nobs, crv$training.proportion * crs$nobs)
+crs$train  <- crs$sample <- sample(crs$nobs, crv$training.proportion * crs$nobs)
+# crs$train  <- sample(crs$nobs, 1*crs$nobs)
+crs$validate <- NULL
+crs$test <- NULL
+
+# The following variable selections have been noted.
+crs$input     <- c("Trade", "UpdatedDay", "UpdatedTime",
+                   "TradedDay", "TradedTime", "Desk", "CapturedBy",
+                   "TradeStatus", "TraderId", "Instrument", "Reason",
+                   "Loss", "EventTypeCategoryLevel1",
+                   "BusinessLineLevel1", "exposure")
+
+crs$numeric   <- c("Trade", "UpdatedDay", "UpdatedTime",
+                   "TradedDay", "TradedTime", "Loss", "exposure")
+
+crs$categoric <- c("Desk", "CapturedBy", "TradeStatus",
+                   "TraderId", "Instrument", "Reason",
+                   "EventTypeCategoryLevel1", "BusinessLineLevel1")
+
+crs$target    <- "LossIndicator"
+crs$risk      <- NULL
+crs$ident     <- NULL
+crs$ignore    <- c("UpdateTime", "TradeTime", "Nominal", "FloatRef", "LastResetDate", "LastResetRate", "Theta", "Unexplained")
+crs$weights   <- NULL
+
+#Data summary
+contents(crs$dataset[crs$sample, c(crs$input, crs$risk, crs$target)])
+summary(crs$dataset[crs$sample, c(crs$input, crs$risk, crs$target)])
+
+```
+
+The exposure of risk of type $i$, $d_i$ shows the daily duration, from when the trade was booked to the moment the operational risk event was observed and ended. This measure is defined this way when specifically applied to projecting the number of loss events (frequencies) and can be plotted as follows depicted in graphs depicted in Figure \ref{Exploration_analysis_exposure}.\medskip
+
+```{r Exposure Data, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+######Display histogram plots for the selected variables########
+
+#============================================================
+# Display histogram plots for the selected variables. 
+# Use ggplot2 to generate histogram plot for exposure
+# Generate the plot.
+
+Exp <- crs %>%
+  with(dataset[train,]) %>%
+  dplyr::select(exposure) %>%
+  ggplot2::ggplot(ggplot2::aes(x=exposure)) +
+  ggplot2::geom_density(lty=1, lwd=1) +
+  ggplot2::geom_density(ggplot2::aes(fill="", colour=""), alpha=0.55) +
+  ggplot2::xlab("Exposure") +
+  ggplot2::ggtitle("Pdf(exposure)") +
+  ggplot2::labs(y="Density") +
+  theme_bw(base_size = 15) +
+  theme(legend.position = "none")
+
+# Display the plots.
+gridExtra::grid.arrange(Exp)
+
+#============================================================
+# Generate just the data for an Ecdf plot of the variable 'exposure'.
+ds <- rbind(data.frame(dat=crs$dataset[crs$train,][,"exposure"], grp="All"))
+
+# The 'Hmisc' package provides the 'Ecdf' function.
+library(Hmisc, quietly=TRUE)
+
+# Plot the data.
+Ecdf(ds[ds$grp=="All",1], col="red", xlab="exposure", lwd=2, ylab=expression(Proportion <= x), subtitles=FALSE)
+
+# Add a title to the plot.
+title(main="Cdf(exposure)")
+    
+#============================================================
+# Benford's Law 
+
+# The 'ggplot2' package provides the 'ggplot' function.
+library(ggplot2, quietly=TRUE)
+
+# The 'reshape' package provides the 'melt' function.
+library(reshape, quietly=TRUE)
+
+# Initialies the parameters.
+var    <- "exposure"
+digit  <- 1
+len    <- 1
+
+# Build the dataset
+ds <- merge(benfordDistr(digit, len),
+            digitDistr(crs$dataset[crs$train,][var], digit, len, "All"))
+
+# Plot the digital distribution
+p <- plotDigitFreq(ds)
+p <- p + ggtitle("Digital Analysis") +
+  theme(
+    legend.position = c(.95, .95),
+    legend.justification = c("right", "top"),
+    legend.box.just = "right",
+    legend.margin = margin(6, 6, 6, 6)
+    ) +
+  # custom box around legend
+ theme(
+    legend.box.background = element_rect(color="red", size=2),
+    legend.box.margin = margin(6, 6, 6, 6)
+) +
+# custom the key
+ theme(legend.key = element_rect(fill = "white", colour = "black")) +
+# custom the text
+ theme(legend.text = element_text(size = 8, colour = "red")) +
+# custom the title
+ theme(legend.title = element_text(face = "bold"))
+print(p)
+# #============================================================
+```
+
+\begin{figure}
+\begin{frame}
+      \centering
+       \begin{tabular}{ccc}
+        Distribution & Density & Digital Analysis \\
+        \includegraphics[height=7.5cm, width=5cm]{Exposure_cdf.pdf}
+         &
+         \includegraphics[height=7.5cm, width=5cm]{Dist_exposure.pdf}
+         &
+         \includegraphics[height=7.5cm, width=5cm]{Benford.pdf}
+         \end{tabular}
+    \end{frame}
+        \captionof{figure}{A simple comparison of the Sigmoidal like features of the fat-tailed, right skewed distribution for the Exposure variable, and first-digit analysis of frequency distribution from the exposure data with the expected distribution according to Benford's Law}
+    \label{Exploration_analysis_exposure}
+\end{figure}
+
+The variable follows a logistic trend on $[0,1]$, implying an FIs operational risk portfolio rises like a sigmoid function throughout the period of observation, typically starting from $0$, which then observes a plateau in growth. The average exposure is 389.99 or about 1 year.\medskip
+
+Grid plots \ref{Exploration_analysis_exposure} portray the logistic function, together with a  simple comparison of first-digit frequency distribution analysis, according to Benford's Law, with exposure data distribution. The close fitting nature implies the data are uniformly distributed across several orders of magnitude, especially within the 1 year period.\medskip
+
+\subsection{Characteristics of the covariates}
+
+The characteristics of the operational risk portfolio are given by the following covariates: *UpdatedDay*, *UpdatedTime* - the day of the month and time of day the OpRisk incident occurs respectively; *TradedDay*, *TradedTime* - the day in the month and time of day the deal was originated respectively; The *LossIndicator* as indicated before is a binary variable consisting of two values: A $0$, which indicates pending or near misses, and $1$, if the incident results in a realised loss, meaning that there is significant p\&L impact due to the OpRisk incident.\medskip
+
+the *Desk* is the location in the portfolio tree the incident originated, it is a factor variable conisting of 10 categories; *CapturedBy*, the designated analyst who actions the incident, a factor variable consisting of 5 categories; *TraderId*, the trader who originates the deal, a factor variable with 7 categories; *TradeStatus*, the live status of the deal, a factor variable with 4 categories; *Instrument*, the type of deal, a factor variable with 23 categories; *Reason*, a description of the cause of the OpRisk incident, a factor variable with 19 levels; *EventTypeCategoryLevel*, 7 OpRisk event types as per @risk2001supporting, a factor variable with 5 categories; *BusinessLineLevel*, 8 OpRisk business lines as per @risk2001supporting, a factor variable with 8 categories.\medskip
+
+\singlespacing
+```{r Variable Statistics, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+############################### CHARACTERISTICS OF COVARIATES#######################################
+
+#___________________________________________________________________________________________________
+# Desk
+table(projdata$Desk, projdata$LossIndicator)
+addmargins(table(projdata$Desk, projdata$LossIndicator), 2)
+round(addmargins(prop.table(table(projdata$Desk, projdata$LossIndicator), 1), 2)*100, 1)
+do.call("rbind", lapply(split(projdata$Loss, projdata$Desk), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+# Captured By
+table(projdata$CapturedBy, projdata$LossIndicator)
+round(addmargins(prop.table(table(projdata$CapturedBy, projdata$LossIndicator), 1), 2)*100, 1)
+do.call("rbind", lapply(split(projdata$Loss, projdata$CapturedBy), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+# TraderId
+unique(projdata$TraderId)
+table(projdata$TraderId, projdata$LossIndicator)
+round(addmargins(prop.table(table(projdata$TraderId, projdata$LossIndicator), 1), 2)*100, 1)
+tapply(projdata$Loss, INDEX = projdata$TraderId, function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x)))
+do.call("rbind", lapply(split(projdata$Loss, projdata$TraderId), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+# Trader Status
+table(projdata$TradeStatus, projdata$LossIndicator)
+do.call("rbind", lapply(split(projdata$Loss, projdata$TradeStatus), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+# Reason
+unique(projdata$Reason)
+#___________________________________________________________________________________________________
+# Loss
+sum(projdata$Loss)
+sum(projdata$Loss[projdata$LossIndicator == 0])
+sum(projdata$Loss[projdata$LossIndicator == 1])
+#___________________________________________________________________________________________________
+# EventType Category Level
+table(projdata$EventTypeCategoryLevel, projdata$LossIndicator)
+round(addmargins(prop.table(table(projdata$EventTypeCategoryLevel, projdata$LossIndicator), 1), 2)*100, 1)
+do.call("rbind", lapply(split(projdata$Loss, projdata$EventTypeCategoryLevel), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+# Business Line Level
+table(projdata$BusinessLineLevel, projdata$LossIndicator)
+round(addmargins(prop.table(table(projdata$BusinessLineLevel, projdata$LossIndicator), 1), 2)*100, 1)
+do.call("rbind", lapply(split(projdata$Loss, projdata$BusinessLineLevel), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+#___________________________________________________________________________________________________
+# Instrument
+unique(projdata$Instrument)
+table(projdata$LossIndicator, projdata$Instrument)
+round(addmargins(prop.table(table(projdata$LossIndicator, projdata$Instrument), 1), 2)*100, 1)
+pander::pander(tapply(projdata$Loss, INDEX = projdata$Instrument, function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+tablex <- do.call("rbind", lapply(split(projdata$Loss, projdata$Instrument), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+tablex <- cbind(Instrument = rownames(tablex), tablex)
+tablex <- as.data.frame(tablex)
+tablex$Mean <- as.numeric(as.character(tablex$Mean))
+tablex <- tablex[order(tablex$Mean), ]
+stargazer::stargazer(tablex)
+openxlsx::write.xlsx(tablex, "tablex.xlsx", rownames = TRUE)
+
+```
+\doublespacing
+
+The continuous numerical variable *Loss*, shows the financial impact (severity) of the OpRisk incident in Rands. For the most part (i.e. 96.1\% of the time) OpRisk incidents result in pending losses and/or near misses, most realised losses (2.3\%) lie within the [\textbf{R$200,00$}, \textbf{R$300,000$}] range. In the current portfolio there are also five p\&L impacts higher than \textbf{R$2.5$ million}.\medskip
+
+\subsection{Characteristics of daily operational activity}
+
+The distribution of daily losses and/or pending/near misses by operational activities are represented in \ref{Exploratory_Time_Day_Frequency3plot}. Figure \ref{Exploratory_UpdateTime_Frequency3plot} shows that most operational events occur in times leading up to midday (i.e. 10:50AM to 11:50AM), the observed median is 11:39AM, and of these potential loss events, most realised losses occur closest to mid-day. The frequencies of the loss incidents in the analysed portfolio sharply decreases during the following period, i.e. from 12:10PM to 13:10PM, during which the least realised losses occur.\medskip
+
+Figure \ref{Exploratory_UpdateDay_Frequency3plot} shows that operational activity increases in intensity in the  days leading up to the middle of the month, i.e. $10^{th}$ - $15^{th}$; the observed mean is $14.49$ days, and of these potential loss events, realised losses especially impact on the portfolio during these days.
+
+\singlespacing
+```{r Loss Frequency, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+#################################   EXPLORATORY DATA ANALYSIS  ####################################
+#___________________________________________________________________________________________________
+# Update Time
+### summary statistics
+ summary(projdata$UpdatedTime)
+
+### Histograms - LossIndicator of ALL Losses and Near Misses/Pending Losses and Realised losses 
+par(mfrow=c(1,3))
+hist(projdata$UpdatedTime, col = "blue", main = "All losses", xlab = "Update Time", ylab = "Frequency")
+hist(projdata$UpdatedTime[projdata$LossIndicator == 0], col = "red", main = "Near Misses", xlab = "Update Time", ylab = "Frequency")
+hist(projdata$UpdatedTime[projdata$LossIndicator == 1], col = "green", main = "Realised losses", xlab = "Update Time", ylab = "Frequency")
+par(mfrow=c(1,1))
+#___________________________________________________________________________________________________
+# # Update Day
+ summary(projdata$UpdatedDay)
+
+### Histograms - LossIndicator of ALL Losses and Near Misses/Pending Losses and Realised losses
+par(mfrow=c(1,3))
+hist(projdata$UpdatedDay, col = "#9999CC", main = "All losses", xlab = "Updated Day", ylab = "Frequency")
+hist(projdata$UpdatedDay[projdata$LossIndicator == 0], col = "#CC6666", main = "Near Misses", xlab = "Updated Day", ylab = "Frequency")
+hist(projdata$UpdatedDay[projdata$LossIndicator == 1], col = "#66CC99", main = "Realised losses", xlab = "Updated Day", ylab = "Frequency")
+par(mfrow=c(1,1))
+ 
+```
+\doublespacing
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\linewidth]{Exploratory_UpdateTime_Frequency3plot.pdf}
+   \subcaption{Incidents by the time in the day}
+   \label{Exploratory_UpdateTime_Frequency3plot} 
+\end{subfigure}
+
+\begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\linewidth]{Exploratory_UpdateDay_Frequency3plot.pdf}
+   \subcaption{Incidents by the day in the month}
+   \label{Exploratory_UpdateDay_Frequency3plot}
+\end{subfigure}
+
+\caption[Two numerical solutions: Histograms showing the distribution of UpdatedTime \& UpdatedDay by LossIndicator.]{The frequency distributions of All the losses, the realised losses, and pending/near misses of operational incidents by the day in the month when the indidents' occurred}
+\label{Exploratory_Time_Day_Frequency3plot}
+\end{figure}
+
+Similarly, the influence of trading desk's on the frequency of operational events can be analysed on the basis of the portfolio's bidimensional distribution by variables *Desk* and *LossIndicator*, which shows the proportions realised losses vs pending and/or near misses for each particular desk. The bidimensional distribution of *Desk* and *LossIndicator* is presented in a contingency table, Table \ref{tab_Desk_Prop}, in which it's considered useful to calculate proportions for each desk category. 
+
+```{r Loss Density, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+# Density Plot for Updated Day
+p01 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(UpdatedDay, LossIndicator) %>%
+  ggplot2::ggplot(ggplot2::aes(x=UpdatedDay)) +
+  ggplot2::geom_density(lty=3) +
+  ggplot2::geom_density(ggplot2::aes(fill=LossIndicator, colour=LossIndicator), alpha=0.55) +
+  ggplot2::ggtitle("Distr. of Updated Day") +
+  ggplot2::labs(fill="LossIndicator", y="Density") +
+  ggplot2::xlab("Day of Month that Trade Was Updated") +
+  ggplot2::theme(legend.position=c(.7,.2))
+
+# Density Plot for Traded day
+p02 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(TradedDay, LossIndicator) %>%
+  ggplot2::ggplot(ggplot2::aes(x=TradedDay)) +
+  ggplot2::geom_density(lty=3) +
+  ggplot2::geom_density(ggplot2::aes(fill=LossIndicator, colour=LossIndicator), alpha=0.55) +
+  ggplot2::ggtitle("Distr. of TradedDay") +
+  ggplot2::labs(fill="LossIndicator", y="Density") +
+  ggplot2::xlab("Day of Month for Trade") +
+  ggplot2::theme(legend.position=c(.7,.2))
+
+# Display the plots.
+gridExtra::grid.arrange(p01, p02, nrow = 1)
+
+```
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm,height=5cm]{Density_UpdateDay_TradedDay.pdf}
+\caption[Density plots showing a comparison of realised vs pending losses and/near misses over a month for the day in the month the OpRisk incident was updated to the day in the month trades were traded/booked]{Density plots showing a comparison of realised vs pending losses and/near misses over a month for the day in the month the OpRisk incident was updated to the day in the month trades were traded/booked}
+\label{Density_Proportions}
+\end{figure}
+
+\singlespacing
+```{r Desk Analysis Tables, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+# Desk analysis using tables
+table(projdata$Desk, projdata$LossIndicator)
+addmargins(table(projdata$Desk, projdata$LossIndicator), 2)
+round(addmargins(prop.table(table(projdata$Desk, projdata$LossIndicator), 1), 2)*100, 1)
+
+# Statistical analysis
+do.call("rbind", lapply(split(projdata$Loss, projdata$Desk), function(x) c(N = length(x), Mean = mean(x), SD = sd(x), Min = min(x), Max = max(x))))
+
+```
+\doublespacing
+
+\begin{table}[ht]
+\centering
+\caption{Occurence of realised losses: proportions on desk categories}
+\begin{tabular}{lccr}
+\toprule
+  & \multicolumn{3}{c}{No. of transactions} \\
+Desk   & no Loss   & Loss & Total\\ 
+\midrule
+  Africa            &  49 & 10 &  59 \\
+  Bonds/Repos       & 113 & 31 & 144 \\
+  Commodities       & 282 & 45 & 327 \\
+  Derivatives       & 205 & 24 & 229 \\
+  Equity            & 269 & 66 & 335 \\
+  Management/Other  &  41 &  2 &  43 \\
+  Money Market      & 169 & 52 & 221 \\
+  Prime Services    & 220 & 62 & 282 \\
+  Rates             & 336 & 53 & 389 \\
+  Structured Notes  & 275 & 26 & 301 \\
+ \bottomrule
+\end{tabular}\label{tab_Desk_Prop}
+\end{table}
+
+Thus, as illustratred in figure \ref{Desk_Proportions}, from 23,5\%; the highest proportion of realised losses per desk is the Money Market (MM) desk, the figures are decreasing, followed by Prime Services (22\%); Bonds/Repos (21,5\%); Equity (19,7\%); Africa (16,9\%); Commodities (13,8\%); Rates (13,6\%); Derivatives (10,5\%); Structured Notes (SND) (8.6\%), to the least proportion in the Management/Other, a category where only 4,7\% of operations activities were realised as losses.      
+
+\singlespacing
+```{r Desk Density Analysis, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
+
+# Plot Desk category distribution
+p03 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(Desk, LossIndicator) %>%
+  dplyr::group_by(Desk, LossIndicator) %>%
+  dplyr::summarise(n = n()) %>%
+  ggplot2::ggplot(ggplot2::aes(x=Desk, y=n, fill=LossIndicator)) +
+  ggplot2::geom_bar(stat="identity") +
+  ggplot2::ggtitle("Desk category distribution") +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ggplot2::ylab("Frequency") +
+  ggplot2::theme(legend.position=c(.2,.9))
+
+# Create new variable to proportion no. of realised losses
+T01 <- crs %>%
+  with(dataset[sample,]) %>%
+  dplyr::mutate(LossIndicator=as.factor(LossIndicator)) %>%
+  dplyr::select(Desk, LossIndicator) %>%
+  dplyr::group_by(Desk, LossIndicator) %>%
+  dplyr::summarise(n = n())
+
+T02 <- T01 %>%
+  group_by(Desk) %>%
+  summarise(N=sum(n))
+
+T03 <- inner_join(T01, T02)
+
+# Plot Desk category by proportion
+T04 <- T03 %>%
+  mutate(Prob=n/N) %>%
+  filter(LossIndicator==1) %>%
+  select(Desk, Prob) %>%
+  arrange(desc(Prob)) %>%
+  ggplot2::ggplot(ggplot2::aes(x=Desk, y=Prob, fill=Desk), alpha=0.55) +
+  ggplot2::geom_bar(stat="identity", fill="grey", colour="black", show.legend = FALSE)+
+  ggplot2::ggtitle("Proportion of losses per Desk") +
+  ggplot2::theme_minimal()+
+  ggplot2::theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ggplot2::ylab("Loss Ratio (n/N)")+
+  ggplot2::xlab("Desk")
+
+#Display both plots in one row
+gridExtra::grid.arrange(p03, T04, nrow = 1)
+# ####============================================================
+
+```
+\doublespacing
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Exploratory_Desk_Proportions.pdf}
+\caption[Desk category by realised losses]{Histograms showing the proportions of realised losses vs all losses including pending and/or near misses by desk category}
+\label{Desk_Proportions}
+\end{figure}
+
+This behaviour can be extended beyond the trading desk, as represented in Figure \ref{Mosaic_Instr_Trd_Tec}, a mosaic plot grid presenting the structure of the OpRisk portfolio by Instrument, TraderId, CapturedBy \footnote{i.e. the type of financial instrument, the trader who originated the incident on the deal, and the role of the technical support personnel who is involved in the query resolution.} and the operational losses.
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+# Instrument
+unique(projdata$Instrument)
+table(projdata$LossIndicator, projdata$Instrument)
+plot(table(projdata$LossIndicator, projdata$Instrument), main="By Instrument", col=rainbow(20), las=1)
+
+# Trader
+unique(projdata$TraderId)
+table(projdata$TraderId, projdata$LossIndicator)
+round(addmargins(prop.table(table(projdata$TraderId, projdata$LossIndicator), 1), 2)*100, 1)
+plot(table(projdata$LossIndicator, projdata$TraderId), main="By Trader", col=rainbow(20), las=1)
+
+# Captured By
+table(projdata$CapturedBy, projdata$LossIndicator)
+round(addmargins(prop.table(table(projdata$CapturedBy, projdata$LossIndicator), 1), 2)*100, 1)
+plot(table(projdata$LossIndicator, projdata$CapturedBy), main="By Tech Support", col=rainbow(20), las=1)
+
+#___________________________________________________________________________________________________
+par(mfrow=c(2,1), cex.axis=2.0, cex.lab=1.5, cex.main=2)
+plot(table(projdata$LossIndicator, projdata$TraderId), main = "", xlab = "By Trader", col=rainbow(20), las=1)
+plot(table(projdata$LossIndicator, projdata$CapturedBy), main = "", xlab = "By Tech Support", col=rainbow(20), las=1)
+par(mfrow = c(1, 1), cex.axis=2.0, cex.lab=1.5, cex.main=2)
+plot(table(projdata$LossIndicator, projdata$Instrument), main = "", xlab = "By Instrument", col=rainbow(20), las=1)
+```
+\doublespacing
+
+\begin{figure}
+\begin{frame}
+      \centering
+       \begin{tabular}{cc}
+        Type of instrument traded & Role identification \\
+        \includegraphics[width=7.5cm,height=18cm]{Single_Instr.pdf}
+         &
+         \includegraphics[width=7.5cm,height=18cm]{Stacked_TrId_TechSup.pdf}
+         \end{tabular}
+    \end{frame}
+    \caption{Mosaic grid plots for the bidimensional distribution by traded instrument, the trader originating the operational event, and by the technical support personnel involved in query resolution, against the target variable \texttt{LossIndicator} showing realised losses vs near misses/pending losses reported.}
+    \label{Mosaic_Instr_Trd_Tec}
+\end{figure}
+
+One can notice that the width of the bars corresponding to the different categories, i.e. Instrument, TraderId, CapturedBy, is given by their proportion in the sample.  In particular, for the category 'at least one realised loss', in the top right mosaic of Figure \ref{Mosaic_Instr_Trd_Tec} portrays a increase in "riskiness" trending up from Associate to AMBA, Analyst, Vice Principal, Managing Director, Director, up to the risky ATS category, which are automated trading system generated trades.\medskip
+
+Figure \ref{Mosaic_Instr_Trd_Tec} bottom right mosaic plot for technical support personnel for the category 'at least one realised loss', portrays a downward trend, slowing in riskiness from Unauthorised User downward to Tech Support, Mid Office, Prod Controller down to the least risky Prod Accountant. This intepretation makes sense given unauthorised users are more likely to make impactful operational errors, technical support personnel would also be accountable for large impacts albiet for contrasting reasons, they are mandated to perform these deal adjustments which have unavoidable impacts associated with them, whereas the former group are unauthorised to perform adjustments therefore may lack the skill, or be criminally minded insiders acting on their own or in unison to enable their underhanded practices and intentions without raising any suspicion.\medskip   
+
+<!-- Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu -->
+<!-- % Date and time: Mon, May 20, 2019 - 04:15:17 -->
+\begin{table}[!htbp] \centering 
+  \caption{Summary statistics for all losses as per Instrument type} 
+  \label{Stargazer} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+Mean & 23 & 34,603 & 46,007 & 306 & 7,697 & 44,157 & 192,513 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+In another mosaic plot, Figure \ref{Mosaic_Contingency}, the bidimensional distribution of transactions by trader and realised vs pending losses, conditional on the trade status is presented and analysed. Here, and in the contingency table, Table \ref{tab:Mosaic_Contingency}, we can clearly see the following trends: In BO-BO confirmed status - an increase in realised losses from the leftmost TraderID (i.e. AMBA) to right, and the opposite for transactions performed in BO Confirmed status (both with two exceptions). In particular, the biggest number of realised losses in both BO and BO-BO Confirmed statuses occur due to automated trading systems (ATS) who also give rise to the exceptions mentioned.\medskip
+
+\singlespacing
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+
+# Contingency Table
+library(vcd)
+STD <- structable(~TradeStatus + TraderId + LossIndicator
+                                                    , data = projdata)
+par(cex.axis = 1.5, cex.lab = 0.1)
+# Mosaic plot
+MS01 <- mosaic(STD, condvars = 'TradeStatus', col=rainbow(20), 
+                  split_horizontal = c(TRUE, FALSE, TRUE), shade = TRUE, legend = TRUE)
+MS01
+```
+
+\singlespacing
+\begin{figure}
+\centering
+\textbf{Mosasic plot for trader identification and loss indicator, by trade status}
+\includegraphics[width=\linewidth,height=0.75\linewidth]{Mosaic_Contingency.pdf}
+\caption[Portfolio structure by trader, trade status and number of realised losses]{A mosaic plot representing the structure of the operational risk portfolio by trader identification (TraderId), the status ofthe trade (TradeStatus) and the number of realised losses vs pending or near misses}
+\label{Mosaic_Contingency}
+\end{figure}
+\doublespacing
+
+Table \ref{tab:Crosstab_covariate} presents the most frequent category in the operational risk dataset for each possible covariate.
+
+\begin{table}[htbp]
+        \centering
+        \textbf{Crosstab of trader identification and loss indicator, by trade status}
+\singlespacing        
+        \small
+        \setlength\tabcolsep{2pt}
+			\begin{tabular}{|p{3cm}|p{2cm}|l|l|l|l|l|l|p{2cm}|p{2cm}|} \hline
+  			& & \multicolumn{7}{|c|}{Trader Identification} \\ \hline
+  			TradeStatus & Loss Indicator & Amba & Analyst & Associate & ATS & Director & Mng Director & Vice Principal \\\hline
+  			\multirow{2}{*}{BO-BO Confirmed} & 0 & 24 & 136 & 320 & 0 & 282 & 52 & 49 \\ \cline{2-9}
+    							   & 1 & 2  &  15 & 43 & 0 & 50 & 18 & 16 \\\cline{2-9}
+   			\multirow{2}{*}{BO Confirmed} & 0 & 17  & 299 & 153 & 13 & 257 & 102 & 153 \\ \cline{2-9}
+    							   & 1 &  3 &  71 & 12 & 8 &  62 & 23 & 30 \\ \cline{2-9}
+   			\multirow{2}{*}{Terminated} 	  & 0 &	83 & 9 & 1 & 0 & 0 & 2 & 1 \\ \cline{2-9}
+    							  & 1 & 17 & 1 & 0 & 0 & 0 & 0 & 0 \\ \cline{2-9}
+    		\multirow{2}{*}{Terminated/Void}  & 0 & 2 & 0 & 0 & 0 & 2 & 1 & 1 \\ \cline{2-9}
+							       & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+			\end{tabular}
+   			\caption{A contingency table showing the bidimensional distribution of transactions by trader identification vs realised and/or pending losses, conditional on the trade status}
+        	\label{tab:Crosstab_covariate}
+\end{table}
+\doublespacing
+
+\begin{table}[htbp]
+        \centering
+        \textbf{Modal classes for the categorical variables} 
+\singlespacing        
+        \small
+        \setlength\tabcolsep{2pt}
+			\begin{tabular}{|l|l|p{6cm}|} \hline
+  			Variable & Modal class or category & Name of modal class \\\hline
+  			Desk & Rates & DeskRates \\ \cline{1-3}
+			CapturedBy & TECHSUPPORT & CapturedBy\_TECHSUPPORT \\ \cline{1-3}
+    		TradeStatus & BO confirmed & TradeStatus\_BO confirmed \\ \cline{1-3}
+			TraderId & DIRECTOR & TraderId\_DIRECTOR \\ \cline{1-3}
+			Instrument & Swap & Instrument\_Swap \\ \cline{1-3}
+			Reason & Trade enrichment for system flow  & Reason\_Trade enrichment for system flow \\ \cline{1-3}
+    		EventTypeCategoryLevel & EL7 & EventTypeCategoryLevel\_EL7 \\ \cline{1-3}
+			BusinessLineLevel & BL2 & BusinessLineLevel\_BL2 \\ \cline{1-3}	
+			\end{tabular}
+   			\caption{A contingency table showing the bidimensional distribution of transactions by trader identification vs realised and/or pending losses, conditional on the trade status}
+        	\label{tab:Mosaic_Contingency}
+\end{table}
+\doublespacing
+
+
+
+\singlespacing

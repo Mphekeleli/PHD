@@ -1,0 +1,39 @@
+
+Family:  c("ZAGA", "Zero Adjusted GA") 
+Fitting method: RS() 
+
+Call:  gamlss(formula = Losses ~ UpdatedDay + Desk + CapturedBy +  
+    TradeStatus + Instrument + Reason + EventTypeCategoryLevel1 +  
+    BusinessLineLevel1 + Exposure + pb(Desk) + pb(CapturedBy) +  
+    pb(TradeStatus) + pb(BusinessLineLevel1) + pb(Reason) +  
+    UpdatedDay:Desk + TradeStatus:Instrument + Reason:EventTypeCategoryLevel1 +  
+    TradeStatus:Exposure + Desk:Reason, sigma.formula = ~pb(BusinessLineLevel1) +  
+    TradeStatus, nu.formula = ~1, family = ZAGA, data = crs$training,  
+    mu.start = NULL, sigma.start = NULL, nu.start = NULL,      tau.start = NULL, n.cyc = 80, trace = FALSE) 
+
+Mu Coefficients:
+                   (Intercept)                      UpdatedDay                            Desk  
+                     20.759619                        0.155588                        0.145218  
+                    CapturedBy                     TradeStatus                      Instrument  
+                     -0.152411                       -2.687438                       -0.193635  
+                        Reason         EventTypeCategoryLevel1              BusinessLineLevel1  
+                     -0.486672                       -1.342425                       -0.482369  
+                      Exposure                        pb(Desk)                  pb(CapturedBy)  
+                      0.002518                              NA                              NA  
+               pb(TradeStatus)          pb(BusinessLineLevel1)                      pb(Reason)  
+                            NA                              NA                              NA  
+               UpdatedDay:Desk          TradeStatus:Instrument  Reason:EventTypeCategoryLevel1  
+                     -0.022408                        0.103712                        0.090495  
+          TradeStatus:Exposure                     Desk:Reason  
+                     -0.001293                        0.033084  
+Sigma Coefficients:
+           (Intercept)  pb(BusinessLineLevel1)             TradeStatus  
+                1.0798                 -0.1467                 -0.2060  
+Nu Coefficients:
+(Intercept)  
+      -20.2  
+
+ Degrees of Freedom for the fit: 25.13 Residual Deg. of Freedom   233.9 
+Global Deviance:     6016.34 
+            AIC:     6066.61 
+            SBC:     6156 
