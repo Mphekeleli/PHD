@@ -1,0 +1,102 @@
+
+Call:
+glm(formula = LossesIndicator ~ UpdatedDay + UpdatedTime + TradedDay + 
+    TradedTime + Desk + CapturedBy + TradeStatus + TraderId + 
+    Instrument + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1, 
+    family = poisson(link = "log"), data = crs$training, offset = log(Exposure))
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-3.7911  -0.3659  -0.1017  -0.0228   3.9024  
+
+Coefficients:
+                                                         Estimate  Std. Error z value             Pr(>|z|)    
+(Intercept)                                             -9.214333    0.729053 -12.639 < 0.0000000000000002 ***
+UpdatedDay                                              -0.009850    0.010011  -0.984             0.325165    
+UpdatedTime                                              0.718006    0.673789   1.066             0.286593    
+TradedDay                                               -0.001164    0.007811  -0.149             0.881539    
+TradedTime                                               0.666537    0.752024   0.886             0.375443    
+DeskAfrica                                               2.882159    0.586362   4.915    0.000000886378719 ***
+DeskBonds/Repos                                          2.904312    0.405445   7.163    0.000000000000788 ***
+DeskCommodities                                          1.180102    0.479279   2.462             0.013807 *  
+DeskDerivatives                                         -0.078398    0.509321  -0.154             0.877668    
+DeskEquity                                               1.235454    0.390990   3.160             0.001579 ** 
+DeskManagement/Other                                   -17.031251  888.939553  -0.019             0.984714    
+DeskMM                                                   1.817230    0.527972   3.442             0.000578 ***
+DeskPrime Services                                       0.621448    1.052622   0.590             0.554936    
+DeskSND                                                  1.553032    0.721956   2.151             0.031465 *  
+CapturedByMIDOFFICE                                      0.563953    0.349595   1.613             0.106709    
+CapturedByPROD ACCOUNTANT                               -0.319863    0.514346  -0.622             0.534019    
+CapturedByPROD CONTROLLER                               -0.764935    0.343137  -2.229             0.025798 *  
+CapturedByUNAUTHORISED                                  -0.149136    0.525288  -0.284             0.776477    
+TradeStatusBO-BO Confirmed                              -0.571824    0.240481  -2.378             0.017415 *  
+TradeStatusTerminated                                    2.187875    1.043719   2.096             0.036062 *  
+TradeStatusTerminated/Void                             -13.673872 4421.612471  -0.003             0.997533    
+TraderIdAMBA                                             0.059475    0.606383   0.098             0.921867    
+TraderIdANALYST                                          0.035798    0.281457   0.127             0.898790    
+TraderIdASSOCIATE                                       -0.466878    0.352993  -1.323             0.185960    
+TraderIdATS                                              3.758481    0.644771   5.829    0.000000005570461 ***
+TraderIdMNGDIRECTOR                                      0.238961    0.335993   0.711             0.476955    
+TraderIdVICE PRINCIPAL                                   0.239373    0.357030   0.670             0.502568    
+InstrumentBill                                           0.993175    0.797533   1.245             0.213018    
+InstrumentBond                                          -0.262234    0.417123  -0.629             0.529563    
+InstrumentBuySellback                                    0.642671    0.722325   0.890             0.373613    
+InstrumentCall Deposit                                  -1.132913    0.427663  -2.649             0.008071 ** 
+InstrumentCombination                                    0.659655    1.143209   0.577             0.563926    
+InstrumentCreditDefaultSwap                             -1.813091    0.674635  -2.688             0.007199 ** 
+InstrumentCurr                                          -1.010088    0.504758  -2.001             0.045378 *  
+InstrumentCurrSwap                                      -0.952189    0.499077  -1.908             0.056404 .  
+InstrumentDeposit                                        0.565077    0.366476   1.542             0.123093    
+InstrumentEquityIndex                                  -15.714222 1371.790501  -0.011             0.990860    
+InstrumentETF                                            2.993300    1.380075   2.169             0.030087 *  
+InstrumentFRA                                          -15.159260  972.092444  -0.016             0.987558    
+InstrumentFRN                                            0.606177    0.562057   1.078             0.280812    
+InstrumentFuture/Forward                                -0.544915    0.365509  -1.491             0.136004    
+InstrumentIndexLinkedBond                               -1.705576    0.642466  -2.655             0.007937 ** 
+InstrumentIndexLinkedSwap                               -0.444661    0.391274  -1.136             0.255771    
+InstrumentOption                                         0.063668    0.585485   0.109             0.913406    
+InstrumentOther                                         -0.316428    0.278937  -1.134             0.256624    
+InstrumentRepo/Reverse                                  -2.030732    0.604182  -3.361             0.000776 ***
+InstrumentSecurityLoan                                  -1.283938    0.354727  -3.620             0.000295 ***
+InstrumentStock                                         -0.794056    2.290703  -0.347             0.728860    
+InstrumentTotalReturnSwap                               -0.768744    0.376985  -2.039             0.041431 *  
+ReasonAcquirer                                           2.034313    1.269162   1.603             0.108961    
+ReasonBrokerage Related                                  1.562250    1.099216   1.421             0.155247    
+ReasonCalendar Related                                   2.000761    0.419331   4.771    0.000001830275389 ***
+ReasonCapture Errors - Direction / Amount / Rate / CP    1.108691    0.402366   2.755             0.005862 ** 
+ReasonClient Request to Amend Economics of Deal         -0.034627    0.999684  -0.035             0.972369    
+ReasonCommodities Early Delivery                         1.425586    0.884032   1.613             0.106833    
+ReasonCorrected NDEUSSA Reset Level                     -4.097789    0.864938  -4.738    0.000002161888988 ***
+ReasonCPI Fixings                                       -4.593979    0.829727  -5.537    0.000000030816053 ***
+ReasonEarly Termination / Delivery / Close out          -3.309589    0.715272  -4.627    0.000003709313627 ***
+ReasonFees/Commissions Related                          -0.354549    0.898159  -0.395             0.693027    
+ReasonOperations request to change Economics of Trade   -1.430936    0.973260  -1.470             0.141494    
+ReasonPayments Related                                   0.482154    0.626510   0.770             0.441545    
+ReasonPortfolio Move / Restructure                      -3.431383    2.292956  -1.496             0.134526    
+ReasonSales Credits                                      3.389993    1.142404   2.967             0.003003 ** 
+ReasonSystem Update Call Accounts                       -5.813889    0.934526  -6.221    0.000000000493316 ***
+ReasonTrade Restructure                                -13.926568  835.230660  -0.017             0.986697    
+ReasonTri-Optima                                        -1.766910    1.159435  -1.524             0.127524    
+ReasonValuation Group Request                            1.396678    0.608563   2.295             0.021731 *  
+EventTypeCategoryLevel1EL1                               4.792740    0.691025   6.936    0.000000000004042 ***
+EventTypeCategoryLevel1EL4                               0.867198    0.499296   1.737             0.082415 .  
+EventTypeCategoryLevel1EL6                               7.369940    0.850875   8.662 < 0.0000000000000002 ***
+EventTypeCategoryLevel1EL8                              -3.403010    1.087666  -3.129             0.001756 ** 
+BusinessLineLevel1BL1                                    2.283664    0.728397   3.135             0.001717 ** 
+BusinessLineLevel1BL3                                   -0.951393    0.675089  -1.409             0.158751    
+BusinessLineLevel1BL4                                   -2.684442    0.561963  -4.777    0.000001780192759 ***
+BusinessLineLevel1BL5                                   -1.791575    0.507993  -3.527             0.000421 ***
+BusinessLineLevel1BL6                                    0.713857    1.093549   0.653             0.513892    
+BusinessLineLevel1BL7                                  -14.112278 1929.549994  -0.007             0.994165    
+BusinessLineLevel1BL9                                   22.303953  888.940393   0.025             0.979983    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 1994.9  on 1630  degrees of freedom
+Residual deviance: 1269.7  on 1553  degrees of freedom
+AIC: 1949.7
+
+Number of Fisher Scoring iterations: 17
+

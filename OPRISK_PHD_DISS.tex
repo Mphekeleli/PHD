@@ -3350,6 +3350,41 @@ against it.
 
 \singlespacing
 
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = LossesIndicator ~ TradedDay + Desk, family = poisson(link = "log"), 
+##     data = crs$training, offset = log(Exposure))
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.8706  -0.5300  -0.2286  -0.0545   4.3750  
+## 
+## Coefficients:
+##                       Estimate Std. Error z value             Pr(>|z|)    
+## (Intercept)          -8.053221   0.193632 -41.590 < 0.0000000000000002 ***
+## TradedDay            -0.014087   0.006381  -2.208             0.027266 *  
+## DeskAfrica            1.457695   0.413087   3.529             0.000417 ***
+## DeskBonds/Repos       1.764230   0.254571   6.930      0.0000000000042 ***
+## DeskCommodities       0.924033   0.235749   3.920      0.0000887114575 ***
+## DeskDerivatives      -0.577626   0.344672  -1.676             0.093763 .  
+## DeskEquity            1.365152   0.225948   6.042      0.0000000015232 ***
+## DeskManagement/Other -1.410706   1.014052  -1.391             0.164177    
+## DeskMM                0.339561   0.241501   1.406             0.159711    
+## DeskPrime Services    2.129594   0.223030   9.548 < 0.0000000000000002 ***
+## DeskSND              -0.716361   0.283796  -2.524             0.011596 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for poisson family taken to be 1)
+## 
+##     Null deviance: 1994.9  on 1630  degrees of freedom
+## Residual deviance: 1764.7  on 1620  degrees of freedom
+## AIC: 2310.7
+## 
+## Number of Fisher Scoring iterations: 8
+\end{verbatim}
+
 \doublespacing
 
 Using this bivariate model, the estimated quarterly OpRisk
@@ -3604,7 +3639,7 @@ perform on new previously unseen data i.e., used to evaluate the model.
 
 \begin{figure}
 \centering
-\includegraphics[scale=1.0]{ConfusionMatrix}
+\includegraphics[scale=1.0]{ConfusionMatrix.pdf}
 \caption[Confusion (Error) matrices]{Basic comparison of prediction and actuals as confusion matrices using both counts and calculated as a percentage. Summary statistics are computed and displayed}
 \label{ConfusionMatricesAll}
 \end{figure}
@@ -3662,13 +3697,13 @@ comparison, see figure \ref{ROCCurveAll} in Appendix
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.5\textwidth}
-   \includegraphics[width=1\linewidth]{ROC_Curve_testing.eps}
+   \includegraphics[width=1\linewidth]{ROC_Curve_POITesting.pdf}
    \caption{}
    \label{ROC_Validation_dataset} 
 \end{subfigure}
 
 \begin{subfigure}[b]{0.5\textwidth}
-   \includegraphics[width=1\linewidth]{ROCCurve_Testing.eps}
+   \includegraphics[width=1\linewidth]{ROC _Curve_BINTesting.pdf}
    \caption{}
    \label{ROC_Testing_dataset}
 \end{subfigure}
@@ -5687,6 +5722,10 @@ Deviance Residuals:
     Min       1Q   Median       3Q      Max  
 -4.7605  -0.3575  -0.1105  -0.0315   3.9754  
 
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-4.7605  -0.3575  -0.1105  -0.0315   3.9754  
+
 Coefficients:
                        Estimate     Std. Error z value             Pr(>|z|)    
 (Intercept)           -7.8113982    0.6701090 -11.657 < 0.0000000000000002 ***
@@ -6015,7 +6054,7 @@ summary
 
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Dredge_bin.eps}
+\includegraphics[height=20cm, width=15cm]{Dredge_bin.pdf}
 \caption[Data dredging]{Model selection data mining exercise}
 \label{Dredge}
 \end{figure}
@@ -6039,23 +6078,23 @@ mean model).
 
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Get_models_bin1.eps}
-\caption[Model averaging]{component models for computing the average (mean) model \texttt{AModel}}
+\includegraphics[height=20cm, width=15cm]{Get_models_bin1.pdf}
+\caption[Model averaging components]{Estimation of some Poisson distribution for target variable \texttt{LossesIndicator} showing the 4096 component models and their respective AICc values for our models giving rise to the average (mean) model \texttt{Amodel}}
 \label{AModel_Summary1}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Get_models_bin2.eps}
-\caption[Model averaging]{Continued from \ref{AModel_Summary1}}
+\includegraphics[height=20cm, width=15cm]{Get_models_bin2.pdf}
+\caption[Poisson GLM Amodel summary statistics]{Continued from \ref{AModel_Summary1}}
 \label{AModel_Summary2}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Get_models_bin3.eps}
-\caption[Model averaging]{Continued from \ref{AModel_Summary2}}
-\label{AModel_Summary3}
+\includegraphics[height=20cm, width=15cm]{Get_models_bin3.pdf}
+\caption[Poisson GLM Amodel summary statistics continued]{Continued from \ref{AModel_Summary2}}
+\label{Poisson GLM Amodel summary statistics continued}
 \end{figure}
 
 \subsection{Evaluate model performance on the test dataset}
@@ -6146,11 +6185,37 @@ performance(predic, "auc")
 \label{ConfusionMatrixAll}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[height=20cm, width=15cm]{ROC_Curves_All.eps}
-\caption[ROC Curve comparison]{Comparison of Poisson, Binomial GLM's ROC Curves for Training, Validation \& Testing datasets}
-\label{ROCCurveAll}
+\begin{figure}[t!] % "[t!]" placement specifier just for this example
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{POI_ROC_Training.pdf}
+\caption{AUC for poisson parameter depicting model's performance on the training set} \label{POI_ROC_Train}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{BIN_ROC_Training.pdf}
+\caption{AUC for binomial parameters depicting model's performance on the training set} \label{BIN_ROC_Train}
+\end{subfigure}
+
+\medskip
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{POI_ROC_Validation.pdf}
+\caption{As in (a) but depicting model's performance on the validation set} \label{POI_ROC_Validate}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{BIN_ROC_Validation.pdf}
+\caption{As in (b) but depicting model's performance on the validation set} \label{BIN_ROC_Validate}
+\end{subfigure}
+
+\medskip
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{POI_ROC_Testing.pdf}
+\caption{As in (a) \& (c) depicting model's performance on the testing set} \label{POI_ROC_Test}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{BIN_ROC_Testing.pdf}
+\caption{As in (b) \& (d) depicting model's performance on the testing set} \label{BIN_ROC_Test}
+\end{subfigure}
+
+\caption{Comparison of area under the curve (AUC) for the Poisson, Binomial GLM ROC curve for training, validation and testing datasets} \label{ROCCurveAll}
 \end{figure}
 
 \clearpage

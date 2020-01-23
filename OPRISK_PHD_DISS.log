@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.1.17)  18 JAN 2020 15:12
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2020.1.17)  23 JAN 2020 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -183,7 +183,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.s
 ty
-Package: hyperref 2019/11/10 v7.00c Hypertext links for LaTeX
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
 )
@@ -231,7 +231,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 \Hy@pagecounter=\count96
 
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2019/11/10 v7.00c Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 )
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.s
 ty
@@ -247,19 +247,19 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 f.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4535.
-Package hyperref Info: Link nesting OFF on input line 4540.
-Package hyperref Info: Hyper index ON on input line 4543.
-Package hyperref Info: Plain pages OFF on input line 4550.
-Package hyperref Info: Backreferencing OFF on input line 4555.
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4788.
+Package hyperref Info: Bookmarks ON on input line 4800.
 \c@Hy@tempcnt=\count98
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5147.
+LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen125
 
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
@@ -273,15 +273,15 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 \Fld@menulength=\count99
 \Field@Width=\dimen126
 \Fld@charsize=\dimen127
-Package hyperref Info: Hyper figures OFF on input line 6418.
-Package hyperref Info: Link nesting OFF on input line 6423.
-Package hyperref Info: Hyper index ON on input line 6426.
-Package hyperref Info: backreferencing OFF on input line 6433.
-Package hyperref Info: Link coloring OFF on input line 6438.
-Package hyperref Info: Link coloring with OCG OFF on input line 6443.
-Package hyperref Info: PDF/A mode OFF on input line 6448.
-LaTeX Info: Redefining \ref on input line 6488.
-LaTeX Info: Redefining \pageref on input line 6492.
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
 
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/atbegshi/atbegshi
 .sty
@@ -294,9 +294,9 @@ Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 Package hyperref Info: Driver (autodetected): hxetex.
 
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2019/11/10 v7.00c Hyperref driver for XeTeX
+File: hxetex.def 2020/01/14 v7.00d Hyperref driver for XeTeX
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2019/11/10 v7.00c Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 )
 (c:/Users/user/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringe
 nc.sty
@@ -1653,7 +1653,7 @@ Overfull \hbox (5.71329pt too wide) in paragraph at lines 103--103
  []
 
 
-Overfull \hbox (12.52805pt too wide) in paragraph at lines 112--112
+Overfull \hbox (12.24005pt too wide) in paragraph at lines 112--112
  [][] [][]\TU/lmr/m/n/12 Theoretical investigations for the quantification of m
 oderm ORMF[] []  
  []
@@ -1906,7 +1906,7 @@ Overfull \hbox (8.13206pt too wide) in paragraph at lines 155--155
  []
 
 
-Overfull \hbox (15.61208pt too wide) in paragraph at lines 155--155
+Overfull \hbox (14.73608pt too wide) in paragraph at lines 155--155
  \TU/lmr/m/n/12 function \TU/lmtt/m/n/12 gamlss \TU/lmr/m/n/12 i.e., the formul
 a that describes the model to build.[] []  
  []
@@ -2059,6 +2059,12 @@ m/n/12 -means clustering of size 4, and the covari-
 Overfull \hbox (34.82413pt too wide) in paragraph at lines 24--24
  \TU/lmr/m/n/12 ates of frequency loss events consisting of 369 loss event freq
 uencies amount- 
+ []
+
+
+Overfull \hbox (0.49211pt too wide) in paragraph at lines 30--30
+ [][] [][]\TU/lmr/m/n/12 Comparison of area under the curve (AUC) for the Poiss
+on, Binomial 
  []
 
 )
@@ -2529,241 +2535,322 @@ Overfull \hbox (51.51588pt too wide) in paragraph at lines 3334--3334
 isson(link="log"),[] 
  []
 
+
+Overfull \hbox (82.41586pt too wide) in paragraph at lines 3356--3356
+[]\TU/lmtt/m/n/12 ## glm(formula = LossesIndicator ~ TradedDay + Desk, family =
+ poisson(link = "log"),[] 
+ []
+
+
+Overfull \hbox (16.28369pt too wide) in paragraph at lines 3364--3364
+[]\TU/lmtt/m/n/12 ##                       Estimate Std. Error z value         
+    Pr(>|z|)[] 
+ []
+
 [88]
-Overfull \hbox (0.25966pt too wide) in alignment at lines 3374--3378
- [][][] []
+Overfull \hbox (40.96788pt too wide) in paragraph at lines 3365--3365
+[]\TU/lmtt/m/n/12 ## (Intercept)          -8.053221   0.193632 -41.590 < 0.0000
+000000000002 ***[] 
+ []
+
+
+Overfull \hbox (28.60776pt too wide) in paragraph at lines 3366--3366
+[]\TU/lmtt/m/n/12 ## TradedDay            -0.014087   0.006381  -2.208         
+    0.027266 *[] 
+ []
+
+
+Overfull \hbox (40.96777pt too wide) in paragraph at lines 3367--3367
+[]\TU/lmtt/m/n/12 ## DeskAfrica            1.457695   0.413087   3.529         
+    0.000417 ***[] 
+ []
+
+
+Overfull \hbox (40.96786pt too wide) in paragraph at lines 3368--3368
+[]\TU/lmtt/m/n/12 ## DeskBonds/Repos       1.764230   0.254571   6.930      0.0
+000000000042 ***[] 
+ []
+
+
+Overfull \hbox (40.96786pt too wide) in paragraph at lines 3369--3369
+[]\TU/lmtt/m/n/12 ## DeskCommodities       0.924033   0.235749   3.920      0.0
+000887114575 ***[] 
+ []
+
+
+Overfull \hbox (25.4758pt too wide) in paragraph at lines 3370--3370
+[]\TU/lmtt/m/n/12 ## DeskDerivatives      -0.577626   0.344672  -1.676         
+    0.093763 .[] 
+ []
+
+
+Overfull \hbox (40.96783pt too wide) in paragraph at lines 3371--3371
+[]\TU/lmtt/m/n/12 ## DeskEquity            1.365152   0.225948   6.042      0.0
+000000015232 ***[] 
+ []
+
+
+Overfull \hbox (17.17188pt too wide) in paragraph at lines 3372--3372
+[]\TU/lmtt/m/n/12 ## DeskManagement/Other -1.410706   1.014052  -1.391         
+    0.164177[] 
+ []
+
+
+Overfull \hbox (17.15974pt too wide) in paragraph at lines 3373--3373
+[]\TU/lmtt/m/n/12 ## DeskMM                0.339561   0.241501   1.406         
+    0.159711[] 
+ []
+
+
+Overfull \hbox (40.9679pt too wide) in paragraph at lines 3374--3374
+[]\TU/lmtt/m/n/12 ## DeskPrime Services    2.129594   0.223030   9.548 < 0.0000
+000000000002 ***[] 
+ []
+
+
+Overfull \hbox (28.57175pt too wide) in paragraph at lines 3375--3375
+[]\TU/lmtt/m/n/12 ## DeskSND              -0.716361   0.283796  -2.524         
+    0.011596 *[] 
  []
 
 [89]
-Overfull \hbox (2.0759pt too wide) in paragraph at lines 3426--3426
+Overfull \hbox (0.25966pt too wide) in alignment at lines 3409--3413
+ [][][] []
+ []
+
+[90]
+Overfull \hbox (2.0759pt too wide) in paragraph at lines 3461--3461
 []    \TU/lmtt/m/n/12 Instrument + Reason + EventTypeCategoryLevel1 + BusinessL
 ineLevel1,[] 
  []
 
-[90] [91] [92] [93] [94]
-File: ConfusionMatrix.eps Graphic file (type eps)
-<ConfusionMatrix.eps>
+[91] [92] [93] [94] [95]
+File: ConfusionMatrix.pdf Graphic file (type pdf)
+<use ConfusionMatrix.pdf>
 
-Overfull \hbox (5.01874pt too wide) in paragraph at lines 3607--3608
+Overfull \hbox (4.51578pt too wide) in paragraph at lines 3642--3643
  [][] 
  []
 
-[95] [96]
-Overfull \hbox (1.54407pt too wide) in paragraph at lines 3633--3646
+
+Overfull \hbox (1.54407pt too wide) in paragraph at lines 3668--3681
 \TU/lmr/m/n/12 cur (called the false positives). If we were using this mode to 
 help us decide whether 
  []
 
 
-Overfull \hbox (2.20802pt too wide) in paragraph at lines 3633--3646
+Overfull \hbox (2.20802pt too wide) in paragraph at lines 3668--3681
 \TU/lmr/m/n/12 or not to be wary and closely monitor future daily trading activ
 ity, then there aren’t 
  []
 
-File: ROC_Curve_testing.eps Graphic file (type eps)
-<ROC_Curve_testing.eps>
-File: ROCCurve_Testing.eps Graphic file (type eps)
-<ROCCurve_Testing.eps>
+[96] [97]
+File: ROC_Curve_POITesting.pdf Graphic file (type pdf)
+<use ROC_Curve_POITesting.pdf>
+File: ROC _Curve_BINTesting.pdf Graphic file (type pdf)
+<use ROC _Curve_BINTesting.pdf>
 
-LaTeX Warning: Float too large for page by 1.71667pt on input line 3677.
+LaTeX Warning: Float too large for page by 1.7153pt on input line 3712.
 
-[97] [98] [99]
-Overfull \hbox (8.09836pt too wide) in paragraph at lines 3737--3741
+[98] [99]
+Overfull \hbox (8.09836pt too wide) in paragraph at lines 3772--3776
 \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 18009498$\TU/lmr/m/n/12 . By
  a simple growth formula, one years of data (4 quarters) i.e., 3 months 
  []
 
 [100]
-Overfull \hbox (1.96878pt too wide) in paragraph at lines 3774--3781
+Overfull \hbox (1.96878pt too wide) in paragraph at lines 3809--3816
 []\TU/lmr/m/n/12 After building the augmented dataset we simulate the applicati
 on of the model 
  []
 
-
-Overfull \hbox (2.38803pt too wide) in paragraph at lines 3786--3786
+[101]
+Overfull \hbox (2.38803pt too wide) in paragraph at lines 3821--3821
 |\TU/lmr/bx/n/12 The estimation of some generalised additive models for locatio
 n scale and
  []
 
-[101]
 File: Rplot01.eps Graphic file (type eps)
 <Rplot01.eps>
 File: Rplot.eps Graphic file (type eps)
 <Rplot.eps>
 
-Underfull \hbox (badness 1552) in paragraph at lines 3827--3827
+Underfull \hbox (badness 1552) in paragraph at lines 3862--3862
 []\TU/lmr/bx/n/10.95 (b) |\TU/lmr/m/n/10.95 Boxplots of \TU/lmtt/m/n/10.95 Upda
 tedDay \TU/lmr/m/n/10.95 and 
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 3827--3827
+Underfull \hbox (badness 1178) in paragraph at lines 3862--3862
 \TU/lmtt/m/n/10.95 Loss \TU/lmr/m/n/10.95 against explanatory variable 
  []
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3855.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3855.
-
 [102] [103]
-Underfull \hbox (badness 1259) in paragraph at lines 3884--3884
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3890.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3890.
+
+[104]
+Underfull \hbox (badness 1259) in paragraph at lines 3919--3919
 [][][]\TU/lmr/m/n/10 The GB2 adjusts the obove density $\OML/cmm/m/it/10 f\OT1/
 cmr/m/n/10 (\OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^V; ^^[; ^^W;
  ^^\\OT1/cmr/m/n/10 )$\TU/lmr/m/n/10 , resulting from the condition $\OML/cmm/m
 /it/10 y > \OT1/cmr/m/n/10 0$\TU/lmr/m/n/10 , where
  []
 
-[104]
-Overfull \hbox (2.00128pt too wide) in paragraph at lines 3903--3904
+
+Overfull \hbox (2.00128pt too wide) in paragraph at lines 3938--3939
 \TU/lmr/m/n/12 sis (i.e. population mean, standard deviation, $\OML/cmm/m/it/12
  ^^M[]; ^^M[]$ \TU/lmr/m/n/12 [@rigby2017distributions]);  
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3909.
+(hyperref)                removing `math shift' on input line 3944.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3909.
+(hyperref)                removing `math shift' on input line 3944.
+
+[105]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3957.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3922.
+(hyperref)                removing `math shift' on input line 3957.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 3966.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 3967.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 3968.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 3969.
+
+[106]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3922.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 3931.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 3932.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 3933.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 3934.
-
-[105] [106]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3964.
+(hyperref)                removing `math shift' on input line 3999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3964.
+(hyperref)                removing `math shift' on input line 3999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3964.
+(hyperref)                removing `\Lambda' on input line 3999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 3964.
+(hyperref)                removing `math shift' on input line 3999.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3964.
-
-
-Overfull \hbox (9.12804pt too wide) in paragraph at lines 3976--3983
+Overfull \hbox (9.12804pt too wide) in paragraph at lines 4011--4018
 \TU/lmr/m/n/12 plus smooth function of expalnatory variables. In R this is achi
 eved through a “scope” 
  []
 
+[107]
 File: 4_GOF_plot.pdf Graphic file (type pdf)
 <use 4_GOF_plot.pdf>
-[107]
 File: mod42GB2.eps Graphic file (type eps)
 <mod42GB2.eps>
 
-Overfull \hbox (61.42612pt too wide) in paragraph at lines 4015--4016
+Overfull \hbox (61.42612pt too wide) in paragraph at lines 4050--4051
  [][] 
  []
 
 
-Overfull \hbox (26.58913pt too wide) in alignment at lines 4030--4038
+Overfull \hbox (26.58913pt too wide) in alignment at lines 4065--4073
  [][][] []
  []
 
-[108] [109]
-Overfull \hbox (33.32407pt too wide) in paragraph at lines 4042--4054
+
+Overfull \hbox (33.32407pt too wide) in paragraph at lines 4077--4089
 \TU/lmr/m/n/12 on the available explanatory variables such as the \TU/lmtt/m/n/
 12 UpdatedDay\TU/lmr/m/n/12 , \TU/lmtt/m/n/12 UpdatedTime\TU/lmr/m/n/12 , \TU/l
 mtt/m/n/12 CapturedBy\TU/lmr/m/n/12 , 
  []
 
+[108] [109] [110]
 File: GAIC.eps Graphic file (type eps)
 <GAIC.eps>
-[110]
+[111]
 Chapter 5.
 
-Overfull \hbox (3.50406pt too wide) in paragraph at lines 4088--4098
+Overfull \hbox (3.50406pt too wide) in paragraph at lines 4123--4133
 \TU/lmr/m/n/12 porting the call from industry for a new class of EBOR models th
 at capture forward- 
  []
 
-[111
+[112
 
-] [112] [113] [114] [115]
-Underfull \hbox (badness 10000) in paragraph at lines 4246--4246
+] [113] [114] [115] [116]
+Underfull \hbox (badness 10000) in paragraph at lines 4281--4281
 [][][]\TU/lmr/m/n/10 As recent evidence from human brain imaging has shown [@ku
 hnen2005neural] linking neural
  []
 
-[116]
-Underfull \hbox (badness 10000) in paragraph at lines 4276--4276
+[117]
+Underfull \hbox (badness 10000) in paragraph at lines 4311--4311
 [][][]\TU/lmr/m/n/10 Representing ability of FI’s financial market models to ch
 aracterise the repeated decision-
  []
 
-[117]
+[118]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4343--4343
+Underfull \hbox (badness 10000) in paragraph at lines 4378--4378
 [][][]\TU/lmr/m/n/10 OpRisk loss events in FI’s are largely due to human failin
 gs that are exploitable e.g., fraud-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4343--4343
+Underfull \hbox (badness 10000) in paragraph at lines 4378--4378
 \TU/lmr/m/n/10 ulent trading activity, and PT is based on the same behavioural 
 element of how people make
  []
 
-[118
+[119
 
-] [119] [120]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4433.
-
+] [120] [121]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4433.
+(hyperref)                removing `math shift' on input line 4468.
 
-[121] [122] [123]
-Underfull \hbox (badness 10000) in paragraph at lines 4512--4512
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4468.
+
+[122] [123] [124]
+Underfull \hbox (badness 10000) in paragraph at lines 4547--4547
 [][][]\TU/lmr/m/n/10 A typical approach taken in the literature is to use an un
 supervised learning algorithm to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4512--4512
+Underfull \hbox (badness 10000) in paragraph at lines 4547--4547
 \TU/lmr/m/n/10 train a model of the unlabeled data and then use the results to 
 extract interesting features from
  []
 
-[124]
+[125]
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 4557; it cannot
+Package fontspec Warning: \addfontfeature(s) ignored on line 4592; it cannot
 (fontspec)                be used with a font that wasn't selected by a
 (fontspec)                fontspec command.
 (fontspec)                 
@@ -2774,1642 +2861,1657 @@ File: Loss_vs_Exposure(1).eps Graphic file (type eps)
 <Loss_vs_Exposure(1).eps>
 File: CorrPlot.eps Graphic file (type eps)
 <CorrPlot.eps>
-[125]
-
-LaTeX Warning: Reference `Fig5' on page 126 undefined on input line 4586.
-
 [126]
+
+LaTeX Warning: Reference `Fig5' on page 127 undefined on input line 4621.
+
+[127]
 File: IterateKmeans.eps Graphic file (type eps)
 <IterateKmeans.eps>
-[127]
+[128]
 File: CA14MeansPlot.eps Graphic file (type eps)
 <CA14MeansPlot.eps>
-[128] [129] [130
+[129] [130] [131
 
 ]
-Overfull \hbox (3.7553pt too wide) in paragraph at lines 4764--4768
+Overfull \hbox (3.7553pt too wide) in paragraph at lines 4799--4803
  \TU/lmr/m/it/12 sues \TU/lmr/m/n/12 (pp. 1–12). Retrieved from []$[][][][] [] 
 [] [] [][][] [] [][][][][][][][][][][][][][][] [] [][][] [] [][][][][][][][] []
  
  []
 
 
-Overfull \hbox (14.34705pt too wide) in paragraph at lines 4764--4768
+Overfull \hbox (14.34705pt too wide) in paragraph at lines 4799--4803
  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[]
   
  []
 
-[131]
-Overfull \hbox (73.64697pt too wide) in paragraph at lines 4852--4857
+[132]
+Overfull \hbox (73.64697pt too wide) in paragraph at lines 4887--4892
  []$[][][][][] [] [] [] [][][][][][][][][][][][][][][][][][][][] [] [][][] [] [
 ][][] [] [][][][][][][][][][][][][][][] [] [][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][]$[]  
  []
 
 
-Overfull \hbox (18.18062pt too wide) in paragraph at lines 4897--4900
+Overfull \hbox (18.18062pt too wide) in paragraph at lines 4932--4935
  [][]\TU/lmr/m/n/12 Nelder, J. A., & Pregibon, D. (1987). An extended quasi-lik
 elihood function. \TU/lmr/m/it/12 Biometrika\TU/lmr/m/n/12 , 
  []
 
-[132]
-Overfull \hbox (0.13258pt too wide) in paragraph at lines 4951--4955
+[133]
+Overfull \hbox (0.13258pt too wide) in paragraph at lines 4986--4990
  [][]\TU/lmr/m/n/12 Shefrin, H. (2016). \TU/lmr/m/it/12 Behavioral risk managem
 ent: Managing the psychology that drives 
  []
 
 
-Overfull \hbox (125.57492pt too wide) in paragraph at lines 4961--4965
+Overfull \hbox (125.57492pt too wide) in paragraph at lines 4996--5000
  [][][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][]$[]  
  []
 
-[133] [134] [135
+[134] [135] [136
 
 ]
-Overfull \hbox (13.31998pt too wide) in paragraph at lines 5079--5079
+Overfull \hbox (13.31998pt too wide) in paragraph at lines 5114--5114
 |\TU/lmr/m/it/12 Data preparation for understanding the raw frequency and raw s
 everity data mentioned
  []
 
 
-Overfull \hbox (16.82397pt too wide) in paragraph at lines 5079--5079
+Overfull \hbox (16.82397pt too wide) in paragraph at lines 5114--5114
 \TU/lmr/m/it/12 in section []3.3[] on page []65[] of collected internally over 
 the period between 1 January 2013
  []
 
-[136
+[137
 
 ]
-Overfull \hbox (25.33199pt too wide) in paragraph at lines 5099--5099
+Overfull \hbox (25.33199pt too wide) in paragraph at lines 5134--5134
 |\TU/lmr/m/it/12 Data preparation providing the numbers of OpRisk events collec
 ted through pre-processing
  []
 
 
-Overfull \hbox (17.38799pt too wide) in paragraph at lines 5099--5099
+Overfull \hbox (17.38799pt too wide) in paragraph at lines 5134--5134
 \TU/lmr/m/it/12 by following the LCDE as described in section []3.4[] on []68[]
  over Q12013, limited to the co-
  []
 
 
-Overfull \hbox (25.13014pt too wide) in paragraph at lines 5123--5123
+Overfull \hbox (25.13014pt too wide) in paragraph at lines 5158--5158
 []\TU/lmtt/m/n/10.95 crs$train  <- crs$sample <- sample(crs$nobs, crv$training.
 proportion * crs$nobs)[] 
  []
 
-[137]
-Overfull \hbox (2.13515pt too wide) in paragraph at lines 5146--5146
+[138]
+Overfull \hbox (2.13515pt too wide) in paragraph at lines 5181--5181
 []                   \TU/lmtt/m/n/10.95 "LastResetDate", "LastResetRate", "Thet
 a", "Unexplained")[] 
  []
 
 
-Overfull \hbox (7.85995pt too wide) in paragraph at lines 5152--5152
+Overfull \hbox (7.85995pt too wide) in paragraph at lines 5187--5187
 |\TU/lmr/m/it/12 The algorithm only accepts numerical data and so categorical d
 ata is transformed into
  []
 
 
-Overfull \hbox (33.89595pt too wide) in paragraph at lines 5152--5152
+Overfull \hbox (33.89595pt too wide) in paragraph at lines 5187--5187
 \TU/lmr/m/it/12 numeric. This is done using an approach where each value of a c
 ategoric variable is turned
  []
 
 
-Overfull \hbox (17.32397pt too wide) in paragraph at lines 5152--5152
+Overfull \hbox (17.32397pt too wide) in paragraph at lines 5187--5187
 \TU/lmr/m/it/12 into a variable itself. Multi-level categoric variables are rec
 oded by building dummy vari-
  []
 
 
-Overfull \hbox (19.46399pt too wide) in paragraph at lines 5177--5177
+Overfull \hbox (19.46399pt too wide) in paragraph at lines 5212--5212
 |\TU/lmr/m/it/12 Scatterplots and Histograms plots of loss severities and frequ
 ency counts against selected
  []
 
-[138]
-Overfull \hbox (49.27489pt too wide) in paragraph at lines 5192--5192
+[139]
+Overfull \hbox (49.27489pt too wide) in paragraph at lines 5227--5227
 []\TU/lmtt/m/n/10.95 hist(projdata$UpdatedDay, col = "#9999CC", main = "All los
 ses", xlab = "Updated Day"[] 
  []
 
 
-Overfull \hbox (9.03365pt too wide) in paragraph at lines 5210--5210
+Overfull \hbox (9.03365pt too wide) in paragraph at lines 5245--5245
 []\TU/lmtt/m/n/10.95 # Display histogram plots for the selected variables. Use 
 ggplot2 to generate[] 
  []
 
 
-Overfull \hbox (2.13513pt too wide) in paragraph at lines 5230--5230
+Overfull \hbox (2.13513pt too wide) in paragraph at lines 5265--5265
 []\TU/lmtt/m/n/10.95 ds <- rbind(data.frame(dat=crs$dataset[crs$train,][,"expos
 ure"], grp="All"))[] 
  []
 
-[139]
-Overfull \hbox (17.79599pt too wide) in paragraph at lines 5286--5286
+[140]
+Overfull \hbox (17.79599pt too wide) in paragraph at lines 5321--5321
 |\TU/lmr/m/it/12 Histograms for frequency characteristics of daily and monthly 
 operations for daily losses
  []
 
 
-Overfull \hbox (140.67445pt too wide) in paragraph at lines 5297--5297
+Overfull \hbox (140.67445pt too wide) in paragraph at lines 5332--5332
 []\TU/lmtt/m/n/10.95 #_________________________________________________________
 __________________________________________[] 
  []
 
-[140]
-Overfull \hbox (14.7824pt too wide) in paragraph at lines 5302--5302
+[141]
+Overfull \hbox (14.7824pt too wide) in paragraph at lines 5337--5337
 []\TU/lmtt/m/n/10.95 ### Histograms - ALL Losses and Near Misses/Pending Losses
  and Realised losses[] 
  []
 
 
-Overfull \hbox (140.67445pt too wide) in paragraph at lines 5311--5311
+Overfull \hbox (140.67445pt too wide) in paragraph at lines 5346--5346
 []\TU/lmtt/m/n/10.95 #_________________________________________________________
 __________________________________________[] 
  []
 
 
-Overfull \hbox (14.7824pt too wide) in paragraph at lines 5315--5315
+Overfull \hbox (14.7824pt too wide) in paragraph at lines 5350--5350
 []\TU/lmtt/m/n/10.95 ### Histograms - ALL Losses and Near Misses/Pending Losses
  and Realised losses[] 
  []
 
 
-Overfull \hbox (27.67198pt too wide) in paragraph at lines 5328--5328
+Overfull \hbox (27.67198pt too wide) in paragraph at lines 5363--5363
 |\TU/lmr/m/it/12 Density plots of overlaid trade proportions of realised losses
  vs pending losses/near misses| 
  []
 
 
-Overfull \hbox (13.63261pt too wide) in paragraph at lines 5343--5343
+Overfull \hbox (13.63261pt too wide) in paragraph at lines 5378--5378
 []  \TU/lmtt/m/n/10.95 ggplot2::geom_density(ggplot2::aes(fill=LossIndicator, c
 olour=LossIndicator)[] 
  []
 
-[141]
-Overfull \hbox (13.63261pt too wide) in paragraph at lines 5357--5357
+[142]
+Overfull \hbox (13.63261pt too wide) in paragraph at lines 5392--5392
 []  \TU/lmtt/m/n/10.95 ggplot2::geom_density(ggplot2::aes(fill=LossIndicator, c
 olour=LossIndicator)[] 
  []
 
 
-Overfull \hbox (7.29599pt too wide) in paragraph at lines 5380--5380
+Overfull \hbox (7.29599pt too wide) in paragraph at lines 5415--5415
 |\TU/lmr/m/it/12 Histograms of overlaid trade proportions of realised losses vs
  pending loss/near misses| 
  []
 
-[142]
-Overfull \hbox (65.08669pt too wide) in paragraph at lines 5423--5423
+[143]
+Overfull \hbox (65.08669pt too wide) in paragraph at lines 5458--5458
 []  \TU/lmtt/m/n/10.95 ggplot2::geom_bar(stat="identity", fill="grey", colour="
 black", show.legend = FALSE)+[] 
  []
 
 
-Overfull \hbox (11.02798pt too wide) in paragraph at lines 5437--5437
+Overfull \hbox (11.02798pt too wide) in paragraph at lines 5472--5472
 |\TU/lmr/m/it/12 Mosaic grid plots for the bidimensional distributions by trade
 d \TU/lmtt/m/it/12 Instrument\TU/lmr/m/it/12 , \TU/lmtt/m/it/12 TraderId
  []
 
 
-Overfull \hbox (11.90254pt too wide) in paragraph at lines 5447--5447
+Overfull \hbox (11.90254pt too wide) in paragraph at lines 5482--5482
 []\TU/lmtt/m/n/10.95 plot(table(projdata$LossIndicator, projdata$Instrument), m
 ain="By Instrument",[] 
  []
 
 
-Overfull \hbox (23.40004pt too wide) in paragraph at lines 5451--5451
+Overfull \hbox (23.40004pt too wide) in paragraph at lines 5486--5486
 []\TU/lmtt/m/n/10.95 plot(table(projdata$LossIndicator, projdata$CapturedBy), m
 ain="By Tech Support",[] 
  []
 
 
-Overfull \hbox (26.49599pt too wide) in paragraph at lines 5459--5459
+Overfull \hbox (26.49599pt too wide) in paragraph at lines 5494--5494
 |\TU/lmr/m/it/12 Mosaic grid plots for the structure of OpRisk portfolio by tra
 ded \TU/lmtt/m/it/12 TradeStatus\TU/lmr/m/it/12 , \TU/lmtt/m/it/12 TraderId
  []
 
-[143] [144]
-Overfull \hbox (14.08797pt too wide) in paragraph at lines 5517--5517
+[144] [145]
+Overfull \hbox (14.08797pt too wide) in paragraph at lines 5552--5552
 |\TU/lmr/m/it/12 Data partitioning of the pre-processed OpRisk dataset into Tra
 ining/Validation/Testing
  []
 
 
-Overfull \hbox (5.76799pt too wide) in paragraph at lines 5517--5517
+Overfull \hbox (5.76799pt too wide) in paragraph at lines 5552--5552
 \TU/lmr/m/it/12 proportions, in preparation for machine learning model building
  treatments. The orig-
  []
 
 
-Overfull \hbox (5.54396pt too wide) in paragraph at lines 5517--5517
+Overfull \hbox (5.54396pt too wide) in paragraph at lines 5552--5552
 \TU/lmr/m/it/12 inal dataset is partitioned into three random subsets initiated
  by a random number se-
  []
 
-[145
+[146
 
 ]
-Overfull \hbox (89.5161pt too wide) in paragraph at lines 5574--5574
+Overfull \hbox (89.5161pt too wide) in paragraph at lines 5609--5609
 []\TU/lmtt/m/n/10.95 #=========================================================
 =================================[] 
  []
 
 
-Overfull \hbox (49.27489pt too wide) in paragraph at lines 5575--5575
+Overfull \hbox (49.27489pt too wide) in paragraph at lines 5610--5610
 []\TU/lmtt/m/n/10.95 # A predefined value is used to reset the random seed so t
 hat results are repeatable[] 
  []
 
 
-Overfull \hbox (26.27989pt too wide) in paragraph at lines 5585--5585
+Overfull \hbox (26.27989pt too wide) in paragraph at lines 5620--5620
 []\TU/lmtt/m/n/10.95 crs$train <- sample(crs$nobs, 0.7*crs$nobs) # proportion o
 f training data = 1632[] 
  []
 
-[146]
-Overfull \hbox (32.02864pt too wide) in paragraph at lines 5590--5590
+[147]
+Overfull \hbox (32.02864pt too wide) in paragraph at lines 5625--5625
 []  \TU/lmtt/m/n/10.95 sample(0.15*crs$nobs) ->                  # proportion o
 f validation data = 350[] 
  []
 
 
-Overfull \hbox (14.7824pt too wide) in paragraph at lines 5596--5596
+Overfull \hbox (14.7824pt too wide) in paragraph at lines 5631--5631
 []  \TU/lmtt/m/n/10.95 setdiff(crs$validate) ->                  # proportion o
 f testing data = 349[] 
  []
 
 
-Overfull \hbox (0.19197pt too wide) in paragraph at lines 5614--5614
+Overfull \hbox (0.19197pt too wide) in paragraph at lines 5649--5649
 |\TU/lmr/m/it/12 Estimation of some poisson regression models for OpRisk loss f
 requency distribution:
  []
 
 
-Overfull \hbox (10.82394pt too wide) in paragraph at lines 5614--5614
+Overfull \hbox (10.82394pt too wide) in paragraph at lines 5649--5649
 \TU/lmr/m/it/12 To build the model we pass on to the model building function \T
 U/lmtt/m/it/12 glm \TU/lmr/m/it/12 i.e., the formula that
  []
 
 
-Overfull \hbox (63.87587pt too wide) in paragraph at lines 5628--5628
+Overfull \hbox (63.87587pt too wide) in paragraph at lines 5663--5663
 []\TU/lmtt/m/n/12 glm(formula = LossesIndicator ~ TradedDay + Desk, family = po
 isson(link = "log"),[] 
  []
 
 
-Overfull \hbox (21.81589pt too wide) in paragraph at lines 5637--5637
+Overfull \hbox (21.81589pt too wide) in paragraph at lines 5672--5672
 []\TU/lmtt/m/n/12 (Intercept)          -8.053221   0.193632 -41.590 < 0.0000000
 000000002 ***[] 
  []
 
 
-Overfull \hbox (9.75577pt too wide) in paragraph at lines 5638--5638
+Overfull \hbox (9.75577pt too wide) in paragraph at lines 5673--5673
 []\TU/lmtt/m/n/12 TradedDay            -0.014087   0.006381  -2.208            
  0.027266 *[] 
  []
 
 
-Overfull \hbox (22.42778pt too wide) in paragraph at lines 5639--5639
+Overfull \hbox (22.42778pt too wide) in paragraph at lines 5674--5674
 []\TU/lmtt/m/n/12 DeskAfrica            1.457695   0.413087   3.529            
  0.000417 ***[] 
  []
 
 
-Overfull \hbox (22.42787pt too wide) in paragraph at lines 5640--5640
+Overfull \hbox (22.42787pt too wide) in paragraph at lines 5675--5675
 []\TU/lmtt/m/n/12 DeskBonds/Repos       1.764230   0.254571   6.930      0.0000
 000000042 ***[] 
  []
 
 
-Overfull \hbox (22.42787pt too wide) in paragraph at lines 5641--5641
+Overfull \hbox (22.42787pt too wide) in paragraph at lines 5676--5676
 []\TU/lmtt/m/n/12 DeskCommodities       0.924033   0.235749   3.920      0.0000
 887114575 ***[] 
  []
 
-[147]
-Overfull \hbox (6.9358pt too wide) in paragraph at lines 5642--5642
+[148]
+Overfull \hbox (6.9358pt too wide) in paragraph at lines 5677--5677
 []\TU/lmtt/m/n/12 DeskDerivatives      -0.577626   0.344672  -1.676            
  0.093763 .[] 
  []
 
 
-Overfull \hbox (22.42784pt too wide) in paragraph at lines 5643--5643
+Overfull \hbox (22.42784pt too wide) in paragraph at lines 5678--5678
 []\TU/lmtt/m/n/12 DeskEquity            1.365152   0.225948   6.042      0.0000
 000015232 ***[] 
  []
 
 
-Overfull \hbox (22.4279pt too wide) in paragraph at lines 5646--5646
+Overfull \hbox (22.4279pt too wide) in paragraph at lines 5681--5681
 []\TU/lmtt/m/n/12 DeskPrime Services    2.129594   0.223030   9.548 < 0.0000000
 000000002 ***[] 
  []
 
 
-Overfull \hbox (10.03175pt too wide) in paragraph at lines 5647--5647
+Overfull \hbox (10.03175pt too wide) in paragraph at lines 5682--5682
 []\TU/lmtt/m/n/12 DeskSND              -0.716361   0.283796  -2.524            
  0.011596 *[] 
  []
 
 
-Overfull \hbox (14.80795pt too wide) in paragraph at lines 5660--5660
+Overfull \hbox (14.80795pt too wide) in paragraph at lines 5695--5695
 |\TU/lmr/m/it/12 Let us now fit a broader GLM to be our global model, still \TU
 /lmtt/m/it/12 LossesIndicator \TU/lmr/m/it/12 as the de-
  []
 
 
-Overfull \hbox (30.5942pt too wide) in paragraph at lines 5666--5666
+Overfull \hbox (30.5942pt too wide) in paragraph at lines 5701--5701
 []\TU/lmtt/m/n/10.95 freqfit <- glm(formula = LossesIndicator ~ UpdatedDay + Up
 datedTime + TradedDay + 
  []
 
 
-Overfull \hbox (2.0759pt too wide) in paragraph at lines 5682--5682
+Overfull \hbox (2.0759pt too wide) in paragraph at lines 5717--5717
 []    \TU/lmtt/m/n/12 Instrument + Reason + EventTypeCategoryLevel1 + BusinessL
 ineLevel1,[] 
  []
 
 
-Overfull \hbox (28.64366pt too wide) in paragraph at lines 5691--5691
+Overfull \hbox (28.64366pt too wide) in paragraph at lines 5730--5730
 []                       \TU/lmtt/m/n/12 Estimate     Std. Error z value       
       Pr(>|z|)[] 
  []
 
-
-Overfull \hbox (46.52388pt too wide) in paragraph at lines 5692--5692
+[149]
+Overfull \hbox (46.52388pt too wide) in paragraph at lines 5731--5731
 []\TU/lmtt/m/n/12 (Intercept)           -7.8113982    0.6701090 -11.657 < 0.000
 0000000000002 ***[] 
  []
 
 
-Overfull \hbox (23.63976pt too wide) in paragraph at lines 5693--5693
+Overfull \hbox (23.63976pt too wide) in paragraph at lines 5732--5732
 []\TU/lmtt/m/n/12 UpdatedDay             0.0043298    0.0097374   0.445        
      0.656565[] 
  []
 
 
-Overfull \hbox (23.66377pt too wide) in paragraph at lines 5694--5694
+Overfull \hbox (23.66377pt too wide) in paragraph at lines 5733--5733
 []\TU/lmtt/m/n/12 UpdatedTime            0.5850748    0.7146037   0.819        
      0.412935[] 
  []
 
 
-Overfull \hbox (23.01576pt too wide) in paragraph at lines 5695--5695
+Overfull \hbox (23.01576pt too wide) in paragraph at lines 5734--5734
 []\TU/lmtt/m/n/12 TradedDay             -0.0001216    0.0082899  -0.015        
      0.988297[] 
  []
 
-[148]
-Overfull \hbox (23.33978pt too wide) in paragraph at lines 5696--5696
+
+Overfull \hbox (23.33978pt too wide) in paragraph at lines 5735--5735
 []\TU/lmtt/m/n/12 TradedTime            -0.8201083    0.7856849  -1.044        
      0.296572[] 
  []
 
 
-Overfull \hbox (40.94377pt too wide) in paragraph at lines 5697--5697
+Overfull \hbox (40.94377pt too wide) in paragraph at lines 5736--5736
 []\TU/lmtt/m/n/12 DeskAfrica             1.5831846    0.5281939   2.997        
      0.002723 **[] 
  []
 
 
-Overfull \hbox (47.14786pt too wide) in paragraph at lines 5698--5698
+Overfull \hbox (47.14786pt too wide) in paragraph at lines 5737--5737
 []\TU/lmtt/m/n/12 DeskBonds/Repos        2.3432611    0.3958404   5.920     0.0
 0000000322505 ***[] 
  []
 
 
-Overfull \hbox (23.62779pt too wide) in paragraph at lines 5699--5699
+Overfull \hbox (23.62779pt too wide) in paragraph at lines 5738--5738
 []\TU/lmtt/m/n/12 DeskCommodities        0.6910019    0.4627163   1.493        
      0.135343[] 
  []
 
 
-Overfull \hbox (23.67578pt too wide) in paragraph at lines 5700--5700
+Overfull \hbox (23.67578pt too wide) in paragraph at lines 5739--5739
 []\TU/lmtt/m/n/12 DeskDerivatives        0.3832286    0.5020354   0.763        
      0.445255[] 
  []
 
 
-Overfull \hbox (40.90778pt too wide) in paragraph at lines 5701--5701
+Overfull \hbox (40.90778pt too wide) in paragraph at lines 5740--5740
 []\TU/lmtt/m/n/12 DeskEquity             1.1778919    0.3969116   2.968        
      0.003001 **[] 
  []
 
 
-Overfull \hbox (23.61588pt too wide) in paragraph at lines 5702--5702
+Overfull \hbox (23.61588pt too wide) in paragraph at lines 5741--5741
 []\TU/lmtt/m/n/12 DeskManagement/Other -14.7535497  367.5957685  -0.040        
      0.967985[] 
  []
 
 
-Overfull \hbox (34.78772pt too wide) in paragraph at lines 5703--5703
+Overfull \hbox (34.78772pt too wide) in paragraph at lines 5742--5742
 []\TU/lmtt/m/n/12 DeskMM                 1.2027479    0.5903580   2.037        
      0.041618 *[] 
  []
 
 
-Overfull \hbox (23.62782pt too wide) in paragraph at lines 5704--5704
+Overfull \hbox (23.62782pt too wide) in paragraph at lines 5743--5743
 []\TU/lmtt/m/n/12 DeskPrime Services    -0.1311216    1.3579826  -0.097        
      0.923079[] 
  []
 
 
-Overfull \hbox (23.33972pt too wide) in paragraph at lines 5705--5705
+Overfull \hbox (23.33972pt too wide) in paragraph at lines 5744--5744
 []\TU/lmtt/m/n/12 DeskSND                0.0518179    0.7105464   0.073        
      0.941864[] 
  []
 
 
-Overfull \hbox (23.65182pt too wide) in paragraph at lines 5706--5706
+Overfull \hbox (23.65182pt too wide) in paragraph at lines 5745--5745
 []\TU/lmtt/m/n/12 CapturedByMIDOFFICE    0.2618294    0.3319433   0.789        
      0.430242[] 
  []
 
 
-Overfull \hbox (23.32771pt too wide) in paragraph at lines 5708--5708
+Overfull \hbox (23.32771pt too wide) in paragraph at lines 5747--5747
 []\TU/lmtt/m/n/12 TANT                   0.0934629    0.5393415   0.173        
      0.862423[] 
  []
 
 
-Overfull \hbox (23.35178pt too wide) in paragraph at lines 5710--5710
+Overfull \hbox (23.35178pt too wide) in paragraph at lines 5749--5749
 []\TU/lmtt/m/n/12 CONTROLLER            -0.4702595    0.3321428  -1.416        
      0.156824[] 
  []
 
 
-Overfull \hbox (31.67984pt too wide) in paragraph at lines 5711--5711
+Overfull \hbox (31.67984pt too wide) in paragraph at lines 5750--5750
 []\TU/lmtt/m/n/12 CapturedByUNAUTHORISED-0.9738648    0.5370115  -1.813        
      0.069756 .[] 
  []
 
 
-Overfull \hbox (23.33977pt too wide) in paragraph at lines 5713--5713
+Overfull \hbox (23.33977pt too wide) in paragraph at lines 5752--5752
 []\TU/lmtt/m/n/12 Confirmed             -0.3379764    0.2363953  -1.430        
      0.152801[] 
  []
 
 
-Overfull \hbox (23.33984pt too wide) in paragraph at lines 5714--5714
+Overfull \hbox (23.33984pt too wide) in paragraph at lines 5753--5753
 []\TU/lmtt/m/n/12 TradeStatusTerminated  2.1847205    1.3465905   1.622        
      0.104716[] 
  []
 
 
-Overfull \hbox (22.71574pt too wide) in paragraph at lines 5716--5716
+Overfull \hbox (22.71574pt too wide) in paragraph at lines 5755--5755
 []\TU/lmtt/m/n/12 /Void                 11.3395140 1443.2959040  -0.008        
      0.993731[] 
  []
 
 
-Overfull \hbox (23.35176pt too wide) in paragraph at lines 5717--5717
+Overfull \hbox (23.35176pt too wide) in paragraph at lines 5756--5756
 []\TU/lmtt/m/n/12 TraderIdAMBA           0.4943858    0.5830511   0.848        
      0.396478[] 
  []
 
 
-Overfull \hbox (23.32782pt too wide) in paragraph at lines 5718--5718
+Overfull \hbox (23.32782pt too wide) in paragraph at lines 5757--5757
 []\TU/lmtt/m/n/12 TraderIdANALYST       -0.2062667    0.2944408  -0.701        
      0.483592[] 
  []
 
 
-Overfull \hbox (34.4998pt too wide) in paragraph at lines 5719--5719
+Overfull \hbox (34.4998pt too wide) in paragraph at lines 5758--5758
 []\TU/lmtt/m/n/12 TraderIdASSOCIATE     -0.7844915    0.3507247  -2.237        
      0.025301 *[] 
  []
 
 
-Overfull \hbox (46.77585pt too wide) in paragraph at lines 5720--5720
+Overfull \hbox (46.77585pt too wide) in paragraph at lines 5759--5759
 []\TU/lmtt/m/n/12 TraderIdATS            2.7382867    0.6662928   4.110     0.0
 0003961139187 ***[] 
  []
 
 
-Overfull \hbox (31.3918pt too wide) in paragraph at lines 5721--5721
+Overfull \hbox (31.3918pt too wide) in paragraph at lines 5760--5760
 []\TU/lmtt/m/n/12 TraderIdMNGDIRECTOR    0.6153055    0.3144102   1.957        
      0.050346 .[] 
  []
 
 
-Overfull \hbox (23.00386pt too wide) in paragraph at lines 5722--5722
+Overfull \hbox (23.00386pt too wide) in paragraph at lines 5761--5761
 []\TU/lmtt/m/n/12 TraderIdVICE PRINCIPAL 0.2229076    0.3662304   0.609        
      0.542754[] 
  []
 
 
-Overfull \hbox (23.3278pt too wide) in paragraph at lines 5723--5723
+Overfull \hbox (23.3278pt too wide) in paragraph at lines 5762--5762
 []\TU/lmtt/m/n/12 InstrumentBill         0.7859508    0.6781491   1.159        
      0.246471[] 
  []
 
 
-Overfull \hbox (23.68779pt too wide) in paragraph at lines 5724--5724
+Overfull \hbox (23.68779pt too wide) in paragraph at lines 5763--5763
 []\TU/lmtt/m/n/12 InstrumentBond        -0.3433677    0.4080143  -0.842        
      0.400035[] 
  []
 
 
-Overfull \hbox (23.62784pt too wide) in paragraph at lines 5725--5725
+Overfull \hbox (23.62784pt too wide) in paragraph at lines 5764--5764
 []\TU/lmtt/m/n/12 InstrumentBuySellback  0.1566566    0.6720075   0.233        
      0.815670[] 
  []
 
 
-Overfull \hbox (40.94385pt too wide) in paragraph at lines 5726--5726
+Overfull \hbox (40.94385pt too wide) in paragraph at lines 5765--5765
 []\TU/lmtt/m/n/12 InstrumentCall Deposit-1.2603996    0.3973057  -3.172        
      0.001512 **[] 
  []
 
 
-Overfull \hbox (23.65184pt too wide) in paragraph at lines 5727--5727
+Overfull \hbox (23.65184pt too wide) in paragraph at lines 5766--5766
 []\TU/lmtt/m/n/12 InstrumentCombination  0.6328848    1.2513624   0.506        
      0.613028[] 
  []
 
 
-Overfull \hbox (40.95578pt too wide) in paragraph at lines 5729--5729
+Overfull \hbox (40.95578pt too wide) in paragraph at lines 5768--5768
 []\TU/lmtt/m/n/12 DefaultSwap           -1.9878550    0.6529647  -3.044        
      0.002332 **[] 
  []
 
 
-Overfull \hbox (34.8118pt too wide) in paragraph at lines 5730--5730
+Overfull \hbox (34.8118pt too wide) in paragraph at lines 5769--5769
 []\TU/lmtt/m/n/12 InstrumentCurr        -1.0355350    0.5045561  -2.052        
      0.040134 *[] 
  []
 
 
-Overfull \hbox (23.63985pt too wide) in paragraph at lines 5731--5731
+Overfull \hbox (23.63985pt too wide) in paragraph at lines 5770--5770
 []\TU/lmtt/m/n/12 InstrumentCurrSwap    -0.6964712    0.5165406  -1.348        
      0.177550[] 
  []
 
 
-Overfull \hbox (23.6638pt too wide) in paragraph at lines 5732--5732
+Overfull \hbox (23.6638pt too wide) in paragraph at lines 5771--5771
 []\TU/lmtt/m/n/12 InstrumentDeposit      0.0584655    0.3945317   0.148        
      0.882193[] 
  []
 
 
-Overfull \hbox (23.65186pt too wide) in paragraph at lines 5733--5733
+Overfull \hbox (23.65186pt too wide) in paragraph at lines 5772--5772
 []\TU/lmtt/m/n/12 InstrumentEquityIndex -0.8243925    1.0794767  -0.764        
      0.445048[] 
  []
 
 
-Overfull \hbox (23.65178pt too wide) in paragraph at lines 5734--5734
+Overfull \hbox (23.65178pt too wide) in paragraph at lines 5773--5773
 []\TU/lmtt/m/n/12 InstrumentETF          1.0751791    1.1397155   0.943        
      0.345489[] 
  []
 
 
-Overfull \hbox (31.70377pt too wide) in paragraph at lines 5735--5735
+Overfull \hbox (31.70377pt too wide) in paragraph at lines 5774--5774
 []\TU/lmtt/m/n/12 InstrumentFRA         -1.6745203    0.9177750  -1.825        
      0.068070 .[] 
  []
 
 
-Overfull \hbox (23.33977pt too wide) in paragraph at lines 5736--5736
+Overfull \hbox (23.33977pt too wide) in paragraph at lines 5775--5775
 []\TU/lmtt/m/n/12 InstrumentFRN          0.2792480    0.5903548   0.473        
      0.636201[] 
  []
 
-
-Overfull \hbox (31.69174pt too wide) in paragraph at lines 5738--5738
+[150]
+Overfull \hbox (31.69174pt too wide) in paragraph at lines 5777--5777
 []\TU/lmtt/m/n/12 Forward               -0.7303512    0.3917942  -1.864        
      0.062305 .[] 
  []
 
 
-Overfull \hbox (23.60374pt too wide) in paragraph at lines 5740--5740
+Overfull \hbox (23.60374pt too wide) in paragraph at lines 5779--5779
 []\TU/lmtt/m/n/12 Bond                  -0.6022619    0.7595690  -0.793        
      0.427836[] 
  []
 
-[149]
-Overfull \hbox (23.62773pt too wide) in paragraph at lines 5742--5742
+
+Overfull \hbox (23.62773pt too wide) in paragraph at lines 5781--5781
 []\TU/lmtt/m/n/12 Swap                  -0.0154039    0.6024804  -0.026        
      0.979602[] 
  []
 
 
-Overfull \hbox (23.6038pt too wide) in paragraph at lines 5743--5743
+Overfull \hbox (23.6038pt too wide) in paragraph at lines 5782--5782
 []\TU/lmtt/m/n/12 InstrumentOption       0.0277106    0.5621959   0.049        
      0.960688[] 
  []
 
 
-Overfull \hbox (23.31581pt too wide) in paragraph at lines 5744--5744
+Overfull \hbox (23.31581pt too wide) in paragraph at lines 5783--5783
 []\TU/lmtt/m/n/12 InstrumentOther       -0.1830206    0.2891929  -0.633        
      0.526821[] 
  []
 
 
-Overfull \hbox (40.97986pt too wide) in paragraph at lines 5745--5745
+Overfull \hbox (40.97986pt too wide) in paragraph at lines 5784--5784
 []\TU/lmtt/m/n/12 InstrumentRepo/Reverse-2.0252367    0.7133321  -2.839        
      0.004524 **[] 
  []
 
 
-Overfull \hbox (40.97987pt too wide) in paragraph at lines 5746--5746
+Overfull \hbox (40.97987pt too wide) in paragraph at lines 5785--5785
 []\TU/lmtt/m/n/12 InstrumentSecurityLoan-1.0447821    0.3461497  -3.018        
      0.002542 **[] 
  []
 
 
-Overfull \hbox (23.6278pt too wide) in paragraph at lines 5747--5747
+Overfull \hbox (23.6278pt too wide) in paragraph at lines 5786--5786
 []\TU/lmtt/m/n/12 InstrumentStock       -0.6782734    1.4169911  -0.479        
      0.632172[] 
  []
 
 
-Overfull \hbox (34.73973pt too wide) in paragraph at lines 5749--5749
+Overfull \hbox (34.73973pt too wide) in paragraph at lines 5788--5788
 []\TU/lmtt/m/n/12 Swap                  -1.0219974    0.3990992  -2.561        
      0.010444 *[] 
  []
 
 
-Overfull \hbox (47.17178pt too wide) in paragraph at lines 5750--5750
+Overfull \hbox (47.17178pt too wide) in paragraph at lines 5789--5789
 []\TU/lmtt/m/n/12 ReasonAcquirer         4.2877314    1.2671128   3.384        
      0.000715 ***[] 
  []
 
 
-Overfull \hbox (31.72769pt too wide) in paragraph at lines 5752--5752
+Overfull \hbox (31.72769pt too wide) in paragraph at lines 5791--5791
 []\TU/lmtt/m/n/12 Related                1.7788236    1.0318752   1.724        
      0.084730 .[] 
  []
 
 
-Overfull \hbox (40.97983pt too wide) in paragraph at lines 5753--5753
+Overfull \hbox (40.97983pt too wide) in paragraph at lines 5792--5792
 []\TU/lmtt/m/n/12 ReasonCalendar Related 1.2768935    0.3888510   3.284        
      0.001024 **[] 
  []
 
 
-Overfull \hbox (23.37582pt too wide) in paragraph at lines 5755--5755
+Overfull \hbox (23.37582pt too wide) in paragraph at lines 5794--5794
 []\TU/lmtt/m/n/12 Direct/Amount/Rate/CP  0.2418004    0.4150033   0.583        
      0.560131[] 
  []
 
 
-Overfull \hbox (23.65178pt too wide) in paragraph at lines 5760--5760
+Overfull \hbox (23.65178pt too wide) in paragraph at lines 5799--5799
 []\TU/lmtt/m/n/12 Early Delivery        -0.4631230    1.2048262  -0.384        
      0.700689[] 
  []
 
 
-Overfull \hbox (47.1598pt too wide) in paragraph at lines 5762--5762
+Overfull \hbox (47.1598pt too wide) in paragraph at lines 5801--5801
 []\TU/lmtt/m/n/12 NDEUSSA Reset Level   -2.8475291    0.8317484  -3.424        
      0.000618 ***[] 
  []
 
 
-Overfull \hbox (47.08788pt too wide) in paragraph at lines 5763--5763
+Overfull \hbox (47.08788pt too wide) in paragraph at lines 5802--5802
 []\TU/lmtt/m/n/12 ReasonCPI Fixings     -4.2562507    0.9924649  -4.289     0.0
 0001798306834 ***[] 
  []
 
 
-Overfull \hbox (47.14786pt too wide) in paragraph at lines 5765--5765
+Overfull \hbox (47.14786pt too wide) in paragraph at lines 5804--5804
 []\TU/lmtt/m/n/12 on/Delivery/ Close out-2.6225044    0.7518160  -3.488        
      0.000486 ***[] 
  []
 
 
-Overfull \hbox (23.65175pt too wide) in paragraph at lines 5767--5767
+Overfull \hbox (23.65175pt too wide) in paragraph at lines 5806--5806
 []\TU/lmtt/m/n/12 Related               -1.4712607    0.9402884  -1.565        
      0.117655[] 
  []
 
 
-Overfull \hbox (23.65181pt too wide) in paragraph at lines 5770--5770
+Overfull \hbox (23.65181pt too wide) in paragraph at lines 5809--5809
 []\TU/lmtt/m/n/12 Economics of Trade    -0.1702668    0.8638805  -0.197        
      0.843753[] 
  []
 
 
-Overfull \hbox (23.62785pt too wide) in paragraph at lines 5771--5771
+Overfull \hbox (23.62785pt too wide) in paragraph at lines 5810--5810
 []\TU/lmtt/m/n/12 ReasonPayments Related-0.5039834    0.7179092  -0.702        
      0.482669[] 
  []
 
 
-Overfull \hbox (23.3518pt too wide) in paragraph at lines 5773--5773
+Overfull \hbox (23.3518pt too wide) in paragraph at lines 5812--5812
 [] \TU/lmtt/m/n/12 / Restructure        -1.8408735    1.1353256  -1.621        
      0.104921[] 
  []
 
 
-Overfull \hbox (31.70378pt too wide) in paragraph at lines 5774--5774
+Overfull \hbox (31.70378pt too wide) in paragraph at lines 5813--5813
 []\TU/lmtt/m/n/12 ReasonSales Credits    2.1487308    1.1446783   1.877        
      0.060498 .[] 
  []
 
 
-Overfull \hbox (47.13585pt too wide) in paragraph at lines 5776--5776
+Overfull \hbox (47.13585pt too wide) in paragraph at lines 5815--5815
 []\TU/lmtt/m/n/12 Call Accounts         -4.2209045    0.9534873  -4.427     0.0
 0000956382022 ***[] 
  []
 
 
-Overfull \hbox (23.62779pt too wide) in paragraph at lines 5778--5778
+Overfull \hbox (23.62779pt too wide) in paragraph at lines 5817--5817
 []\TU/lmtt/m/n/12 Restructure           -0.6497247    2.2083716  -0.294        
      0.768598[] 
  []
 
 
-Overfull \hbox (34.76381pt too wide) in paragraph at lines 5779--5779
+Overfull \hbox (34.76381pt too wide) in paragraph at lines 5818--5818
 []\TU/lmtt/m/n/12 ReasonTri-Optima      -3.2769186    1.4560359  -2.251        
      0.024412 *[] 
  []
 
 
-Overfull \hbox (23.66373pt too wide) in paragraph at lines 5781--5781
+Overfull \hbox (23.66373pt too wide) in paragraph at lines 5820--5820
 []\TU/lmtt/m/n/12 Request                0.7265138    0.6359340   1.142        
      0.253273[] 
  []
 
-
-Overfull \hbox (46.83572pt too wide) in paragraph at lines 5783--5783
+[151]
+Overfull \hbox (46.83572pt too wide) in paragraph at lines 5822--5822
 []\TU/lmtt/m/n/12 1EL1                   2.4984605    0.6443312   3.878        
      0.000105 ***[] 
  []
 
 
-Overfull \hbox (34.45172pt too wide) in paragraph at lines 5785--5785
+Overfull \hbox (34.45172pt too wide) in paragraph at lines 5824--5824
 []\TU/lmtt/m/n/12 1EL4                   1.3739551    0.6054219   2.269        
      0.023243 *[] 
  []
 
-[150]
-Overfull \hbox (46.77579pt too wide) in paragraph at lines 5787--5787
+
+Overfull \hbox (46.77579pt too wide) in paragraph at lines 5826--5826
 []\TU/lmtt/m/n/12 1EL6                   5.6915077    0.8154721   6.979     0.0
 0000000000296 ***[] 
  []
 
 
-Overfull \hbox (46.84775pt too wide) in paragraph at lines 5789--5789
+Overfull \hbox (46.84775pt too wide) in paragraph at lines 5828--5828
 []\TU/lmtt/m/n/12 1EL8                  -4.0471414    1.1004892  -3.678        
      0.000235 ***[] 
  []
 
 
-Overfull \hbox (40.64372pt too wide) in paragraph at lines 5791--5791
+Overfull \hbox (40.64372pt too wide) in paragraph at lines 5830--5830
 []\TU/lmtt/m/n/12 1BL1                   2.0456821    0.7730115   2.646        
      0.008136 **[] 
  []
 
 
-Overfull \hbox (23.33972pt too wide) in paragraph at lines 5793--5793
+Overfull \hbox (23.33972pt too wide) in paragraph at lines 5832--5832
 []\TU/lmtt/m/n/12 1BL3                   0.1576673    0.6308477   0.250        
      0.802642[] 
  []
 
 
-Overfull \hbox (34.43974pt too wide) in paragraph at lines 5795--5795
+Overfull \hbox (34.43974pt too wide) in paragraph at lines 5834--5834
 []\TU/lmtt/m/n/12 1BL4                  -1.2651162    0.4937915  -2.562        
      0.010406 *[] 
  []
 
 
-Overfull \hbox (34.45172pt too wide) in paragraph at lines 5797--5797
+Overfull \hbox (34.45172pt too wide) in paragraph at lines 5836--5836
 []\TU/lmtt/m/n/12 1BL5                  -1.1905846    0.5243289  -2.271        
      0.023166 *[] 
  []
 
 
-Overfull \hbox (23.36371pt too wide) in paragraph at lines 5799--5799
+Overfull \hbox (23.36371pt too wide) in paragraph at lines 5838--5838
 []\TU/lmtt/m/n/12 1BL6                   1.7544025    1.4007670   1.252        
      0.210403[] 
  []
 
 
-Overfull \hbox (23.0517pt too wide) in paragraph at lines 5801--5801
+Overfull \hbox (23.0517pt too wide) in paragraph at lines 5840--5840
 []\TU/lmtt/m/n/12 1BL7                   2.2553305    2.2524125   1.001        
      0.316684[] 
  []
 
 
-Overfull \hbox (22.97975pt too wide) in paragraph at lines 5803--5803
+Overfull \hbox (22.97975pt too wide) in paragraph at lines 5842--5842
 []\TU/lmtt/m/n/12 1BL9                   0.2496745 1613.4575790   0.000        
      0.999877[] 
  []
 
 
-Overfull \hbox (6.696pt too wide) in paragraph at lines 5816--5816
+Overfull \hbox (6.696pt too wide) in paragraph at lines 5855--5855
 |\TU/lmr/m/it/12 Estimation of some binomial regression modelS: The formula tha
 t describes the model
  []
 
-[151]
-Overfull \hbox (2.0759pt too wide) in paragraph at lines 5855--5855
+[152]
+Overfull \hbox (2.0759pt too wide) in paragraph at lines 5894--5894
 []    \TU/lmtt/m/n/12 Instrument + Reason + EventTypeCategoryLevel1 + BusinessL
 ineLevel1,[] 
  []
 
 
-Overfull \hbox (78.08386pt too wide) in paragraph at lines 5856--5856
+Overfull \hbox (78.08386pt too wide) in paragraph at lines 5895--5895
 []    \TU/lmtt/m/n/12 family = binomial(link = "logit"), data = crs$training, o
 ffset = log(Exposure))[] 
  []
 
 
-Overfull \hbox (22.46367pt too wide) in paragraph at lines 5863--5863
+Overfull \hbox (22.46367pt too wide) in paragraph at lines 5902--5902
 []                       \TU/lmtt/m/n/12 Estimate      Std. Error z value      
      Pr(>|z|)[] 
  []
 
 
-Overfull \hbox (40.36787pt too wide) in paragraph at lines 5864--5864
+Overfull \hbox (40.36787pt too wide) in paragraph at lines 5903--5903
 []\TU/lmtt/m/n/12 (Intercept)           -7.9749408     1.0332350  -7.718 0.0000
 000000000118 ***[] 
  []
 
 
-Overfull \hbox (17.18376pt too wide) in paragraph at lines 5865--5865
+Overfull \hbox (17.18376pt too wide) in paragraph at lines 5904--5904
 []\TU/lmtt/m/n/12 UpdatedDay             0.0158775     0.0144454   1.099       
     0.271707[] 
  []
 
 
-Overfull \hbox (17.1478pt too wide) in paragraph at lines 5866--5866
+Overfull \hbox (17.1478pt too wide) in paragraph at lines 5905--5905
 []\TU/lmtt/m/n/12 UpdatedTime           -0.5014732     0.9397316  -0.534       
     0.593594[] 
  []
 
 
-Overfull \hbox (17.17177pt too wide) in paragraph at lines 5867--5867
+Overfull \hbox (17.17177pt too wide) in paragraph at lines 5906--5906
 []\TU/lmtt/m/n/12 TradedDay             -0.0007336     0.0120301  -0.061       
     0.951373[] 
  []
 
 
-Overfull \hbox (17.11177pt too wide) in paragraph at lines 5868--5868
+Overfull \hbox (17.11177pt too wide) in paragraph at lines 5907--5907
 []\TU/lmtt/m/n/12 TradedTime             0.9590326     1.0673571   0.899       
     0.368913[] 
  []
 
 
-Overfull \hbox (40.94385pt too wide) in paragraph at lines 5869--5869
+Overfull \hbox (40.94385pt too wide) in paragraph at lines 5908--5908
 []\TU/lmtt/m/n/12 DeskAfrica             4.3345648     0.9075486   4.776 0.0000
 017870595853 ***[] 
  []
 
 
-Overfull \hbox (40.94388pt too wide) in paragraph at lines 5870--5870
+Overfull \hbox (40.94388pt too wide) in paragraph at lines 5909--5909
 []\TU/lmtt/m/n/12 DeskBonds/Repos        5.0241306     0.6499654   7.730 0.0000
 000000000108 ***[] 
  []
 
 
-Overfull \hbox (34.7758pt too wide) in paragraph at lines 5871--5871
+Overfull \hbox (34.7758pt too wide) in paragraph at lines 5910--5910
 []\TU/lmtt/m/n/12 DeskCommodities        2.0972543     0.6780211   3.093       
     0.001980 **[] 
  []
 
 
-Overfull \hbox (17.5078pt too wide) in paragraph at lines 5872--5872
+Overfull \hbox (17.5078pt too wide) in paragraph at lines 5911--5911
 []\TU/lmtt/m/n/12 DeskDerivatives       -0.1864882     0.7413218  -0.252       
     0.801380[] 
  []
 
 
-Overfull \hbox (34.77577pt too wide) in paragraph at lines 5873--5873
+Overfull \hbox (34.77577pt too wide) in paragraph at lines 5912--5912
 []\TU/lmtt/m/n/12 DeskEquity             1.8915605     0.5960148   3.174       
     0.001505 **[] 
  []
 
 
-Overfull \hbox (17.44789pt too wide) in paragraph at lines 5874--5874
+Overfull \hbox (17.44789pt too wide) in paragraph at lines 5913--5913
 []\TU/lmtt/m/n/12 DeskManagement/Other -18.2048936  1520.1898190  -0.012       
     0.990445[] 
  []
 
 
-Overfull \hbox (28.58374pt too wide) in paragraph at lines 5875--5875
+Overfull \hbox (28.58374pt too wide) in paragraph at lines 5914--5914
 []\TU/lmtt/m/n/12 DeskMM                 1.9981588     0.7940263   2.516       
     0.011853 *[] 
  []
 
 
-Overfull \hbox (17.47182pt too wide) in paragraph at lines 5876--5876
+Overfull \hbox (17.47182pt too wide) in paragraph at lines 5915--5915
 []\TU/lmtt/m/n/12 DeskPrime Services     0.5307160     1.3075756   0.406       
     0.684832[] 
  []
 
 
-Overfull \hbox (28.61972pt too wide) in paragraph at lines 5877--5877
+Overfull \hbox (28.61972pt too wide) in paragraph at lines 5916--5916
 []\TU/lmtt/m/n/12 DeskSND                2.3274858     1.0644292   2.187       
     0.028771 *[] 
  []
 
 
-Overfull \hbox (25.48782pt too wide) in paragraph at lines 5878--5878
+Overfull \hbox (25.48782pt too wide) in paragraph at lines 5917--5917
 []\TU/lmtt/m/n/12 CapturedByMIDOFFICE    0.8804690     0.4547261   1.936       
     0.052836 .[] 
  []
 
 
-Overfull \hbox (17.12373pt too wide) in paragraph at lines 5880--5880
+Overfull \hbox (17.12373pt too wide) in paragraph at lines 5919--5919
 []\TU/lmtt/m/n/12 TANT                   0.4517261     0.6963223   0.649       
     0.516512[] 
  []
 
 
-Overfull \hbox (34.7638pt too wide) in paragraph at lines 5882--5882
+Overfull \hbox (34.7638pt too wide) in paragraph at lines 5921--5921
 []\TU/lmtt/m/n/12 CONTROLLER            -1.2989586     0.4743150  -2.739       
     0.006170 **[] 
  []
 
 
-Overfull \hbox (17.44786pt too wide) in paragraph at lines 5883--5883
+Overfull \hbox (17.44786pt too wide) in paragraph at lines 5922--5922
 []\TU/lmtt/m/n/12 CapturedByUNAUTHORISED 0.3986375     0.8119582   0.491       
     0.623456[] 
  []
 
-
-Overfull \hbox (40.93184pt too wide) in paragraph at lines 5885--5885
+[153]
+Overfull \hbox (40.93184pt too wide) in paragraph at lines 5924--5924
 []\TU/lmtt/m/n/12 Confirmed             -1.5378456     0.3303144  -4.656 0.0000
 032287903266 ***[] 
  []
 
 
-Overfull \hbox (17.13585pt too wide) in paragraph at lines 5886--5886
+Overfull \hbox (17.13585pt too wide) in paragraph at lines 5925--5925
 []\TU/lmtt/m/n/12 TradeStatusTerminated  1.5155682     1.3644806   1.111       
     0.266685[] 
  []
 
 
-Overfull \hbox (16.85977pt too wide) in paragraph at lines 5888--5888
+Overfull \hbox (16.85977pt too wide) in paragraph at lines 5927--5927
 []\TU/lmtt/m/n/12 /Void                -15.5553055  4600.1942577  -0.003       
     0.997302[] 
  []
 
-[152]
-Overfull \hbox (16.8238pt too wide) in paragraph at lines 5889--5889
+
+Overfull \hbox (16.8238pt too wide) in paragraph at lines 5928--5928
 []\TU/lmtt/m/n/12 TraderIdAMBA          -0.0025153     0.7912919  -0.003       
     0.997464[] 
  []
 
 
-Overfull \hbox (17.12383pt too wide) in paragraph at lines 5890--5890
+Overfull \hbox (17.12383pt too wide) in paragraph at lines 5929--5929
 []\TU/lmtt/m/n/12 TraderIdANALYST       -0.6145646     0.4385093  -1.401       
     0.161069[] 
  []
 
 
-Overfull \hbox (25.19981pt too wide) in paragraph at lines 5891--5891
+Overfull \hbox (25.19981pt too wide) in paragraph at lines 5930--5930
 []\TU/lmtt/m/n/12 TraderIdASSOCIATE     -0.9420685     0.5319834  -1.771       
     0.076584 .[] 
  []
 
 
-Overfull \hbox (34.43979pt too wide) in paragraph at lines 5892--5892
+Overfull \hbox (34.43979pt too wide) in paragraph at lines 5931--5931
 []\TU/lmtt/m/n/12 TraderIdATS            2.6800452     0.9148818   2.929       
     0.003396 **[] 
  []
 
 
-Overfull \hbox (34.46384pt too wide) in paragraph at lines 5893--5893
+Overfull \hbox (34.46384pt too wide) in paragraph at lines 5932--5932
 []\TU/lmtt/m/n/12 TraderIdMNGDIRECTOR    1.3616232     0.5228248   2.604       
     0.009205 **[] 
  []
 
 
-Overfull \hbox (17.15985pt too wide) in paragraph at lines 5894--5894
+Overfull \hbox (17.15985pt too wide) in paragraph at lines 5933--5933
 []\TU/lmtt/m/n/12 TraderIdVICE PRINCIPAL-0.7050650     0.5070382  -1.391       
     0.164360[] 
  []
 
 
-Overfull \hbox (17.49582pt too wide) in paragraph at lines 5895--5895
+Overfull \hbox (17.49582pt too wide) in paragraph at lines 5934--5934
 []\TU/lmtt/m/n/12 InstrumentBill        -0.8718713     0.9354385  -0.932       
     0.351313[] 
  []
 
 
-Overfull \hbox (17.09981pt too wide) in paragraph at lines 5896--5896
+Overfull \hbox (17.09981pt too wide) in paragraph at lines 5935--5935
 []\TU/lmtt/m/n/12 InstrumentBond         0.2366580     0.6067829   0.390       
     0.696521[] 
  []
 
 
-Overfull \hbox (17.17184pt too wide) in paragraph at lines 5897--5897
+Overfull \hbox (17.17184pt too wide) in paragraph at lines 5936--5936
 []\TU/lmtt/m/n/12 InstrumentBuySellback  1.3218806     1.0448559   1.265       
     0.205824[] 
  []
 
 
-Overfull \hbox (40.91988pt too wide) in paragraph at lines 5898--5898
+Overfull \hbox (40.91988pt too wide) in paragraph at lines 5937--5937
 []\TU/lmtt/m/n/12 InstrumentCall Deposit-2.1675836     0.5991862  -3.618       
     0.000297 ***[] 
  []
 
 
-Overfull \hbox (17.1359pt too wide) in paragraph at lines 5899--5899
+Overfull \hbox (17.1359pt too wide) in paragraph at lines 5938--5938
 []\TU/lmtt/m/n/12 InstrumentCombination-16.7614537   746.7004950  -0.022       
     0.982091[] 
  []
 
 
-Overfull \hbox (17.4478pt too wide) in paragraph at lines 5901--5901
+Overfull \hbox (17.4478pt too wide) in paragraph at lines 5940--5940
 []\TU/lmtt/m/n/12 DefaultSwap           -1.5055382     0.9616767  -1.566       
     0.117458[] 
  []
 
 
-Overfull \hbox (40.9679pt too wide) in paragraph at lines 5902--5902
+Overfull \hbox (40.9679pt too wide) in paragraph at lines 5941--5941
 []\TU/lmtt/m/n/12 InstrumentCurr        -2.8712232     0.7263157  -3.953 0.0000
 771343104836 ***[] 
  []
 
 
-Overfull \hbox (34.78784pt too wide) in paragraph at lines 5903--5903
+Overfull \hbox (34.78784pt too wide) in paragraph at lines 5942--5942
 []\TU/lmtt/m/n/12 InstrumentCurrSwap    -2.0228703     0.7723046  -2.619       
     0.008812 **[] 
  []
 
 
-Overfull \hbox (17.47182pt too wide) in paragraph at lines 5904--5904
+Overfull \hbox (17.47182pt too wide) in paragraph at lines 5943--5943
 []\TU/lmtt/m/n/12 InstrumentDeposit      0.2775796     0.5010409   0.554       
     0.579575[] 
  []
 
 
-Overfull \hbox (17.4239pt too wide) in paragraph at lines 5905--5905
+Overfull \hbox (17.4239pt too wide) in paragraph at lines 5944--5944
 []\TU/lmtt/m/n/12 InstrumentEquityIndex-20.9093522  4247.6245656  -0.005       
     0.996072[] 
  []
 
 
-Overfull \hbox (17.47177pt too wide) in paragraph at lines 5906--5906
+Overfull \hbox (17.47177pt too wide) in paragraph at lines 5945--5945
 []\TU/lmtt/m/n/12 InstrumentETF          0.6949521     2.5050338   0.277       
     0.781456[] 
  []
 
 
-Overfull \hbox (17.12384pt too wide) in paragraph at lines 5907--5907
+Overfull \hbox (17.12384pt too wide) in paragraph at lines 5946--5946
 []\TU/lmtt/m/n/12 InstrumentFRA        -18.4966479  2217.1713497  -0.008       
     0.993344[] 
  []
 
 
-Overfull \hbox (17.13579pt too wide) in paragraph at lines 5908--5908
+Overfull \hbox (17.13579pt too wide) in paragraph at lines 5947--5947
 []\TU/lmtt/m/n/12 InstrumentFRN          1.0640690     0.6934803   1.534       
     0.124934[] 
  []
 
 
-Overfull \hbox (34.15176pt too wide) in paragraph at lines 5910--5910
+Overfull \hbox (34.15176pt too wide) in paragraph at lines 5949--5949
 []\TU/lmtt/m/n/12 /Forward              -1.3009786     0.5043702  -2.579       
     0.009897 **[] 
  []
 
 
-Overfull \hbox (17.44778pt too wide) in paragraph at lines 5912--5912
+Overfull \hbox (17.44778pt too wide) in paragraph at lines 5951--5951
 []\TU/lmtt/m/n/12 Bond                 -18.5083821  1980.8539595  -0.009       
     0.992545[] 
  []
 
 
-Overfull \hbox (17.14774pt too wide) in paragraph at lines 5914--5914
+Overfull \hbox (17.14774pt too wide) in paragraph at lines 5953--5953
 []\TU/lmtt/m/n/12 Swap                  -1.3276177     0.8399563  -1.581       
     0.113974[] 
  []
 
 
-Overfull \hbox (17.14783pt too wide) in paragraph at lines 5915--5915
+Overfull \hbox (17.14783pt too wide) in paragraph at lines 5954--5954
 []\TU/lmtt/m/n/12 InstrumentOption      -0.3366249     0.7407203  -0.454       
     0.649501[] 
  []
 
 
-Overfull \hbox (25.5118pt too wide) in paragraph at lines 5916--5916
+Overfull \hbox (25.5118pt too wide) in paragraph at lines 5955--5955
 []\TU/lmtt/m/n/12 InstrumentOther       -0.7233858     0.4259873  -1.698       
     0.089481 .[] 
  []
 
 
-Overfull \hbox (25.47586pt too wide) in paragraph at lines 5917--5917
+Overfull \hbox (25.47586pt too wide) in paragraph at lines 5956--5956
 []\TU/lmtt/m/n/12 InstrumentRepo/Reverse-1.6068842     0.8756603  -1.835       
     0.066498 .[] 
  []
 
 
-Overfull \hbox (34.78787pt too wide) in paragraph at lines 5918--5918
+Overfull \hbox (34.78787pt too wide) in paragraph at lines 5957--5957
 []\TU/lmtt/m/n/12 InstrumentSecurityLoan-1.6209368     0.5052288  -3.208       
     0.001335 **[] 
  []
 
 
-Overfull \hbox (17.45985pt too wide) in paragraph at lines 5919--5919
+Overfull \hbox (17.45985pt too wide) in paragraph at lines 5958--5958
 []\TU/lmtt/m/n/12 InstrumentStock      -15.5171850   917.6844311  -0.017       
     0.986509[] 
  []
 
 
-Overfull \hbox (40.9678pt too wide) in paragraph at lines 5921--5921
+Overfull \hbox (40.9678pt too wide) in paragraph at lines 5960--5960
 []\TU/lmtt/m/n/12 Swap                  -2.1376528     0.5110535  -4.183 0.0000
 287895194553 ***[] 
  []
 
 
-Overfull \hbox (17.42384pt too wide) in paragraph at lines 5922--5922
+Overfull \hbox (17.42384pt too wide) in paragraph at lines 5961--5961
 []\TU/lmtt/m/n/12 ReasonAcquirer       -15.7038902 10686.9945316  -0.001       
     0.998828[] 
  []
 
 
-Overfull \hbox (25.51181pt too wide) in paragraph at lines 5923--5923
+Overfull \hbox (25.51181pt too wide) in paragraph at lines 5962--5962
 []\TU/lmtt/m/n/12 ReasonBrokerage Related4.1338623     2.1977014   1.881       
     0.059973 .[] 
  []
 
 
-Overfull \hbox (40.9919pt too wide) in paragraph at lines 5924--5924
+Overfull \hbox (40.9919pt too wide) in paragraph at lines 5963--5963
 []\TU/lmtt/m/n/12 ReasonCalendar Related 2.8178751     0.5313717   5.303 0.0000
 001139021850 ***[] 
  []
 
 
-Overfull \hbox (34.77573pt too wide) in paragraph at lines 5927--5927
+Overfull \hbox (34.77573pt too wide) in paragraph at lines 5966--5966
 [] \TU/lmtt/m/n/12 / Rate / CP           1.4848841     0.5279634   2.812       
     0.004916 **[] 
  []
 
-
-Overfull \hbox (17.48375pt too wide) in paragraph at lines 5930--5930
+[154]
+Overfull \hbox (17.48375pt too wide) in paragraph at lines 5969--5969
 []\TU/lmtt/m/n/12 of Deal               -0.3720879     1.2198215  -0.305       
     0.760340[] 
  []
 
 
-Overfull \hbox (28.60777pt too wide) in paragraph at lines 5932--5932
+Overfull \hbox (28.60777pt too wide) in paragraph at lines 5971--5971
 []\TU/lmtt/m/n/12 Early Delivery         2.4241223     1.2227799   1.982       
     0.047427 *[] 
  []
 
-[153]
-Overfull \hbox (17.45978pt too wide) in paragraph at lines 5934--5934
+
+Overfull \hbox (17.45978pt too wide) in paragraph at lines 5973--5973
 []\TU/lmtt/m/n/12 NDEUSSA Reset Level    0.4751118     0.9464671   0.502       
     0.615678[] 
  []
 
 
-Overfull \hbox (23.61584pt too wide) in paragraph at lines 5935--5935
+Overfull \hbox (23.61584pt too wide) in paragraph at lines 5974--5974
 []\TU/lmtt/m/n/12 ReasonCPI Fixings     -16.6208128  1172.4035169  -0.014      
      0.988689[] 
  []
 
 
-Overfull \hbox (23.36382pt too wide) in paragraph at lines 5938--5938
+Overfull \hbox (23.36382pt too wide) in paragraph at lines 5977--5977
 [] \TU/lmtt/m/n/12 / Close out          -43.1745557  1552.0277206  -0.028      
      0.977807[] 
  []
 
 
-Overfull \hbox (23.35175pt too wide) in paragraph at lines 5940--5940
+Overfull \hbox (23.35175pt too wide) in paragraph at lines 5979--5979
 []\TU/lmtt/m/n/12 Related                -0.8431985     1.0953186  -0.770      
      0.441407[] 
  []
 
 
-Overfull \hbox (23.62779pt too wide) in paragraph at lines 5943--5943
+Overfull \hbox (23.62779pt too wide) in paragraph at lines 5982--5982
 [] \TU/lmtt/m/n/12 of Trade             -40.9898225  1552.0278612  -0.026      
      0.978930[] 
  []
 
 
-Overfull \hbox (23.61583pt too wide) in paragraph at lines 5944--5944
+Overfull \hbox (23.61583pt too wide) in paragraph at lines 5983--5983
 []\TU/lmtt/m/n/12 ReasonPayments Related  0.6979688     0.7737247   0.902      
      0.367009[] 
  []
 
 
-Overfull \hbox (23.32784pt too wide) in paragraph at lines 5946--5946
+Overfull \hbox (23.32784pt too wide) in paragraph at lines 5985--5985
 [] \TU/lmtt/m/n/12 / Restructure        -14.7140963   850.1374455  -0.017      
      0.986191[] 
  []
 
 
-Overfull \hbox (34.7758pt too wide) in paragraph at lines 5947--5947
+Overfull \hbox (34.7758pt too wide) in paragraph at lines 5986--5986
 []\TU/lmtt/m/n/12 ReasonSales Credits     2.9232638     1.3710077   2.132      
      0.032990 *[] 
  []
 
 
-Overfull \hbox (23.56778pt too wide) in paragraph at lines 5949--5949
+Overfull \hbox (23.56778pt too wide) in paragraph at lines 5988--5988
 [] \TU/lmtt/m/n/12 Accounts             -79.5591356  1906.0449509  -0.042      
      0.966706[] 
  []
 
 
-Overfull \hbox (23.32785pt too wide) in paragraph at lines 5951--5951
+Overfull \hbox (23.32785pt too wide) in paragraph at lines 5990--5990
 []\TU/lmtt/m/n/12 Restructure           -55.6249278  2864.4577747  -0.019      
      0.984507[] 
  []
 
 
-Overfull \hbox (23.65181pt too wide) in paragraph at lines 5952--5952
+Overfull \hbox (23.65181pt too wide) in paragraph at lines 5991--5991
 []\TU/lmtt/m/n/12 ReasonTri-Optima       -1.9567842     1.4525216  -1.347      
      0.177928[] 
  []
 
 
-Overfull \hbox (34.79971pt too wide) in paragraph at lines 5954--5954
+Overfull \hbox (34.79971pt too wide) in paragraph at lines 5993--5993
 [] \TU/lmtt/m/n/12 Request                2.2511805     0.9782985   2.301      
      0.021385 *[] 
  []
 
 
-Overfull \hbox (23.61575pt too wide) in paragraph at lines 5956--5956
+Overfull \hbox (23.61575pt too wide) in paragraph at lines 5995--5995
 []\TU/lmtt/m/n/12 EL1                    44.5975989  1552.0274644   0.029      
      0.977076[] 
  []
 
 
-Overfull \hbox (34.75171pt too wide) in paragraph at lines 5958--5958
+Overfull \hbox (34.75171pt too wide) in paragraph at lines 5997--5997
 []\TU/lmtt/m/n/12 EL4                     1.2665117     0.6101433   2.076      
      0.037916 *[] 
  []
 
 
-Overfull \hbox (23.60373pt too wide) in paragraph at lines 5960--5960
+Overfull \hbox (23.60373pt too wide) in paragraph at lines 5999--5999
 []\TU/lmtt/m/n/12 EL6                    81.6802380  1906.0447914   0.043      
      0.965819[] 
  []
 
 
-Overfull \hbox (47.09981pt too wide) in paragraph at lines 5962--5962
+Overfull \hbox (47.09981pt too wide) in paragraph at lines 6001--6001
 []\TU/lmtt/m/n/12 EL8                    -5.4027759     1.3335661  -4.051 0.000
 0509176014626 ***[] 
  []
 
 
-Overfull \hbox (40.95572pt too wide) in paragraph at lines 5964--5964
+Overfull \hbox (40.95572pt too wide) in paragraph at lines 6003--6003
 []\TU/lmtt/m/n/12 BL1                     2.7388864     1.0366354   2.642      
      0.008240 **[] 
  []
 
 
-Overfull \hbox (37.7997pt too wide) in paragraph at lines 5966--5966
+Overfull \hbox (37.7997pt too wide) in paragraph at lines 6005--6005
 []\TU/lmtt/m/n/12 BL3                     -1.6356998     0.8999922  -1.817     
       0.069147 .[] 
  []
 
 
-Overfull \hbox (53.3158pt too wide) in paragraph at lines 5968--5968
+Overfull \hbox (53.3158pt too wide) in paragraph at lines 6007--6007
 []\TU/lmtt/m/n/12 BL4                     -4.1488349     0.7241412  -5.729 0.00
 00000100835606 ***[] 
  []
 
 
-Overfull \hbox (47.14772pt too wide) in paragraph at lines 5970--5970
+Overfull \hbox (47.14772pt too wide) in paragraph at lines 6009--6009
 []\TU/lmtt/m/n/12 BL5                     -2.2516395     0.7017310  -3.209     
       0.001333 **[] 
  []
 
 
-Overfull \hbox (29.8317pt too wide) in paragraph at lines 5972--5972
+Overfull \hbox (29.8317pt too wide) in paragraph at lines 6011--6011
 []\TU/lmtt/m/n/12 BL6                      0.8510447     1.4106248   0.603     
       0.546302[] 
  []
 
-
-Overfull \hbox (29.72375pt too wide) in paragraph at lines 5974--5974
+[155]
+Overfull \hbox (29.72375pt too wide) in paragraph at lines 6013--6013
 []\TU/lmtt/m/n/12 BL7                    -16.5197686  2691.6096464  -0.006     
       0.995103[] 
  []
 
 
-Overfull \hbox (29.48373pt too wide) in paragraph at lines 5976--5976
+Overfull \hbox (29.48373pt too wide) in paragraph at lines 6015--6015
 []\TU/lmtt/m/n/12 BL9                     24.2348398  1520.1905636   0.016     
       0.987281[] 
  []
 
-[154]
-Overfull \hbox (13.63197pt too wide) in paragraph at lines 5994--5994
+
+Overfull \hbox (13.63197pt too wide) in paragraph at lines 6033--6033
 |\TU/lmr/m/it/12 ”All possible models” are considered by subjectively ad iterat
 ively searching the data for
  []
 
-File: Dredge_bin.eps Graphic file (type eps)
-<Dredge_bin.eps>
+File: Dredge_bin.pdf Graphic file (type pdf)
+<use Dredge_bin.pdf>
 
-Overfull \hbox (6.15596pt too wide) in paragraph at lines 6023--6023
+Overfull \hbox (6.15596pt too wide) in paragraph at lines 6062--6062
 |\TU/lmr/m/it/12 We use \TU/lmtt/m/it/12 get.models \TU/lmr/m/it/12 function to
  generate a list in which its objects are the fitted mod-
  []
 
 
-Overfull \hbox (11.03593pt too wide) in paragraph at lines 6023--6023
+Overfull \hbox (11.03593pt too wide) in paragraph at lines 6062--6062
 \TU/lmr/m/it/12 els. We will also use the ”model.avg” function to do a model av
 eraging based on AICc.| 
  []
 
-File: Get_models_bin1.eps Graphic file (type eps)
-<Get_models_bin1.eps>
-File: Get_models_bin2.eps Graphic file (type eps)
-<Get_models_bin2.eps>
-File: Get_models_bin3.eps Graphic file (type eps)
-<Get_models_bin3.eps>
-[155] [156] [157] [158] [159]
-Overfull \hbox (34.82399pt too wide) in paragraph at lines 6092--6092
+File: Get_models_bin1.pdf Graphic file (type pdf)
+<use Get_models_bin1.pdf>
+
+Underfull \hbox (badness 4713) in paragraph at lines 6082--6082
+[]\TU/lmr/bx/n/10.95 Figure 9.5: |\TU/lmr/m/n/10.95 Estimation of some Poisson 
+distribution for target variable 
+ []
+
+File: Get_models_bin2.pdf Graphic file (type pdf)
+<use Get_models_bin2.pdf>
+File: Get_models_bin3.pdf Graphic file (type pdf)
+<use Get_models_bin3.pdf>
+[156] [157] [158] [159] [160]
+Overfull \hbox (34.82399pt too wide) in paragraph at lines 6131--6131
 []\TU/lmtt/m/n/12 confusionMatrix(table(pred$response, crs[["testing"]][["Losse
 sIndicator"]])) 
  []
 
-
-Overfull \hbox (121.34389pt too wide) in paragraph at lines 6116--6116
+[161]
+Overfull \hbox (121.34389pt too wide) in paragraph at lines 6155--6155
 []\TU/lmtt/m/n/12 p <- p + ggtitle("ROC Curve Linear OPriskDataSet_exposure.csv
  [validate] LossesIndicator")[] 
  []
 
 
-Overfull \hbox (41.00389pt too wide) in paragraph at lines 6118--6118
+Overfull \hbox (41.00389pt too wide) in paragraph at lines 6157--6157
 []\TU/lmtt/m/n/12 p <- p + geom_line(data=data.frame(), aes(x=c(0,1), y=c(0,1))
 , colour="grey")[] 
  []
 
-[160]
 File: ConfusionMatrix_Appendix.eps Graphic file (type eps)
 <ConfusionMatrix_Appendix.eps>
-File: ROC_Curves_All.eps Graphic file (type eps)
-<ROC_Curves_All.eps>
-[161] [162] [163] [164
+File: POI_ROC_Training.pdf Graphic file (type pdf)
+<use POI_ROC_Training.pdf>
+File: BIN_ROC_Training.pdf Graphic file (type pdf)
+<use BIN_ROC_Training.pdf>
+File: POI_ROC_Validation.pdf Graphic file (type pdf)
+<use POI_ROC_Validation.pdf>
+File: BIN_ROC_Validation.pdf Graphic file (type pdf)
+<use BIN_ROC_Validation.pdf>
+File: POI_ROC_Testing.pdf Graphic file (type pdf)
+<use POI_ROC_Testing.pdf>
+File: BIN_ROC_Testing.pdf Graphic file (type pdf)
+<use BIN_ROC_Testing.pdf>
+[162] [163] [164] [165
 
-] [165] [166] [167]
-Overfull \hbox (23.9804pt too wide) in paragraph at lines 6375--6375
+] [166] [167] [168]
+Overfull \hbox (23.9804pt too wide) in paragraph at lines 6440--6440
 []                    \TU/lmtt/m/n/10.95 && TRADED_TIME{1,i}{1,j}{k,2} >= UPDAT
 ED_TIME{1,i}{1,j}{k,2}[] 
  []
 
 
-Overfull \hbox (39.49654pt too wide) in paragraph at lines 6385--6385
+Overfull \hbox (39.49654pt too wide) in paragraph at lines 6450--6450
 []                    \TU/lmtt/m/n/10.95 && TRADED_TIME{1,i}{1,j}{k,2} >= UPDAT
 ED_TIME{1,i}{1,j}{k,2}...[] 
  []
 
 
-Overfull \hbox (23.9804pt too wide) in paragraph at lines 6386--6386
+Overfull \hbox (23.9804pt too wide) in paragraph at lines 6451--6451
 []                    \TU/lmtt/m/n/10.95 && TRADED_TIME{1,i}{1,j}{k,3} >= UPDAT
 ED_TIME{1,i}{1,j}{k,3}[] 
  []
 
 
-Overfull \hbox (39.49654pt too wide) in paragraph at lines 6396--6396
+Overfull \hbox (39.49654pt too wide) in paragraph at lines 6461--6461
 []                    \TU/lmtt/m/n/10.95 && TRADED_TIME{1,i}{1,j}{k,2} >= UPDAT
 ED_TIME{1,i}{1,j}{k,2}...[] 
  []
 
 
-Overfull \hbox (39.49654pt too wide) in paragraph at lines 6397--6397
+Overfull \hbox (39.49654pt too wide) in paragraph at lines 6462--6462
 []                    \TU/lmtt/m/n/10.95 && TRADED_TIME{1,i}{1,j}{k,3} >= UPDAT
 ED_TIME{1,i}{1,j}{k,3}...[] 
  []
 
 
-Overfull \hbox (23.9804pt too wide) in paragraph at lines 6398--6398
+Overfull \hbox (23.9804pt too wide) in paragraph at lines 6463--6463
 []                    \TU/lmtt/m/n/10.95 && TRADED_TIME{1,i}{1,j}{k,4} >= UPDAT
 ED_TIME{1,i}{1,j}{k,4}[] 
  []
 
-[168] [169]
-Overfull \hbox (1.55476pt too wide) in paragraph at lines 6458--6458
+[169] [170]
+Overfull \hbox (1.55476pt too wide) in paragraph at lines 6523--6523
 []\TU/lmtt/m/n/10.95 UNIQ = sortrows(unique(cell2mat(FINAL_TABLE_TRADED_TIME),'
 rows'),[1 2 3 4]);[] 
  []
 
 
-Overfull \hbox (7.30351pt too wide) in paragraph at lines 6459--6459
+Overfull \hbox (7.30351pt too wide) in paragraph at lines 6524--6524
 []\TU/lmtt/m/n/10.95 UNIQO = sortrows(unique(cell2mat(FINAL_TABLE_TRADED_TIME),
 'rows'),[1 2 3 4]);[] 
  []
 
 
-Overfull \hbox (156.77098pt too wide) in paragraph at lines 6480--6480
+Overfull \hbox (156.77098pt too wide) in paragraph at lines 6545--6545
 []\TU/lmtt/m/n/10.95 POS{i,1} = num2cell(find(ismember(cell2mat(FINAL_TABLE_TRA
 DED_TIME(:,1:end)),UNIQO(i,1:4),'rows')~=0));[] 
  []
 
-[170]
-Overfull \hbox (12.76758pt too wide) in paragraph at lines 6538--6538
+[171]
+Overfull \hbox (12.76758pt too wide) in paragraph at lines 6603--6603
 []\TU/lmtt/m/n/10.95 Vec_updatedTime = [cell2mat(FINAL_TABLE_UPDATED_TIME(:,1:e
 nd-1)), hh, mm, ss];[] 
  []
 
-[171]
-Overfull \hbox (16.50151pt too wide) in paragraph at lines 6552--6552
+[172]
+Overfull \hbox (16.50151pt too wide) in paragraph at lines 6617--6617
 []    \TU/lmtt/m/n/10.95 CapturedBy{j} = OPriskDataSetexposure(strcmp(OPriskDat
 aSetexposure(:,9),...[] 
  []
 
 
-Overfull \hbox (36.04727pt too wide) in paragraph at lines 6572--6572
+Overfull \hbox (36.04727pt too wide) in paragraph at lines 6637--6637
 []\TU/lmtt/m/n/10.95 CAPTUREDBY_TOTAL = [CAPTUREDBY_TOTAL, num2cell(rand(length
 (CAPTUREDBY_TOTAL),1))];[] 
  []
 
 
-Overfull \hbox (10.75276pt too wide) in paragraph at lines 6585--6585
+Overfull \hbox (10.75276pt too wide) in paragraph at lines 6650--6650
 []    \TU/lmtt/m/n/10.95 TraderID{j} = OPriskDataSetexposure(strcmp(OPriskDataS
 etexposure(:,11),...[] 
  []
 
-[172]
-Overfull \hbox (1.27008pt too wide) in paragraph at lines 6606--6606
+[173]
+Overfull \hbox (1.27008pt too wide) in paragraph at lines 6671--6671
 []\TU/lmtt/m/n/10.95 TRADERID_TOTAL = [TRADERID_TOTAL, num2cell(rand(length(TRA
 DERID_TOTAL),1))];[] 
  []
 
-[173]
-Overfull \hbox (18.80101pt too wide) in paragraph at lines 6680--6680
+[174]
+Overfull \hbox (18.80101pt too wide) in paragraph at lines 6745--6745
 []    \TU/lmtt/m/n/10.95 BUSINESS_LINES{j}(:,3) = num2cell((j.^0).*rand(length(
 BUSINESS_LINESL),1));[] 
  []
 
-[174]
-Overfull \hbox (9.03363pt too wide) in paragraph at lines 6725--6725
+[175]
+Overfull \hbox (9.03363pt too wide) in paragraph at lines 6790--6790
 [] \TU/lmtt/m/n/10.95 newfname <- "file:///C:/Users/Mphekeleli/Documents/R PROJ
 ECT/OpRiskPHDGitHub 
  []
 
-[175] [176]
-Overfull \hbox (7.85997pt too wide) in paragraph at lines 6763--6763
+[176] [177]
+Overfull \hbox (7.85997pt too wide) in paragraph at lines 6828--6828
 |\TU/lmr/m/it/12 Data exploration of OpRisk loss severity dataset in preparatio
 n for GAMLSS machine
  []
 
 
-Overfull \hbox (12.23598pt too wide) in paragraph at lines 6763--6763
+Overfull \hbox (12.23598pt too wide) in paragraph at lines 6828--6828
 \TU/lmr/m/it/12 learning treatment. The raw data and the pre-processed datasets
  are initiated and anal-
  []
 
 
-Overfull \hbox (14.08797pt too wide) in paragraph at lines 6800--6800
+Overfull \hbox (14.08797pt too wide) in paragraph at lines 6865--6865
 |\TU/lmr/m/it/12 Data partitioning of the pre-processed OpRisk dataset into Tra
 ining/Validation/Testing
  []
 
 
-Overfull \hbox (5.76799pt too wide) in paragraph at lines 6800--6800
+Overfull \hbox (5.76799pt too wide) in paragraph at lines 6865--6865
 \TU/lmr/m/it/12 proportions, in preparation for machine learning model building
  treatments. The orig-
  []
 
 
-Overfull \hbox (5.54396pt too wide) in paragraph at lines 6800--6800
+Overfull \hbox (5.54396pt too wide) in paragraph at lines 6865--6865
 \TU/lmr/m/it/12 inal dataset is partitioned into three random subsets initiated
  by a random number se-
  []
 
-[177
+[178
 
 ]
-Overfull \hbox (14.7824pt too wide) in paragraph at lines 6808--6808
+Overfull \hbox (14.7824pt too wide) in paragraph at lines 6873--6873
 []\TU/lmtt/m/n/10.95 library(magrittr, quietly = TRUE) # Utilize the %>% and %>
 % pipeline operators[] 
  []
 
 
-Overfull \hbox (49.27489pt too wide) in paragraph at lines 6820--6820
+Overfull \hbox (49.27489pt too wide) in paragraph at lines 6885--6885
 []\TU/lmtt/m/n/10.95 # A predefined value is used to reset the random seed so t
 hat results are repeatable[] 
  []
 
 
-Overfull \hbox (49.27486pt too wide) in paragraph at lines 6824--6824
+Overfull \hbox (49.27486pt too wide) in paragraph at lines 6889--6889
 []\TU/lmtt/m/n/10.95 #=========================================================
 ==========================[] 
  []
 
 
-Overfull \hbox (49.27489pt too wide) in paragraph at lines 6854--6854
+Overfull \hbox (49.27489pt too wide) in paragraph at lines 6919--6919
 []\TU/lmtt/m/n/10.95 # Create function "getmode" which finds the modal class in
  the categorical variables[] 
  []
 
-[178]
-Overfull \hbox (20.53114pt too wide) in paragraph at lines 6906--6906
+[179]
+Overfull \hbox (20.53114pt too wide) in paragraph at lines 6971--6971
 []\TU/lmtt/m/n/10.95 mod1 <- gamlss(Losses ~ UpdatedDay + Desk + CapturedBy + T
 radeStatus + TraderId 
  []
 
 
-Overfull \hbox (52.14378pt too wide) in paragraph at lines 6907--6907
+Overfull \hbox (52.14378pt too wide) in paragraph at lines 6972--6972
 []     \TU/lmtt/m/n/10.95 + Instrument + Reason + EventTypeCategoryLevel1 + Bus
 inessLineLevel1 + Exposure,[] 
  []
 
-[179]
-Overfull \hbox (6.1538pt too wide) in paragraph at lines 6908--6908
+[180]
+Overfull \hbox (6.1538pt too wide) in paragraph at lines 6973--6973
 []     \TU/lmtt/m/n/10.95 mu.start = NULL,  sigma.start = NULL, nu.start = NULL
 , tau.start = NULL,[] 
  []
 
 
-Overfull \hbox (2.13515pt too wide) in paragraph at lines 6909--6909
+Overfull \hbox (2.13515pt too wide) in paragraph at lines 6974--6974
 []     \TU/lmtt/m/n/10.95 sigma.fo = ~1, nu.fo = ~1, data=crs$training,  family
  = ZAGA, n.cyc=80)[] 
  []
 
 
-Overfull \hbox (20.53114pt too wide) in paragraph at lines 6912--6912
+Overfull \hbox (20.53114pt too wide) in paragraph at lines 6977--6977
 []\TU/lmtt/m/n/10.95 mod2 <- gamlss(Losses ~ UpdatedDay + Desk + CapturedBy + T
 radeStatus + TraderId[] 
  []
 
 
-Overfull \hbox (46.39503pt too wide) in paragraph at lines 6913--6913
+Overfull \hbox (46.39503pt too wide) in paragraph at lines 6978--6978
 []     \TU/lmtt/m/n/10.95 + Instrument + Reason + EventTypeCategoryLevel1+ Busi
 nessLineLevel1 + Exposure,[] 
  []
 
 
-Overfull \hbox (6.1538pt too wide) in paragraph at lines 6914--6914
+Overfull \hbox (6.1538pt too wide) in paragraph at lines 6979--6979
 []     \TU/lmtt/m/n/10.95 mu.start = NULL,  sigma.start = NULL, nu.start = NULL
 , tau.start = NULL,[] 
  []
 
 
-Overfull \hbox (2.13515pt too wide) in paragraph at lines 6915--6915
+Overfull \hbox (2.13515pt too wide) in paragraph at lines 6980--6980
 []     \TU/lmtt/m/n/10.95 sigma.fo = ~1, nu.fo = ~1, data=crs$training,  family
  = ZAIG, n.cyc=80)[] 
  []
 
 
-Overfull \hbox (20.53114pt too wide) in paragraph at lines 6918--6918
+Overfull \hbox (20.53114pt too wide) in paragraph at lines 6983--6983
 []\TU/lmtt/m/n/10.95 mod3 <- gamlss(Losses ~ UpdatedDay + Desk + CapturedBy + T
 radeStatus + TraderId[] 
  []
 
 
-Overfull \hbox (52.14378pt too wide) in paragraph at lines 6919--6919
+Overfull \hbox (52.14378pt too wide) in paragraph at lines 6984--6984
 []     \TU/lmtt/m/n/10.95 + Instrument + Reason + EventTypeCategoryLevel1 + Bus
 inessLineLevel1 + Exposure,[] 
  []
 
 
-Overfull \hbox (6.1538pt too wide) in paragraph at lines 6920--6920
+Overfull \hbox (6.1538pt too wide) in paragraph at lines 6985--6985
 []     \TU/lmtt/m/n/10.95 mu.start = NULL,  sigma.start = NULL, nu.start = NULL
 , tau.start = NULL,[] 
  []
 
 
-Overfull \hbox (82.61763pt too wide) in paragraph at lines 6921--6921
+Overfull \hbox (82.61763pt too wide) in paragraph at lines 6986--6986
 []     \TU/lmtt/m/n/10.95 sigma.fo = ~1, nu.fo = ~1, tau.fo = ~1, data=crs$trai
 ning,  family = GB2, n.cyc=1700)[] 
  []
 
 
-Overfull \hbox (1.85045pt too wide) in paragraph at lines 6940--6940
+Overfull \hbox (1.85045pt too wide) in paragraph at lines 7005--7005
 []\TU/lmtt/m/n/10.95 add1(mod3, scope=~(UpdatedDay + Desk + CapturedBy + TradeS
 tatus + TraderId +[] 
  []
 
 
-Overfull \hbox (30.87889pt too wide) in paragraph at lines 6941--6941
+Overfull \hbox (30.87889pt too wide) in paragraph at lines 7006--7006
 []\TU/lmtt/m/n/10.95 Instrument + Reason + EventTypeCategoryLevel1 + BusinessLi
 neLevel1 + Exposure)^2)[] 
  []
 
 
-Overfull \hbox (9.03365pt too wide) in paragraph at lines 6953--6953
+Overfull \hbox (9.03365pt too wide) in paragraph at lines 7018--7018
 []\TU/lmtt/m/n/10.95 FORM <- as.formula("~(UpdatedDay + Desk + CapturedBy + Tra
 deStatus + TraderId 
  []
 
 
-Overfull \hbox (36.34294pt too wide) in paragraph at lines 6954--6954
+Overfull \hbox (36.34294pt too wide) in paragraph at lines 7019--7019
 []\TU/lmtt/m/n/10.95 + Instrument + Reason + EventTypeCategoryLevel1 + Business
 LineLevel1 + Exposure)^2[] 
  []
 
 
-Overfull \hbox (12.1982pt too wide) in paragraph at lines 6955--6955
+Overfull \hbox (12.1982pt too wide) in paragraph at lines 7020--7020
 []\TU/lmtt/m/n/10.95 +pb(UpdatedDay) + pb(Desk) + pb(CapturedBy) + pb(TradeStat
 us)+ pb(TradeStatus)[] 
  []
 
 
-Overfull \hbox (0.39198pt too wide) in paragraph at lines 6962--6962
+Overfull \hbox (0.39198pt too wide) in paragraph at lines 7027--7027
 |\TU/lmr/m/it/12 The estimation of some GAMLSS for OpRisk loss severity distrib
 ution: To build the
  []
 
 
-Overfull \hbox (14.42397pt too wide) in paragraph at lines 6962--6962
+Overfull \hbox (14.42397pt too wide) in paragraph at lines 7027--7027
 \TU/lmr/m/it/12 model we pass on to the model building function \TU/lmtt/m/it/1
 2 gamlss \TU/lmr/m/it/12 i.e., the formula that describes
  []
 
-[180]
+[181]
 File: GAIC_statistics.eps Graphic file (type eps)
 <GAIC_statistics.eps>
 File: ROC_4Plot_GB2.eps Graphic file (type eps)
@@ -4419,12 +4521,12 @@ File: ROC_4Plot_ZAIG.eps Graphic file (type eps)
 File: ROC_4Plot_ZAGA.eps Graphic file (type eps)
 <ROC_4Plot_ZAGA.eps>
 No file OPRISK_PHD_DISS.bbl.
-[181] [182] [183]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7015.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7015.
+[182] [183] [184]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7080.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7080.
 (./OPRISK_PHD_DISS.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7015.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7015.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7080.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7080.
 
 Package rerunfilecheck Info: File `OPRISK_PHD_DISS.out' has not changed.
 (rerunfilecheck)             Checksum: 10B3BF0A19D3A45FD608BCBE2FF29103;17289.
@@ -4433,12 +4535,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 52266 strings out of 494457
- 1157326 string characters out of 6172108
- 1483251 words of memory out of 5000000
- 55757 multiletter control sequences out of 15000+600000
+ 52294 strings out of 494457
+ 1158500 string characters out of 6172108
+ 1483340 words of memory out of 5000000
+ 55796 multiletter control sequences out of 15000+600000
  557804 words of font info for 146 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  76i,17n,102p,1204b,2146s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on OPRISK_PHD_DISS.pdf (198 pages).
+Output written on OPRISK_PHD_DISS.pdf (199 pages).

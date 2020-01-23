@@ -1,0 +1,166 @@
+
+Model-averaged coefficients:  
+(full average) 
+                                                          Estimate   Std. Error  Adjusted SE z value             Pr(>|z|)    
+(Intercept)                                             -8.8787031    0.6796955    0.6801422  13.054 < 0.0000000000000002 ***
+BusinessLineLevel1BL1                                    2.1990778    0.7561376    0.7566563   2.906             0.003657 ** 
+BusinessLineLevel1BL3                                   -0.9757639    0.6262275    0.6267127   1.557             0.119481    
+BusinessLineLevel1BL4                                   -2.6859817    0.5441946    0.5446131   4.932            0.0000008 ***
+BusinessLineLevel1BL5                                   -1.8351287    0.4922025    0.4925780   3.726             0.000195 ***
+BusinessLineLevel1BL6                                    0.6907694    1.0892788    1.0900078   0.634             0.526258    
+BusinessLineLevel1BL7                                  -13.8690897 1822.4256962 1823.8425007   0.008             0.993933    
+BusinessLineLevel1BL9                                   21.9293672  819.1412328  819.7781267   0.027             0.978659    
+DeskAfrica                                               2.6638254    0.6141599    0.6145644   4.334            0.0000146 ***
+DeskBonds/Repos                                          2.8614565    0.4150348    0.4153324   6.890 < 0.0000000000000002 ***
+DeskCommodities                                          0.8374079    0.5773402    0.5775861   1.450             0.147103    
+DeskDerivatives                                          0.0938421    0.5196582    0.5200309   0.180             0.856796    
+DeskEquity                                               1.1580070    0.3888296    0.3891092   2.976             0.002920 ** 
+DeskManagement/Other                                   -16.8321767  819.1402878  819.7771812   0.021             0.983618    
+DeskMM                                                   1.7677941    0.5264042    0.5267619   3.356             0.000791 ***
+DeskPrime Services                                       0.5859774    1.1461265    1.1467616   0.511             0.609362    
+DeskSND                                                  1.5540972    0.6846709    0.6851998   2.268             0.023324 *  
+EventTypeCategoryLevel1EL1                               4.6608888    0.6823239    0.6828341   6.826 < 0.0000000000000002 ***
+EventTypeCategoryLevel1EL4                               1.0244537    0.5257579    0.5261249   1.947             0.051515 .  
+EventTypeCategoryLevel1EL6                               7.0542841    0.8402098    0.8408161   8.390 < 0.0000000000000002 ***
+EventTypeCategoryLevel1EL8                              -3.5582594    1.0856581    1.0864933   3.275             0.001057 ** 
+InstrumentBill                                           0.8785449    0.7839937    0.7845996   1.120             0.262826    
+InstrumentBond                                          -0.1840620    0.4170528    0.4173442   0.441             0.659190    
+InstrumentBuySellback                                    0.7166388    0.7198198    0.7203757   0.995             0.319827    
+InstrumentCall Deposit                                  -1.1806710    0.4266362    0.4269644   2.765             0.005688 ** 
+InstrumentCombination                                    0.5286339    1.1450102    1.1458788   0.461             0.644558    
+InstrumentCreditDefaultSwap                             -1.7802894    0.6706260    0.6711392   2.653             0.007987 ** 
+InstrumentCurr                                          -1.0499370    0.5007145    0.5011016   2.095             0.036148 *  
+InstrumentCurrSwap                                      -1.0070097    0.5044565    0.5048397   1.995             0.046074 *  
+InstrumentDeposit                                        0.4556083    0.3618001    0.3620761   1.258             0.208275    
+InstrumentEquityIndex                                  -15.7467581 1419.1243216 1420.2275038   0.011             0.991154    
+InstrumentETF                                            3.0651188    1.3054201    1.3064207   2.346             0.018966 *  
+InstrumentFRA                                          -15.0414617  986.3234467  987.0902064   0.015             0.987842    
+InstrumentFRN                                            0.5851823    0.5599759    0.5603794   1.044             0.296365    
+InstrumentFuture/Forward                                -0.4884910    0.3770461    0.3773063   1.295             0.195431    
+InstrumentIndexLinkedBond                               -1.7752927    0.6472282    0.6477195   2.741             0.006128 ** 
+InstrumentIndexLinkedSwap                               -0.4842555    0.3842343    0.3845283   1.259             0.207904    
+InstrumentOption                                         0.1256043    0.5923983    0.5928436   0.212             0.832210    
+InstrumentOther                                         -0.3369413    0.2765225    0.2767353   1.218             0.223392    
+InstrumentRepo/Reverse                                  -2.0009504    0.5938833    0.5943387   3.367             0.000761 ***
+InstrumentSecurityLoan                                  -1.2864516    0.3461556    0.3464223   3.714             0.000204 ***
+InstrumentStock                                         -0.5806859    2.1984298    2.2001290   0.264             0.791832    
+InstrumentTotalReturnSwap                               -0.8033741    0.3697911    0.3700768   2.171             0.029944 *  
+ReasonAcquirer                                           2.0248298    1.3039062    1.3048077   1.552             0.120705    
+ReasonBrokerage Related                                  1.2819414    1.0694934    1.0702793   1.198             0.231009    
+ReasonCalendar Related                                   1.8963670    0.4258797    0.4261818   4.450            0.0000086 ***
+ReasonCapture Errors - Direction / Amount / Rate / CP    0.9860837    0.4105764    0.4108730   2.400             0.016396 *  
+ReasonClient Request to Amend Economics of Deal         -0.0225502    1.0093297    1.0100771   0.022             0.982189    
+ReasonCommodities Early Delivery                         1.3216858    0.8845219    0.8851866   1.493             0.135407    
+ReasonCorrected NDEUSSA Reset Level                     -3.8940181    0.8831458    0.8837540   4.406            0.0000105 ***
+ReasonCPI Fixings                                       -4.5372221    0.8630591    0.8636444   5.254            0.0000001 ***
+ReasonEarly Termination / Delivery / Close out          -3.4642627    0.7262186    0.7267480   4.767            0.0000019 ***
+ReasonFees/Commissions Related                          -0.6434868    0.9213938    0.9220639   0.698             0.485254    
+ReasonOperations request to change Economics of Trade   -1.2727438    0.9685105    0.9692461   1.313             0.189140    
+ReasonPayments Related                                   0.3097870    0.6576338    0.6580910   0.471             0.637829    
+ReasonPortfolio Move / Restructure                      -3.4379978    2.2001669    2.2018689   1.561             0.118429    
+ReasonSales Credits                                      2.9051211    1.1945822    1.1954005   2.430             0.015088 *  
+ReasonSystem Update Call Accounts                       -5.5650068    0.9028657    0.9035366   6.159 < 0.0000000000000002 ***
+ReasonTrade Restructure                                -13.7306356  801.1635356  801.7863489   0.017             0.986337    
+ReasonTri-Optima                                        -1.8103809    1.3222422    1.3229053   1.368             0.171159    
+ReasonValuation Group Request                            1.4109237    0.6042975    0.6047613   2.333             0.019647 *  
+TraderIdAMBA                                             0.1469376    0.6180489    0.6184714   0.238             0.812205    
+TraderIdANALYST                                          0.1031346    0.2816760    0.2818794   0.366             0.714453    
+TraderIdASSOCIATE                                       -0.4694817    0.3620466    0.3622989   1.296             0.195030    
+TraderIdATS                                              3.6517019    0.6517425    0.6521871   5.599 < 0.0000000000000002 ***
+TraderIdMNGDIRECTOR                                      0.2258536    0.3313708    0.3316220   0.681             0.495835    
+TraderIdVICE PRINCIPAL                                   0.1845696    0.3744434    0.3746939   0.493             0.622304    
+TradeStatusBO-BO Confirmed                              -0.4502038    0.2933359    0.2934609   1.534             0.125000    
+TradeStatusTerminated                                    2.0501475    1.2927044    1.2932193   1.585             0.112897    
+TradeStatusTerminated/Void                             -11.3989715 3991.3792400 3994.4829583   0.003             0.997723    
+UpdatedTime                                              0.4141693    0.6317367    0.6319710   0.655             0.512235    
+CapturedByMIDOFFICE                                      0.3000223    0.3902080    0.3903254   0.769             0.442103    
+CapturedByPROD ACCOUNTANT                               -0.1468411    0.3949380    0.3952004   0.372             0.710220    
+CapturedByPROD CONTROLLER                               -0.3944590    0.4673887    0.4674837   0.844             0.398786    
+CapturedByUNAUTHORISED                                  -0.0858343    0.3776174    0.3778936   0.227             0.820316    
+TradedTime                                               0.2847775    0.5839947    0.5842525   0.487             0.625959    
+UpdatedDay                                              -0.0027196    0.0068597    0.0068633   0.396             0.691912    
+TradedDay                                               -0.0002386    0.0039133    0.0039163   0.061             0.951423    
+ 
+(conditional average) 
+                                                          Estimate   Std. Error  Adjusted SE z value             Pr(>|z|)    
+(Intercept)                                             -8.8787031    0.6796955    0.6801422  13.054 < 0.0000000000000002 ***
+BusinessLineLevel1BL1                                    2.1990778    0.7561376    0.7566563   2.906             0.003657 ** 
+BusinessLineLevel1BL3                                   -0.9757639    0.6262275    0.6267127   1.557             0.119481    
+BusinessLineLevel1BL4                                   -2.6859817    0.5441946    0.5446131   4.932            0.0000008 ***
+BusinessLineLevel1BL5                                   -1.8351287    0.4922025    0.4925780   3.726             0.000195 ***
+BusinessLineLevel1BL6                                    0.6907694    1.0892788    1.0900078   0.634             0.526258    
+BusinessLineLevel1BL7                                  -13.8690897 1822.4256964 1823.8425009   0.008             0.993933    
+BusinessLineLevel1BL9                                   21.9293672  819.1412329  819.7781268   0.027             0.978659    
+DeskAfrica                                               2.6638254    0.6141599    0.6145644   4.334            0.0000146 ***
+DeskBonds/Repos                                          2.8614565    0.4150348    0.4153324   6.890 < 0.0000000000000002 ***
+DeskCommodities                                          0.8374079    0.5773402    0.5775861   1.450             0.147103    
+DeskDerivatives                                          0.0938421    0.5196582    0.5200309   0.180             0.856796    
+DeskEquity                                               1.1580070    0.3888296    0.3891092   2.976             0.002920 ** 
+DeskManagement/Other                                   -16.8321767  819.1402878  819.7771812   0.021             0.983618    
+DeskMM                                                   1.7677941    0.5264042    0.5267619   3.356             0.000791 ***
+DeskPrime Services                                       0.5859774    1.1461265    1.1467616   0.511             0.609362    
+DeskSND                                                  1.5540972    0.6846709    0.6851998   2.268             0.023324 *  
+EventTypeCategoryLevel1EL1                               4.6608888    0.6823239    0.6828341   6.826 < 0.0000000000000002 ***
+EventTypeCategoryLevel1EL4                               1.0244537    0.5257579    0.5261249   1.947             0.051515 .  
+EventTypeCategoryLevel1EL6                               7.0542841    0.8402098    0.8408161   8.390 < 0.0000000000000002 ***
+EventTypeCategoryLevel1EL8                              -3.5582594    1.0856581    1.0864933   3.275             0.001057 ** 
+InstrumentBill                                           0.8785715    0.7839907    0.7845966   1.120             0.262810    
+InstrumentBond                                          -0.1840675    0.4170579    0.4173493   0.441             0.659184    
+InstrumentBuySellback                                    0.7166604    0.7198199    0.7203758   0.995             0.319813    
+InstrumentCall Deposit                                  -1.1807067    0.4265933    0.4269216   2.766             0.005681 ** 
+InstrumentCombination                                    0.5286499    1.1450238    1.1458925   0.461             0.644552    
+InstrumentCreditDefaultSwap                             -1.7803432    0.6705647    0.6710780   2.653             0.007979 ** 
+InstrumentCurr                                          -1.0499687    0.5006888    0.5010760   2.095             0.036133 *  
+InstrumentCurrSwap                                      -1.0070401    0.5044338    0.5048170   1.995             0.046058 *  
+InstrumentDeposit                                        0.4556221    0.3617969    0.3620729   1.258             0.208258    
+InstrumentEquityIndex                                  -15.7472339 1419.1457596 1420.2489585   0.011             0.991154    
+InstrumentETF                                            3.0652114    1.3053311    1.3063317   2.346             0.018954 *  
+InstrumentFRA                                          -15.0419162  986.3383450  987.1051163   0.015             0.987842    
+InstrumentFRN                                            0.5852000    0.5599752    0.5603786   1.044             0.296349    
+InstrumentFuture/Forward                                -0.4885058    0.3770422    0.3773025   1.295             0.195412    
+InstrumentIndexLinkedBond                               -1.7753463    0.6471644    0.6476557   2.741             0.006122 ** 
+InstrumentIndexLinkedSwap                               -0.4842702    0.3842309    0.3845249   1.259             0.207886    
+InstrumentOption                                         0.1256081    0.5924068    0.5928522   0.212             0.832208    
+InstrumentOther                                         -0.3369515    0.2765204    0.2767333   1.218             0.223375    
+InstrumentRepo/Reverse                                  -2.0010109    0.5937904    0.5942459   3.367             0.000759 ***
+InstrumentSecurityLoan                                  -1.2864905    0.3460886    0.3463554   3.714             0.000204 ***
+InstrumentStock                                         -0.5807035    2.1984607    2.2001600   0.264             0.791829    
+InstrumentTotalReturnSwap                               -0.8033984    0.3697704    0.3700560   2.171             0.029930 *  
+ReasonAcquirer                                           2.0248298    1.3039062    1.3048077   1.552             0.120705    
+ReasonBrokerage Related                                  1.2819414    1.0694934    1.0702793   1.198             0.231009    
+ReasonCalendar Related                                   1.8963670    0.4258797    0.4261818   4.450            0.0000086 ***
+ReasonCapture Errors - Direction / Amount / Rate / CP    0.9860837    0.4105764    0.4108730   2.400             0.016396 *  
+ReasonClient Request to Amend Economics of Deal         -0.0225502    1.0093297    1.0100771   0.022             0.982189    
+ReasonCommodities Early Delivery                         1.3216858    0.8845219    0.8851866   1.493             0.135407    
+ReasonCorrected NDEUSSA Reset Level                     -3.8940181    0.8831458    0.8837540   4.406            0.0000105 ***
+ReasonCPI Fixings                                       -4.5372221    0.8630591    0.8636444   5.254            0.0000001 ***
+ReasonEarly Termination / Delivery / Close out          -3.4642627    0.7262186    0.7267480   4.767            0.0000019 ***
+ReasonFees/Commissions Related                          -0.6434868    0.9213938    0.9220639   0.698             0.485254    
+ReasonOperations request to change Economics of Trade   -1.2727438    0.9685105    0.9692461   1.313             0.189140    
+ReasonPayments Related                                   0.3097870    0.6576338    0.6580910   0.471             0.637829    
+ReasonPortfolio Move / Restructure                      -3.4379978    2.2001669    2.2018689   1.561             0.118429    
+ReasonSales Credits                                      2.9051211    1.1945822    1.1954005   2.430             0.015088 *  
+ReasonSystem Update Call Accounts                       -5.5650068    0.9028657    0.9035366   6.159 < 0.0000000000000002 ***
+ReasonTrade Restructure                                -13.7306356  801.1635356  801.7863489   0.017             0.986337    
+ReasonTri-Optima                                        -1.8103809    1.3222422    1.3229053   1.368             0.171159    
+ReasonValuation Group Request                            1.4109237    0.6042975    0.6047613   2.333             0.019647 *  
+TraderIdAMBA                                             0.1473384    0.6188435    0.6192666   0.238             0.811940    
+TraderIdANALYST                                          0.1034159    0.2820083    0.2822120   0.366             0.714031    
+TraderIdASSOCIATE                                       -0.4707622    0.3617076    0.3619609   1.301             0.193399    
+TraderIdATS                                              3.6616625    0.6240630    0.6245286   5.863 < 0.0000000000000002 ***
+TraderIdMNGDIRECTOR                                      0.2264696    0.3316121    0.3318638   0.682             0.494975    
+TraderIdVICE PRINCIPAL                                   0.1850730    0.3748295    0.3750804   0.493             0.621714    
+TradeStatusBO-BO Confirmed                              -0.5347604    0.2387247    0.2389070   2.238             0.025198 *  
+TradeStatusTerminated                                    2.4352029    1.0233558    1.0241282   2.378             0.017415 *  
+TradeStatusTerminated/Void                             -13.5399080 4350.0844070 4353.4670615   0.003             0.997518    
+UpdatedTime                                              0.8944703    0.6574889    0.6579751   1.359             0.174011    
+CapturedByMIDOFFICE                                      0.6090901    0.3476566    0.3479240   1.751             0.080008 .  
+CapturedByPROD ACCOUNTANT                               -0.2981093    0.5211143    0.5215181   0.572             0.567581    
+CapturedByPROD CONTROLLER                               -0.8008109    0.3436271    0.3438896   2.329             0.019876 *  
+CapturedByUNAUTHORISED                                  -0.1742564    0.5235273    0.5239318   0.333             0.739441    
+TradedTime                                               0.7674361    0.7407244    0.7412721   1.035             0.300531    
+UpdatedDay                                              -0.0083672    0.0098750    0.0098826   0.847             0.397184    
+TradedDay                                               -0.0009453    0.0077467    0.0077527   0.122             0.902950    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+

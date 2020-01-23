@@ -217,6 +217,10 @@ Deviance Residuals:
     Min       1Q   Median       3Q      Max  
 -4.7605  -0.3575  -0.1105  -0.0315   3.9754  
 
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-4.7605  -0.3575  -0.1105  -0.0315   3.9754  
+
 Coefficients:
                        Estimate     Std. Error z value             Pr(>|z|)    
 (Intercept)           -7.8113982    0.6701090 -11.657 < 0.0000000000000002 ***
@@ -540,7 +544,7 @@ we use "dredge" function to generate models using combinations of the terms in t
 
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Dredge_bin.eps}
+\includegraphics[height=20cm, width=15cm]{Dredge_bin.pdf}
 \caption[Data dredging]{Model selection data mining exercise}
 \label{Dredge}
 \end{figure}
@@ -561,25 +565,32 @@ stopCluster(cl)
 
 Now we have AICc values for our models and we have the average model (or mean model).
 
+<!-- \begin{figure} -->
+<!-- \centering -->
+<!-- \includegraphics[scale=1.0]{Average_model_Training_1.pdf} -->
+<!-- \caption[]{Estimation of some Poisson distribution for target variable \texttt{LossesIndicator} showing the 4096 component models and their respective AICc values for our models giving rise to the average (mean) model \texttt{Amodel}} -->
+<!-- \label{AModel_Summary1} -->
+<!-- \end{figure} -->
+
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Get_models_bin1.eps}
-\caption[Model averaging]{component models for computing the average (mean) model \texttt{AModel}}
+\includegraphics[height=20cm, width=15cm]{Get_models_bin1.pdf}
+\caption[Model averaging components]{Estimation of some Poisson distribution for target variable \texttt{LossesIndicator} showing the 4096 component models and their respective AICc values for our models giving rise to the average (mean) model \texttt{Amodel}}
 \label{AModel_Summary1}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Get_models_bin2.eps}
-\caption[Model averaging]{Continued from \ref{AModel_Summary1}}
+\includegraphics[height=20cm, width=15cm]{Get_models_bin2.pdf}
+\caption[Poisson GLM Amodel summary statistics]{Continued from \ref{AModel_Summary1}}
 \label{AModel_Summary2}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[height=20cm, width=15cm]{Get_models_bin3.eps}
-\caption[Model averaging]{Continued from \ref{AModel_Summary2}}
-\label{AModel_Summary3}
+\includegraphics[height=20cm, width=15cm]{Get_models_bin3.pdf}
+\caption[Poisson GLM Amodel summary statistics continued]{Continued from \ref{AModel_Summary2}}
+\label{Poisson GLM Amodel summary statistics continued}
 \end{figure}
 
 \subsection{Evaluate model performance on the test dataset}
@@ -670,11 +681,37 @@ performance(predic, "auc")
 \label{ConfusionMatrixAll}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[height=20cm, width=15cm]{ROC_Curves_All.eps}
-\caption[ROC Curve comparison]{Comparison of Poisson, Binomial GLM's ROC Curves for Training, Validation \& Testing datasets}
-\label{ROCCurveAll}
+\begin{figure}[t!] % "[t!]" placement specifier just for this example
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{POI_ROC_Training.pdf}
+\caption{AUC for poisson parameter depicting model's performance on the training set} \label{POI_ROC_Train}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{BIN_ROC_Training.pdf}
+\caption{AUC for binomial parameters depicting model's performance on the training set} \label{BIN_ROC_Train}
+\end{subfigure}
+
+\medskip
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{POI_ROC_Validation.pdf}
+\caption{As in (a) but depicting model's performance on the validation set} \label{POI_ROC_Validate}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{BIN_ROC_Validation.pdf}
+\caption{As in (b) but depicting model's performance on the validation set} \label{BIN_ROC_Validate}
+\end{subfigure}
+
+\medskip
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{POI_ROC_Testing.pdf}
+\caption{As in (a) \& (c) depicting model's performance on the testing set} \label{POI_ROC_Test}
+\end{subfigure}\hspace*{\fill}
+\begin{subfigure}{0.48\textwidth}
+\includegraphics[width=\linewidth, height=5cm]{BIN_ROC_Testing.pdf}
+\caption{As in (b) \& (d) depicting model's performance on the testing set} \label{BIN_ROC_Test}
+\end{subfigure}
+
+\caption{Comparison of area under the curve (AUC) for the Poisson, Binomial GLM ROC curve for training, validation and testing datasets} \label{ROCCurveAll}
 \end{figure}
 
 \clearpage

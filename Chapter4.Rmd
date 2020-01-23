@@ -156,109 +156,109 @@ These cases are characteristic of scenarios in OpRisk other than those modeling 
 As per section \ref{sec4:Generalized linear (regression) models (GLM) for count data} in chapter \ref{DATA EXPLORATION AND EXPOSURE VARIABLE ANALYSIS} a GLM is introduced starting by estimating the expected number of OpRisk events (the mean OpRisk frequency) by a poisson model given by equation \ref{eqn:Poisson}: Followed up by estimating the target variable using the binomial/bernoulli distribution complementing the numerical counts with factor (categorical) outcomes, thereby covering the range of probable model fits using the glm function. In calling the GLM we specify the target variable *LossIndicator*; the explanatory variables are also composed of numeric, continuous and categorical variables. Where the variable in the argument of a GLM is categorical, we choose to specify the modal class as the reference level. A user defined function "getmode" accomplishes the following as specified see chapter \ref{DATA EXPLORATION AND EXPOSURE VARIABLE ANALYSIS} section \ref{sec:Exploratory data analysis} on page \pageref{sec:Exploratory data analysis}: It selects the modal class of observation in each factor, and the dataset is reordered using the *relevel* function in RStudio.
 
 \singlespacing
-```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+```{r setupDatasaset, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
 
-# options(scipen = 999)
-# 
-# # Load packages
-# library(rattle, quietly = TRUE)
-# library(magrittr, quietly = TRUE) # Utilize the %>% and %>% pipeline operators
-# library(Hmisc, quietly = TRUE)
-# library(chron, quietly = TRUE)
-# library(dplyr, quietly = TRUE)
-# library(ggplot2)
-# library(caTools)
-# library(caret)
-# 
-# 
-# building <- TRUE
-# scoring <- ! building
-# 
-# # A predefined value is used to reset the random seed so that results are repeatable
-# 
-# crv$seed <- 42 # set random seed to make your partition reproducible
-# 
-# #==========================================================================================
-# #crv$training.proportion <- 0.7 # proportion of data used for training
-# #crv$validation.proportion <- 0.15 # proportion of data used for validation
-# 
-# # Load the dataset OPriskDataSet_exposure
-# 
-# 
-# fname <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_exposure.csv"
-# crs$dataset <- read.csv(fname,
-#               sep=";",
-#               dec=",",
-#               na.strings=c(".", "NA", "", "?"),
-#               strip.white=TRUE, encoding="UTF-8")
-# 
-# exposure <- crs$dataset[,ncol(crs$dataset)]
-# 
-# #class(exposure)
-# #length(exposure)
-# 
-# crs$dataset <- as.data.frame(crs$dataset)
-# 
-# # The following varaible selections have been noted
-# 
-# crs$input <- crs$dataset %>%
-#   group_by(UpdatedDay,
-#            UpdatedTime,
-#            TradedDay,
-#            TradedTime,
-#            Desk,
-#            CapturedBy,
-#            TradeStatus,
-#            TraderId,
-#            Instrument,
-#            Reason,
-#            EventTypeCategoryLevel1,
-#            BusinessLineLevel1) %>%
-#   transmute(LossesIndicator = LossIndicator,
-#             Losses = Loss,
-#             Exposure = exposure)
-# 
-# # Create function "getmode" which finds the modal class in the categorical variables
-# getmode <- function(x){
-#   u <- unique(x)
-#   as.integer(u[which.max(tabulate(match(x,u)))])
-# }
-# # Reorder the categorical variables so that the modal class
-# # is specified as the reference level
-# for (i in 5:(ncol(crs$input) - 3)){
-#      crs$input[[i]] <- relevel(crs$input[[i]], getmode(crs$input[[i]]))
-# }
-# 
-# # crs$target  <- "LossesIndicator"
-# # crs$risk    <- NULL
-# # crs$ident   <- NULL
-# # crs$ignore  <- c("UpdateTime", "TradeTime", "Nominal", "FloatRef", "LastResetDate", "LastResetRate", "Theta", "Loss", "Unexplained")
-# # crs$weights <- NULL
-# 
-# # Build the training/validation/testing datasets
-# # nobs=2331 training=1632 validation=349 testing=350
-# 
-# set.seed(crv$seed)
-# 
-# crs$nobs <- nrow(crs$input)
-# 
-# crs$train <- sample(crs$nobs, 0.7*crs$nobs)
-# 
-# crs$nobs %>%
-#   seq_len() %>%
-#   setdiff(crs$train) %>%
-#   sample(0.15*crs$nobs) ->
-#   crs$validate
-# 
-# crs$nobs %>%
-#   seq_len() %>%
-#   setdiff(crs$train) %>%
-#   setdiff(crs$validate) ->
-#   crs$test
-# 
-# crs$training <- as.data.frame(crs$input[crs$train,])
-# crs$validation <- as.data.frame(crs$input[crs$validate,])
-# crs$testing <- as.data.frame(crs$input[crs$test,])
+options(scipen = 999)
+
+# Load packages
+library(rattle, quietly = TRUE)
+library(magrittr, quietly = TRUE) # Utilize the %>% and %>% pipeline operators
+library(Hmisc, quietly = TRUE)
+library(chron, quietly = TRUE)
+library(dplyr, quietly = TRUE)
+library(ggplot2)
+library(caTools)
+library(caret)
+
+
+building <- TRUE
+scoring <- ! building
+
+# A predefined value is used to reset the random seed so that results are repeatable
+
+crv$seed <- 42 # set random seed to make your partition reproducible
+
+#==========================================================================================
+#crv$training.proportion <- 0.7 # proportion of data used for training
+#crv$validation.proportion <- 0.15 # proportion of data used for validation
+
+# Load the dataset OPriskDataSet_exposure
+
+
+fname <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_exposure.csv"
+crs$dataset <- read.csv(fname,
+              sep=";",
+              dec=",",
+              na.strings=c(".", "NA", "", "?"),
+              strip.white=TRUE, encoding="UTF-8")
+
+exposure <- crs$dataset[,ncol(crs$dataset)]
+
+#class(exposure)
+#length(exposure)
+
+crs$dataset <- as.data.frame(crs$dataset)
+
+# The following varaible selections have been noted
+
+crs$input <- crs$dataset %>%
+  group_by(UpdatedDay,
+           UpdatedTime,
+           TradedDay,
+           TradedTime,
+           Desk,
+           CapturedBy,
+           TradeStatus,
+           TraderId,
+           Instrument,
+           Reason,
+           EventTypeCategoryLevel1,
+           BusinessLineLevel1) %>%
+  transmute(LossesIndicator = LossIndicator,
+            Losses = Loss,
+            Exposure = exposure)
+
+# Create function "getmode" which finds the modal class in the categorical variables
+getmode <- function(x){
+  u <- unique(x)
+  as.integer(u[which.max(tabulate(match(x,u)))])
+}
+# Reorder the categorical variables so that the modal class
+# is specified as the reference level
+for (i in 5:(ncol(crs$input) - 3)){
+     crs$input[[i]] <- relevel(crs$input[[i]], getmode(crs$input[[i]]))
+}
+
+# crs$target  <- "LossesIndicator"
+# crs$risk    <- NULL
+# crs$ident   <- NULL
+# crs$ignore  <- c("UpdateTime", "TradeTime", "Nominal", "FloatRef", "LastResetDate", "LastResetRate", "Theta", "Loss", "Unexplained")
+# crs$weights <- NULL
+
+# Build the training/validation/testing datasets
+# nobs=2331 training=1632 validation=349 testing=350
+
+set.seed(crv$seed)
+
+crs$nobs <- nrow(crs$input)
+
+crs$train <- sample(crs$nobs, 0.7*crs$nobs)
+
+crs$nobs %>%
+  seq_len() %>%
+  setdiff(crs$train) %>%
+  sample(0.15*crs$nobs) ->
+  crs$validate
+
+crs$nobs %>%
+  seq_len() %>%
+  setdiff(crs$train) %>%
+  setdiff(crs$validate) ->
+  crs$test
+
+crs$training <- as.data.frame(crs$input[crs$train,])
+crs$validation <- as.data.frame(crs$input[crs$validate,])
+crs$testing <- as.data.frame(crs$input[crs$test,])
 
 ```
 \doublespacing
@@ -272,9 +272,9 @@ The following fits the model (the log link is canonical for the poisson distribu
 
 \singlespacing
 ```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
-# 
-# freqfit1 <- glm(LossesIndicator ~ TradedDay + Desk, data=crs$training,
-#                family=poisson(link = 'log'), offset = log(Exposure))
+
+freqfit0 <- glm(LossesIndicator ~ TradedDay + Desk, data=crs$training,
+               family=poisson(link = 'log'), offset = log(Exposure))
 
 ```
 \doublespacing
@@ -292,7 +292,7 @@ The output in the appendices Appendix \ref{sec:Appendix B: R Code for Chapter 4}
 
 \singlespacing
 ```{r, tidy=TRUE, echo=FALSE}
-# summary(freqfit1)
+ summary(freqfit0)
 ```
 \doublespacing
 
@@ -324,10 +324,10 @@ We now fit a more comprehensive model wherein all $13$ explanatory variables are
 ## We will use "LossesIndicator" as the dependent variable, while the
 # other variables will be predictor variables.
 
- # freqfitP1 <- glm(LossesIndicator ~ UpdatedDay + UpdatedTime + TradedDay
- # + TradedTime + Desk + CapturedBy + TradeStatus + TraderId + Instrument
- # + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1,
- # data=crs$training, family=poisson(link="log"), offset=log(Exposure))
+ freqfitPOI_2 <- glm(LossesIndicator ~ UpdatedDay + UpdatedTime + TradedDay
+ + TradedTime + Desk + CapturedBy + TradeStatus + TraderId + Instrument
+ + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1,
+ data=crs$validation, family=poisson(link="log"), offset=log(Exposure))
 
 ```
 
@@ -337,7 +337,10 @@ The selection of the best-fit model from the list of possible combinations of pr
 \singlespacing
 ```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
 
-# summary(freqfitP1)
+summary(freqfitPOI_2)
+POI_2 <- summary(freqfitPOI_2)
+capture.output(POI_2,file = "SUMfreqfitPOI_2.txt")
+
 ```
 \doublespacing
 
@@ -504,10 +507,10 @@ The AIC value for the binomial model of $1426.6$ is less than that of the poisso
 @Burnham2002's introduction of the information-theoretic approach permits a data-based selection for the "best-fit" model in the analysis of the OpRisk dataset *OpRiskDataSet_exposure.csv*, and a ranking and weighting of what remains. This approach allows traditional (formal) statistical inference to be based on the selected "best-fit" model, which is now based on more than one model (multimodel inference). As a requirment the r package to load is the *MuMIn* Rstudio package. \medskip
 
 \singlespacing
-```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+```{r LoadMuMIn, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
 
 # Load "MuMIn" package
-# require(MuMIn)
+require(MuMIn)
 
 ```
 \doublespacing
@@ -517,20 +520,20 @@ The AIC value for the binomial model of $1426.6$ is less than that of the poisso
 We then use the *dredge* function to generate models using combinations of the terms in the global model. This function also calculates AICc values and rank models according to it. Note that AICc is AIC corrected for finite sample sizes. The process of analyzing data where the experimentalist has few or no a priori information, thus "all possible models" are considered by subjectively ad iteratively searching the data for patterns and "significance", is often called "data mining", "data snooping" or the term "data dredging". 
 
 \singlespacing
-```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
+```{r Dredge, echo=FALSE, fig.keep="none", fig.show="hide", results="hide"}
 ## Then, we use "dredge" function to generate models using combinations of the terms in the global model. The function will also calculate AICc values and rank models according to it. ## Note that AICc is AIC corrected for finite sample sizes
 
-# library(parallel)
-# cl <- makeCluster(2) # Assign R cores to the job
-# 
-# options(na.action=na.fail)
-# freqfitsp1 <- dredge(freqfitP1)
-# 
-# stopCluster(cl)
-# freqfitsp1
+ library(parallel)
+ cl <- makeCluster(6) # Assign R cores to the job
 
-# t <- freqfits
-# capture.output(t,file = "freqfits.txt")
+ options(na.action=na.fail)
+ freqfitsPOI_2 <- dredge(freqfitPOI_2)
+
+ stopCluster(cl)
+ freqfitsPOI_2
+
+ sPOI_2 <- freqfitsPOI_2
+ capture.output(sPOI_2,file = "freqfitsPOI_2.txt")
 ```
 \doublespacing
 
@@ -544,17 +547,18 @@ We now use "get.models" function to generate a list in which its objects are the
 
 \singlespacing
 ```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
-# ### Ok, let us use "get.models" function to generate a list in which its objects are the fitted models. We will also use the "model.avg" function to do a model averaging based on AICc. Note that "subset=TRUE" will make the function calculate the average model (or mean model) using all models.
+### Ok, let us use "get.models" function to generate a list in which its objects are the fitted models. We will also use the "model.avg" function to do a model averaging 
+# based on AICc. Note that "subset=TRUE" will make the function calculate the average model (or mean model) using all models.
  
- # cl <- makeCluster(2) # Assign R cores to the job 
+  cl <- makeCluster(6) # Assign R cores to the job
 
- #  # Amodel <- model.avg(get.models(freqfits, subset = TRUE))
- #  # summary(Amodel)
+  Amodel <- model.avg(get.models(freqfitsPOI_1, subset = TRUE))
+  summary(Amodel)
 
- #  # stopCluster(cl) 
- #  #  
- #  #  u <- summary(Amodel) 
- #  # capture.output(u,file = "SUMAmodel.txt") 
+  stopCluster(cl)
+
+  #  Amodel_t <- summary(Amodel)
+  # capture.output(Amodel_t,file = "Average_model_Training.txt")
 
 # ### That's it! Now we have AICc values for our models and we have the average model (or mean model).
 # ##________________________________________________________________________________________________
@@ -599,31 +603,29 @@ We have gained initial insights through data exploration in Section \ref{sec:Exp
 The resulting error estimates come out in the process of testing the performance of the models we build, by first using the validation dataset in preliminary and intermediate stages, putting in adjustments where required and re-evaluating the error rate, until the final modelling phase where the refined model is evaluated using the testing dataset to provide an unbiased error of the final results. \medskip
 
 \singlespacing
-```{r}
+```{r, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
 
-# # Evaluate model performance on the test dataset
-# 
-# 
-# # Obtain the response from the Linear model.
-# 
-# Av.PredTT <- predict(Amodel, crs$testing, type = "response")
-# Av.PredTT
-# 
-# # Export into excel
-# 
-# library(R2HTML)
-# HTMLStart(); HTML(data.frame(Av.PredTT)); w <- HTMLStop()
-# browseURL(w)
-# 
-# shell(paste("start excel", w))
-# 
-# Est <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_GoF_Amodel_InCode.csv"
-# pred <- read.csv(Est,
-#                   sep=",",
-#                   dec=".",
-#                   na.strings=c(".", "NA", "", "?"),
-#                   strip.white=TRUE, encoding="UTF-8")
-# head(pred)
+# Evaluate model performance on the test dataset
+# Obtain the response from the Linear model.
+
+Av.Pred_Validation <- predict(Amodel, crs$validation, type = "response")
+Av.Pred_Validation
+
+# Export into excel
+
+library(R2HTML)
+HTMLStart(); HTML(data.frame(Av.Pred_Validation)); w <- HTMLStop()
+browseURL(w)
+
+shell(paste("start excel", w))
+
+Est <- "file:///G:/PHD/OPRISK_PHD_DISS/Data/OPriskDataSet_GoF.csv"
+pred <- read.csv(Est,
+                  sep=";",
+                  dec=",",
+                  na.strings=c(".", "NA", "", "?"),
+                  strip.white=TRUE, encoding="UTF-8")
+head(pred)
 
 ```
 \doublespacing
@@ -634,7 +636,7 @@ To measure the level of accuracy of the decisions made by the model compared wit
 
 \begin{figure}
 \centering
-\includegraphics[scale=1.0]{ConfusionMatrix}
+\includegraphics[scale=1.0]{ConfusionMatrix.pdf}
 \caption[Confusion (Error) matrices]{Basic comparison of prediction and actuals as confusion matrices using both counts and calculated as a percentage. Summary statistics are computed and displayed}
 \label{ConfusionMatricesAll}
 \end{figure}
@@ -649,11 +651,11 @@ We also see $41$ potential events when we expect pnl loss impacts and none occur
 ```{r, tidy=TRUE, results="hide", fig.show="hide", fig.keep="none", echo=FALSE}
 # ## Generate the confusion matrix showing counts.
 # 
-# library(e1071)
-# confusionMatrix(table(pred$response, crs[["testing"]][["LossesIndicator"]]))
+library(e1071)
+confusionMatrix(table(pred$response, crs[["validation"]][["LossesIndicator"]]))
 # 
-# # z <- confusionMatrix(table(pred$response, crs[["testing"]][["LossesIndicator"]]))
-# # capture.output(z,file = "Confusion Matrix.txt")
+eMatrix_validate <- confusionMatrix(table(pred$response, crs[["validation"]][["LossesIndicator"]]))
+capture.output(eMatrix_validate,file = "Confusion Matrix.txt")
 
 ```
 \doublespacing
@@ -665,13 +667,13 @@ An ROC chart plots the true positives against the false positive rate, essential
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.5\textwidth}
-   \includegraphics[width=1\linewidth]{ROC_Curve_testing.eps}
+   \includegraphics[width=1\linewidth]{ROC_Curve_POITesting.pdf}
    \caption{}
    \label{ROC_Validation_dataset} 
 \end{subfigure}
 
 \begin{subfigure}[b]{0.5\textwidth}
-   \includegraphics[width=1\linewidth]{ROCCurve_Testing.eps}
+   \includegraphics[width=1\linewidth]{ROC _Curve_BINTesting.pdf}
    \caption{}
    \label{ROC_Testing_dataset}
 \end{subfigure}
@@ -684,61 +686,61 @@ An ROC chart plots the true positives against the false positive rate, essential
 
 # # Guage model performance of ROCR on the validation dataset.
 # # ROC Curve: requires the ROCR package.
-# 
-# library(ROCR)
-# 
-# # ROC Curve: requires the ggplot2 package.
-# 
-# library(ggplot2, quietly=TRUE)
-# 
-# # Generate an ROC Curve for the glm model on OPriskDataSet_exposure.csv [validate].
-# 
-# crs$pr <- Av.PredTT
-# 
-# # Remove observations with missing target.
-# 
-# no.miss   <- na.omit(crs[["testing"]][["LossesIndicator"]])
-# miss.list <- attr(no.miss, "na.action")
-# attributes(no.miss) <- NULL
-# 
-# if (length(miss.list))
-# {
-#   predic <- prediction(crs$pr[-miss.list], no.miss)
-# } else
-# {
-#   predic <- prediction(crs$pr, no.miss)
-# }
-# 
-# pe <- performance(predic, "tpr", "fpr")
-# au <- performance(predic, "auc")@y.values[[1]]
-# pd <- data.frame(fpr=unlist(pe@x.values), tpr=unlist(pe@y.values))
-# p <- ggplot(pd, aes(x=fpr, y=tpr))
-# p <- p + geom_line(colour="red")
-# p <- p + xlab("False Positive Rate") + ylab("True Positive Rate")
-# p <- p + ggtitle("ROC Curve Linear OPriskDataSet_exposure.csv [validate] LossesIndicator")
-# p <- p + theme(plot.title=element_text(size=10))
-# p <- p + geom_line(data=data.frame(), aes(x=c(0,1), y=c(0,1)), colour="grey")
-# p <- p + annotate("text", x=0.50, y=0.00, hjust=0, vjust=0, size=5,
-#                   label=paste("AUC =", round(au, 2)))
-# print(p)
-# 
-# # Calculate the area under the curve for the plot.
-# 
-# 
-# # Remove observations with missing target.
-# 
-# no.miss   <- na.omit(crs[["testing"]][["LossesIndicator"]])
-# miss.list <- attr(no.miss, "na.action")
-# attributes(no.miss) <- NULL
-# 
-# if (length(miss.list))
-# {
-#   predic <- prediction(crs$pr[-miss.list], no.miss)
-# } else
-# {
-#   predic <- prediction(crs$pr, no.miss)
-# }
-# performance(predic, "auc")
+
+library(ROCR)
+
+# ROC Curve: requires the ggplot2 package.
+
+library(ggplot2, quietly=TRUE)
+
+# Generate an ROC Curve for the glm model on OPriskDataSet_exposure.csv [validate].
+
+crs$pr <- Av.Pred_Validation
+
+# Remove observations with missing target.
+
+no.miss   <- na.omit(crs[["validation"]][["LossesIndicator"]])
+miss.list <- attr(no.miss, "na.action")
+attributes(no.miss) <- NULL
+
+if (length(miss.list))
+{
+  predic <- prediction(crs$pr[-miss.list], no.miss)
+} else
+{
+  predic <- prediction(crs$pr, no.miss)
+}
+
+pe <- performance(predic, "tpr", "fpr")
+au <- performance(predic, "auc")@y.values[[1]]
+pd <- data.frame(fpr=unlist(pe@x.values), tpr=unlist(pe@y.values))
+p <- ggplot(pd, aes(x=fpr, y=tpr))
+p <- p + geom_line(colour="red")
+p <- p + xlab("False Positive Rate") + ylab("True Positive Rate")
+p <- p + ggtitle("ROC Curve Linear OPriskDataSet_exposure.csv [validate] LossesIndicator")
+p <- p + theme(plot.title=element_text(size=10))
+p <- p + geom_line(data=data.frame(), aes(x=c(0,1), y=c(0,1)), colour="grey")
+p <- p + annotate("text", x=0.50, y=0.00, hjust=0, vjust=0, size=5,
+                  label=paste("AUC =", round(au, 2)))
+print(p)
+
+# Calculate the area under the curve for the plot.
+
+
+# Remove observations with missing target.
+
+no.miss   <- na.omit(crs[["validation"]][["LossesIndicator"]])
+miss.list <- attr(no.miss, "na.action")
+attributes(no.miss) <- NULL
+
+if (length(miss.list))
+{
+  predic <- prediction(crs$pr[-miss.list], no.miss)
+} else
+{
+  predic <- prediction(crs$pr, no.miss)
+}
+performance(predic, "auc")
 
 ```
 \doublespacing
@@ -761,9 +763,9 @@ We have a population of $K = 2330$ OpRisk events over the first quarter Q12013, 
 
 ## predicting validation set results and estimating the mean 
 
-# av.pred <- predict(Amodel, crs$validation, type = "response")
+# Av.Pred_Validation <- predict(Amodel, crs$validation, type = "response")
 # 
-# MASS::fitdistr(av.pred, "Poisson")
+MASS::fitdistr(Av.Pred_Validation, "Poisson")
 
 ```
 \doublespacing

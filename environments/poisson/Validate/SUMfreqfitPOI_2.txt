@@ -1,0 +1,98 @@
+
+Call:
+glm(formula = LossesIndicator ~ UpdatedDay + UpdatedTime + TradedDay + 
+    TradedTime + Desk + CapturedBy + TradeStatus + TraderId + 
+    Instrument + Reason + EventTypeCategoryLevel1 + BusinessLineLevel1, 
+    family = poisson(link = "log"), data = crs$validation, offset = log(Exposure))
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-1.69036  -0.12103  -0.00018   0.00000   3.15162  
+
+Coefficients:
+                                                         Estimate  Std. Error z value    Pr(>|z|)    
+(Intercept)                                              -9.95336     1.94130  -5.127 0.000000294 ***
+UpdatedDay                                               -0.13688     0.05283  -2.591    0.009576 ** 
+UpdatedTime                                               5.14828     2.69385   1.911    0.055989 .  
+TradedDay                                                -0.02111     0.02920  -0.723    0.469732    
+TradedTime                                                0.22901     2.96212   0.077    0.938375    
+DeskAfrica                                                1.66206     1.90996   0.870    0.384189    
+DeskBonds/Repos                                          -0.09338     1.29985  -0.072    0.942729    
+DeskCommodities                                          -0.26816     1.37108  -0.196    0.844936    
+DeskDerivatives                                           2.06258     2.45476   0.840    0.400776    
+DeskEquity                                                1.96917     1.28660   1.531    0.125888    
+DeskManagement/Other                                    -36.00181  8588.83528  -0.004    0.996656    
+DeskMM                                                   -0.16391    14.39056  -0.011    0.990912    
+DeskPrime Services                                      -24.19486  4963.44288  -0.005    0.996111    
+DeskSND                                                  -0.28375     2.79725  -0.101    0.919203    
+CapturedByMIDOFFICE                                       0.01094     1.09533   0.010    0.992029    
+CapturedByPROD ACCOUNTANT                                 0.86746    14.52213   0.060    0.952368    
+CapturedByPROD CONTROLLER                                 1.07714     0.95405   1.129    0.258894    
+CapturedByUNAUTHORISED                                  -17.89525 14957.82770  -0.001    0.999045    
+TradeStatusBO-BO Confirmed                                0.54039     0.87818   0.615    0.538323    
+TradeStatusTerminated                                     1.81911     2.80435   0.649    0.516548    
+TradeStatusTerminated/Void                              -18.89602 69653.80079   0.000    0.999784    
+TraderIdAMBA                                              6.88432     2.02497   3.400    0.000675 ***
+TraderIdANALYST                                           0.82069     0.84101   0.976    0.329146    
+TraderIdASSOCIATE                                         0.40246     1.04533   0.385    0.700232    
+TraderIdATS                                             -20.65956 69653.80077   0.000    0.999763    
+TraderIdMNGDIRECTOR                                      -0.46021     1.60502  -0.287    0.774316    
+TraderIdVICE PRINCIPAL                                    0.20215     0.98143   0.206    0.836812    
+InstrumentBill                                            3.48645     2.02289   1.724    0.084798 .  
+InstrumentBond                                            4.23681     2.46919   1.716    0.086185 .  
+InstrumentBuySellback                                   -19.43867  2586.42744  -0.008    0.994003    
+InstrumentCall Deposit                                   -1.58912     1.03068  -1.542    0.123117    
+InstrumentCombination                                     2.93299 69689.36102   0.000    0.999966    
+InstrumentCreditDefaultSwap                              -5.67885     2.76460  -2.054    0.039963 *  
+InstrumentCurr                                           -1.88968     1.34300  -1.407    0.159410    
+InstrumentCurrSwap                                       -1.95619     2.20048  -0.889    0.374014    
+InstrumentDeposit                                       -19.84916  5516.35107  -0.004    0.997129    
+InstrumentETF                                            -3.16444 77974.55236   0.000    0.999968    
+InstrumentFRA                                            -3.63516     1.89039  -1.923    0.054483 .  
+InstrumentFRN                                           -22.43291 21148.87422  -0.001    0.999154    
+InstrumentFuture/Forward                                 -3.21611     1.40577  -2.288    0.022149 *  
+InstrumentIndexLinkedBond                                 0.52029     1.48955   0.349    0.726870    
+InstrumentIndexLinkedSwap                                -8.69158     5.04617  -1.722    0.084995 .  
+InstrumentOption                                        -19.83395  9157.72259  -0.002    0.998272    
+InstrumentOther                                          -1.95909     1.12530  -1.741    0.081693 .  
+InstrumentRepo/Reverse                                    0.84038     1.60440   0.524    0.600419    
+InstrumentSecurityLoan                                   -3.21877     1.14621  -2.808    0.004982 ** 
+InstrumentStock                                          -8.48164 71714.81241   0.000    0.999906    
+InstrumentTotalReturnSwap                                -2.88363     1.21932  -2.365    0.018033 *  
+ReasonBrokerage Related                                 -20.98947 69653.80077   0.000    0.999760    
+ReasonCalendar Related                                    3.59985     1.33874   2.689    0.007167 ** 
+ReasonCapture Errors - Direction / Amount / Rate / CP     2.02951     1.89745   1.070    0.284801    
+ReasonClient Request to Amend Economics of Deal         -39.21002 19523.80999  -0.002    0.998398    
+ReasonCommodities Early Delivery                        -14.66489 19920.42376  -0.001    0.999413    
+ReasonCorrected NDEUSSA Reset Level                      -6.66869     2.59948  -2.565    0.010306 *  
+ReasonCPI Fixings                                        -0.96473     4.80696  -0.201    0.840937    
+ReasonEarly Termination / Delivery / Close out           -1.78995     2.33546  -0.766    0.443426    
+ReasonFees/Commissions Related                          -41.99214 35953.64991  -0.001    0.999068    
+ReasonOperations request to change Economics of Trade    -8.84561    14.43545  -0.613    0.540029    
+ReasonPayments Related                                  -23.41553  8017.85964  -0.003    0.997670    
+ReasonPortfolio Move / Restructure                      -12.98399 17069.33984  -0.001    0.999393    
+ReasonSystem Update Call Accounts                         9.47783 14957.82095   0.001    0.999494    
+ReasonTrade Restructure                                 -24.95114 69653.80077   0.000    0.999714    
+ReasonTri-Optima                                         -7.96992     3.22703  -2.470    0.013521 *  
+ReasonValuation Group Request                             0.04362     2.33056   0.019    0.985066    
+EventTypeCategoryLevel1EL1                                5.85726     2.20551   2.656    0.007913 ** 
+EventTypeCategoryLevel1EL4                               23.75011  8017.85962   0.003    0.997637    
+EventTypeCategoryLevel1EL6                               12.36486     2.99762   4.125 0.000037090 ***
+EventTypeCategoryLevel1EL8                              -18.04484  2226.00102  -0.008    0.993532    
+BusinessLineLevel1BL1                                   -14.03026  5977.88071  -0.002    0.998127    
+BusinessLineLevel1BL3                                    -0.35079     2.63573  -0.133    0.894121    
+BusinessLineLevel1BL4                                     0.10725     2.10370   0.051    0.959340    
+BusinessLineLevel1BL5                                    -1.14602     2.49420  -0.459    0.645895    
+BusinessLineLevel1BL6                                    21.89074  4963.44278   0.004    0.996481    
+BusinessLineLevel1BL7                                     0.66557 44517.40306   0.000    0.999988    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 301.46  on 348  degrees of freedom
+Residual deviance: 105.60  on 275  degrees of freedom
+AIC: 345.6
+
+Number of Fisher Scoring iterations: 21
+
